@@ -1,0 +1,19 @@
+# Template file for 'python3-finvizfinance'
+pkgname=python3-finvizfinance
+version=1.7.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+depends="python3 python3-requests python3-BeautifulSoup4 python3-pandas python3-lxml python3-XlsxWriter"
+checkdepends="${depends} python3-pytest python3-pytest-mock"
+short_desc="FinViz API Python 3 Module"
+maintainer="Jason Elswick <jason@jasondavid.tv>"
+license="MIT"
+homepage="https://pypi.org/project/finvizfinance/"
+changelog="https://github.com/lit26/finvizfinance/blob/master/release.md"
+distfiles="https://github.com/lit26/finvizfinance/archive/refs/tags/v${version}.tar.gz"
+checksum=4152abf70ca16049f7fb71d80226777e71c87a2faa4d4f2ea5249041a5f6e41a
+
+post_install() {
+	vlicense LICENSE
+}
