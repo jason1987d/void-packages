@@ -1,0 +1,20 @@
+# Template file for 'mepo'
+pkgname=mepo
+version=1.2.1
+revision=1
+#archs="i686 x86_64"
+#build_wrksrc=
+build_style=zig-build
+#configure_args=""
+#make_build_args=""
+#make_install_args=""
+#conf_files=""
+#make_dirs="/var/log/dir 0755 root root"
+hostmakedepends="SDL2_image SDL2_gfx SDL2_ttf SDL2 curl glibc"
+depends="${hostmakedepends}"
+short_desc="OSM map viewer for Linux - designed with mobile linux in mind"
+maintainer="Jason Elswick <jason@jasondavid.tv>"
+license="GPL-3.0-or-later"
+homepage="https://git.sr.ht/~mil/mepo"
+distfiles="https://git.sr.ht/~mil/mepo/archive/${version}.tar.gz"
+checksum=5032afa245398c90bbd608bea377814c5b6176741af05c880b31dc8908aebcbf
