@@ -1,0 +1,26 @@
+# Template file for 'headphones'
+pkgname=headphones
+version=0.6.4
+revision=1
+make_dirs="/opt/headphones 0755 _headphones _headphones"
+depends="python3"
+short_desc="Automatic music downloader for SABnzbd"
+maintainer="Jason Elswick <jason@jasondavid.tv>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/rembo10/headphones"
+distfiles="https://github.com/rembo10/headphones/archive/refs/tags/v${version}.tar.gz"
+checksum=92bc5a97cf2c921e2aa9e987593efeca0360260a55774f82fe2ee0f3e48432fc
+python_version=3
+
+system_accounts="_headphones"
+headphones_homedir="/opt/headphones"
+headphones_shell="/sbin/nologin"
+
+do_install() {
+	vmkdir opt/
+	vcopy ${wrksrc} opt/headphones/
+}
+
+post_install() {
+	vsv headphones
+}
