@@ -1,0 +1,13 @@
+# Template file for 'python3-multitasking'
+pkgname=python3-multitasking
+version=0.0.13
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+short_desc="Non-blocking Python methods using decorators"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/ranaroussi/multitasking"
+changelog="https://github.com/ranaroussi/multitasking/blob/main/CHANGELOG.rst"
+distfiles="${PYPI_SITE}/m/multitasking/multitasking-${version}.tar.gz"
+checksum=d896b5df877c9ca5eeddbf0e5994124694d6cb535aba698fb23344c7025155a1
