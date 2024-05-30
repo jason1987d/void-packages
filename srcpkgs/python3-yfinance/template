@@ -1,0 +1,19 @@
+# Template file for 'python3-yfinance'
+pkgname=python3-yfinance
+version=1.8.0
+revision=1
+build_style=python3-pep517
+make_check_args="--deselect tests/test_cache_noperms.py::TestCacheNoPermission::test_tzCacheRootLookup --deselect tests/test_cache_noperms.py::TestCacheNoPermission::test_tzCacheRootStore --deselect tests/test_price_repair.py::TestPriceRepair::test_repair_zeroes_daily --deselect tests/test_price_repair.py::TestPriceRepair::test_repair_zeroes_daily_adjClose --deselect tests/test_prices.py::TestPriceHistory::test_regular_interval_freq"
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-lxml python3-pandas python3-requests python3-numpy python3-multitasking python3-pytz python3-peewee python3-BeautifulSoup4 python3-platformdirs python3-websockets python3-protobuf python3-curl_cffi python3-scipy python3-scikit-learn"
+checkdepends="${depends} python3-pytest"
+short_desc="Download market data from Yahoo! Finance's API"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/ranaroussi/yfinance"
+distfiles="https://github.com/ranaroussi/yfinance/archive/refs/tags/${version}.tar.gz"
+checksum=5110a954e41115047522ab6b48047c6aef6b7c7f06006dcc4e460d4932dfda55
+
+post_install() {
+	rm -f ${DESTDIR}/usr/bin/sample
+}
