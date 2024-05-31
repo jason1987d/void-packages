@@ -1,0 +1,14 @@
+# Template file for 'mantra'
+pkgname=mantra
+version=3.1
+revision=1
+build_style=go
+go_import_path="github.com/Brosck/mantra"
+hostmakedepends="go"
+depends="go"
+short_desc="Tool used to hunt down API key leaks in JS files and pages"
+maintainer="Jason Elswick <jason@jasondavid.tv>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/brosck/mantra"
+distfiles="https://github.com/brosck/mantra/archive/refs/tags/v${version}.tar.gz"
+checksum=379894f36ef04a6b4e57e77112070e23dcc75569d1df98a8f128fe24a8b5e0b1
