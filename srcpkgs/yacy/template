@@ -1,0 +1,30 @@
+# Template file for 'yacy'
+pkgname=yacy
+version=1.940.202406121206
+revision=1
+# hostmakedepends="openjdk11 apache-ant"
+depends="openjdk11-jre bash"
+short_desc="Distributed Peer-to-Peer Web Search Engine and Intranet Search Appliance"
+maintainer="Jason Elswick <jason@jasondavid.tv>"
+license="GPL-2.0-or-later"
+homepage="https://yacy.net/"
+#distfiles="https://release.yacy.net/yacy_v${version}_202405270005_70454654f.tar.gz"
+distfiles="https://release.yacy.net/yacy_v1.940_202406121206_66cf7d4ca.tar.gz"
+#checksum=b607a7462ebc12cfd30c2ffb6b849339c8d31a928d3a35ddcf8865f58aa3d880
+checksum=9a47d7dcb3519bcf249aa81836c0e118f64288a13c7b5ddeb28f860ba49305c2
+
+system_accounts="_yacy"
+yacy_homedir="/var/lib/yacy"
+yacy_shell="/bin/bash"
+make_dirs="/var/lib/yacy 0755 _yacy _yacy"
+
+do_install() {
+	vmkdir var/lib/yacy
+	vcopy ${wrksrc}/* var/lib/yacy
+}
+
+post_install() {
+	vsv yacy
+}
+
+# Note: this is not compiled because the github upstream project does not have any recent releases of its source code yacy_search_server, only uses git commits. I may set up releases on my own fork of yacy.
