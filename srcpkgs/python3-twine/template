@@ -1,0 +1,15 @@
+# Template file for 'python3-twine'
+pkgname=python3-twine
+version=6.2.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
+depends="python3-keyring python3-packaging python3-pkginfo python3-requests python3-requests-toolbelt python3-rfc3986 python3-rich python3-urllib3 python3-readme-renderer python3-importlib_metadata python3-id"
+checkdepends="${depends} python3-pytest python3-pytest-socket python3-pretend"
+short_desc="Collection of utilities for publishing packages on PyPI"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/pypa/twine/"
+distfiles="${PYPI_SITE}/t/twine/twine-${version}.tar.gz"
+checksum=e5ed0d2fd70c9959770dce51c8f39c8945c574e18173a7b81802dab51b4b75cf
+make_check=no # tests fail
