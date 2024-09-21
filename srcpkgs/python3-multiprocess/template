@@ -1,0 +1,19 @@
+# Template file for 'python3-multiprocess'
+pkgname=python3-multiprocess
+version=0.70.18
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-dill"
+checkdepends="${depends} python3-pytest"
+short_desc="Better multiprocessing and multithreading in Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/uqfoundation/multiprocess/"
+distfiles="https://github.com/uqfoundation/multiprocess/releases/download/${version}/multiprocess-${version}.tar.gz"
+checksum=f9597128e6b3e67b23956da07cf3d2e5cba79e2f4e0fba8d7903636663ec6d0d
+make_check=no # test errors with finding test modules
+
+post_install() {
+	vlicense LICENSE
+}
