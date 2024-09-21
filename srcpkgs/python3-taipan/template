@@ -1,0 +1,18 @@
+# Template file for 'python3-taipan'
+pkgname=python3-taipan
+version=0.0.3
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+depends="python3-typed-ast"
+short_desc="General purpose toolkit for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-2-Clause"
+homepage="https://github.com/Xion/taipan"
+distfiles="https://github.com/Xion/taipan/archive/refs/tags/${version}.tar.gz"
+checksum=5fe4ad44221e97cd0162cc68a9de69499d22d2b1f2c4cacb92e1a10c64631ca5
+make_check=no # tests are broken
+
+post_install() {
+	vlicense LICENSE
+}
