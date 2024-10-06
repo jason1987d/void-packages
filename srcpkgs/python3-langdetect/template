@@ -1,0 +1,14 @@
+# Template file for 'python3-langdetect'
+pkgname=python3-langdetect
+version=1.0.8
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+#makedepends=""
+depends="python3-six"
+short_desc="Port of Google's language-detection library to Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/Mimino666/langdetect"
+distfiles="https://github.com/Mimino666/langdetect/archive/refs/tags/${version}.tar.gz"
+checksum=6cd844cedbeeb7839518838f57f2290fafdc5d803b982d0ada9c7e3141f5d2eb
