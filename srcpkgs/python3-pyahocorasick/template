@@ -1,0 +1,19 @@
+# Template file for 'python3-pyahocorasick'
+pkgname=python3-pyahocorasick
+version=2.3.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools gcc"
+makedepends="python3-devel"
+depends="python3"
+checkdepends="python3-pytest python3-setuptools python3-wheel"
+short_desc="Python module implementing Aho-Corasick algorithm"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/WojciechMula/pyahocorasick"
+distfiles="https://github.com/WojciechMula/pyahocorasick/archive/refs/tags/v${version}.tar.gz"
+checksum=e5b7d126590ec94b4f9493699b101276e4cfc33a5a8597e3f32fdc7843174f89
+
+post_install() {
+	vlicense LICENSE
+}
