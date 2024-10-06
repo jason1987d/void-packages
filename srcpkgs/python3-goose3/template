@@ -1,0 +1,13 @@
+# Template file for 'python3-goose3'
+pkgname=python3-goose3
+version=3.1.19
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-pyahocorasick python3-Pillow python3-cssselect python3-requests python3-dateutil python3-BeautifulSoup4 python3-lxml python3-langdetect"
+short_desc="Python 3 compatible version of goose article extractor"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/goose3/goose3"
+distfiles="https://github.com/goose3/goose3/archive/refs/tags/v${version}.tar.gz"
+checksum=833adaf7e5372c9b49888d00c2af80b5191c7a97b961ef13f44d80d5a7c7c5eb
