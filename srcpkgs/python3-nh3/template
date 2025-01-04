@@ -1,0 +1,18 @@
+# Template file for 'python3-nh3'
+pkgname=python3-nh3
+version=0.3.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools maturin cargo"
+depends="maturin"
+checkdepends="python3-pytest"
+short_desc="Python binding to Ammonia HTML sanitizer Rust crate"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/messense/nh3"
+distfiles="https://github.com/messense/nh3/archive/refs/tags/v${version}.tar.gz"
+checksum=55d233b9ab59107a351b690f88150fb10a9c9fbf4ca98b34b217378b70bba19f
+
+post_install() {
+	vlicense LICENSE
+}
