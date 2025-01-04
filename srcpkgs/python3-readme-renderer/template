@@ -1,0 +1,13 @@
+# Template file for 'python3-readme-renderer'
+pkgname=python3-readme-renderer
+version=44.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-nh3 python3-docutils python3-Pygments"
+short_desc="Safely render long_description/README files in Warehouse"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/pypa/readme_renderer"
+distfiles="https://github.com/pypa/readme_renderer/archive/refs/tags/${version}.tar.gz"
+checksum=87d5610289d217384a12dfe7c36df29abef03a149244f033b9c8b1df87c53678
