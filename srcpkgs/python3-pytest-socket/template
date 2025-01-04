@@ -1,0 +1,17 @@
+# Template file for 'python3-pytest-socket'
+pkgname=python3-pytest-socket
+version=0.7.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-poetry-core"
+depends="python3-pytest"
+short_desc="Pytest Plugin to disable socket calls during tests"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/miketheman/pytest-socket"
+distfiles="https://github.com/miketheman/pytest-socket/archive/refs/tags/${version}.tar.gz"
+checksum=6a1994c4ae29258936b88b279f539277ef8ebe529dca150324ff62b76765e873
+
+post_install() {
+	vlicense LICENSE
+}
