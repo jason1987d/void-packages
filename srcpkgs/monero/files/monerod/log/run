@@ -1,0 +1,3 @@
+#!/bin/sh
+
+logger -p daemon.notice -t monerod
