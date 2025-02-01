@@ -1,0 +1,13 @@
+# Template file for 'python3-id'
+pkgname=python3-id
+version=1.5.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-flit_core"
+depends="python3-requests"
+short_desc="Python tool for generating OIDC identities"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/di/id"
+distfiles="https://github.com/di/id/archive/refs/tags/v${version}.tar.gz"
+checksum=386c68dbaa0191165b44017781b373e49d9a4ae8ba9d01db772daed28d0849e3
