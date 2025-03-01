@@ -1,0 +1,26 @@
+# Template file for 'xmrig'
+pkgname=xmrig
+version=6.22.2
+revision=1
+build_style=cmake
+makedepends="libuv-devel openssl-devel libhwloc-devel"
+short_desc="RandomX, KawPow, CryptoNight, GhostRider unified CPU/GPU miner"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/xmrig/xmrig"
+distfiles="https://github.com/xmrig/xmrig/archive/refs/tags/v${version}.tar.gz"
+checksum=34759ca9c1b2486ecb7b6bc267c76a6f365d401b2b6de6d667e0a13ae30882a2
+make_check=no # no tests from upstream provided
+
+post_extract() {
+	sed -i 's/constexpr const int kDefaultDonateLevel = 1;/constexpr const int kDefaultDonateLevel = 0;/g' ${wrksrc}/src/donate.h
+	sed -i 's/constexpr const int kMinimumDonateLevel = 1;/constexpr const int kMinimumDonateLevel = 0;/g' ${wrksrc}/src/donate.h
+}
+
+do_install() {
+	vbin build/xmrig
+	vmkdir usr/share/doc/xmrig
+	vcopy doc/* usr/share/doc/xmrig
+	vmkdir usr/share/examples/xmrig
+	vcopy src/config.json usr/share/examples/xmrig
+}
