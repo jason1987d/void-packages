@@ -1,0 +1,77 @@
+# Template file for 'p2pool'
+pkgname=p2pool
+version=4.4
+revision=1
+#_randomx_gitrev=e613bfe3641e126ca97cb7f7d16677a947f7a78c
+#_cppzmq_gitrev=a371495a91a1fa7645f9383e9001ac10148be8a7
+#_curl_gitrev=06c37f3218a8e97d108a2090705fdf456aa7f7cd
+#_grpc_gitrev=e22a758b13217b9c88372d0f1f747b9ef20debf3
+#_libuv_gitrev=252630895bdb33670b1be413a5cd9e2895ad2c7d
+#_libzmq_gitrev=8a20bd6132b3a93562fbf72736739c02a0cc93c3
+#_miniupnp_gitrev=7e28c9f8afd8a86151174746180cdc823dfd983b
+#_rapidjson_gitrev=43a1db7dbab5680b351f723ba3baeb86f7bb0b38
+#_robinhoodhashing_gitrev=4213dd109f03b49c68b52074d929e6f221803bed
+#_googletest_gitrev=6910c9d9165801d8827d628cb72eb7ea9dd538c5
+build_style=cmake
+hostmakedepends="curl git"
+makedepends="libuv-devel czmq-devel libsodium-devel gpm-devel libcurl-devel libidn2-devel rapidjson"
+depends="xmrig curl zeromq"
+short_desc="Decentralized pool for Monero mining"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/SChernykh/p2pool"
+#distfiles="https://github.com/SChernykh/${pkgname}/archive/refs/tags/v${version}.tar.gz
+# https://github.com/tevador/RandomX/archive/${_randomx_gitrev}.tar.gz>RandomX-${_randomx_gitrev}.tar.gz
+# https://github.com/SChernykh/cppzmq/archive/${_cppzmq_gitrev}.tar.gz>cppzmq-${_cppzmq_gitrev}.tar.gz
+# https://github.com/SChernykh/grpc/archive/${_grpc_gitrev}.tar.gz>grpc-${_grpc_gitrev}.tar.gz
+# https://github.com/libuv/libuv/archive/${_libuv_gitrev}.tar.gz>libuv-${_libuv_gitrev}.tar.gz
+# https://github.com/SChernykh/libzmq/archive/${_libzmq_gitrev}.tar.gz>libzmq-${_libzmq_gitrev}.tar.gz
+# https://github.com/miniupnp/miniupnp/archive/${_miniupnp_gitrev}.tar.gz>miniupnp-${_miniupnp_gitrev}.tar.gz
+# https://github.com/Tencent/rapidjson/archive/${_rapidjson_gitrev}.tar.gz>rapidjson-${_rapidjson_gitrev}.tar.gz
+# https://github.com/SChernykh/robin-hood-hashing/archive/${_robinhoodhashing_gitrev}.tar.gz>robin-hood-hashing-${_robinhoodhashing_gitrev}.tar.gz
+# https://github.com/google/googletest/archive/${_googletest_gitrev}.tar.gz>googletest-${_googletest_gitrev}.tar.gz"
+#checksum="1f918da173d789179b0d0f03d1c79312b38ed543a7bdf86d3908541e310bccfb"
+distfiles=(
+  "${pkgname}::git+https://github.com/SChernykh/${pkgname}#tag=v${version}"
+  "${pkgname}-RandomX::git+https://github.com/SChernykh/RandomX"
+  "${pkgname}-cppzmq::git+https://github.com/SChernykh/cppzmq"
+  "${pkgname}-curl::git+https://github.com/SChernykh/curl"
+  "${pkgname}-googletest::git+https://github.com/google/googletest"
+  "${pkgname}-grpc::git+https://github.com/SChernykh/grpc"
+  "${pkgname}-libuv::git+https://github.com/SChernykh/libuv"
+  "${pkgname}-libzmq::git+https://github.com/SChernykh/libzmq"
+  "${pkgname}-miniupnp::git+https://github.com/SChernykh/miniupnp"
+  "${pkgname}-rapidjson::git+https://github.com/SChernykh/rapidjson"
+  "${pkgname}-robin-hood-hashing::git+https://github.com/SChernykh/robin-hood-hashing"
+
+  "${pkgname}-abseil-cpp::git+https://github.com/abseil/abseil-cpp.git"
+  "${pkgname}-benchmark::git+https://github.com/google/benchmark"
+  "${pkgname}-bloaty::git+https://github.com/google/bloaty.git"
+  "${pkgname}-boringssl::git+https://github.com/google/boringssl.git"
+  "${pkgname}-c-ares::git+https://github.com/c-ares/c-ares.git"
+  "${pkgname}-data-plane-api::git+https://github.com/envoyproxy/data-plane-api.git"
+  "${pkgname}-googleapis::git+https://github.com/googleapis/googleapis.git"
+  "${pkgname}-googletest::git+https://github.com/google/googletest.git"
+  "${pkgname}-opencensus-proto::git+https://github.com/census-instrumentation/opencensus-proto.git"
+  "${pkgname}-opentelemetry-cpp::git+https://github.com/open-telemetry/opentelemetry-cpp"
+  "${pkgname}-opentelemetry-proto::git+https://github.com/open-telemetry/opentelemetry-proto.git"
+  "${pkgname}-protobuf::git+https://github.com/SChernykh/protobuf.git"
+  "${pkgname}-protoc-gen-validate::git+https://github.com/envoyproxy/protoc-gen-validate.git"
+  "${pkgname}-re2::git+https://github.com/google/re2.git"
+  "${pkgname}-xds::git+https://github.com/cncf/xds.git"
+  "${pkgname}-zlib::git+https://github.com/madler/zlib"
+)
+checksum=
+
+#post_extract() {
+#	vsrcextract -C external/src/RandomX RandomX-${_randomx_gitrev}.tar.gz
+#	vsrcextract -C external/src/cppzmq cppzmq-${_cppzmq_gitrev}.tar.gz
+#	vsrcextract -C external/src/curl curl-${_curl_gitrev}.tar.gz
+#	vsrcextract -C external/src/grpc grpc-${_grpc_gitrev}.tar.gz
+#	vsrcextract -C external/src/libuv libuv-${_libuv_gitrev}.tar.gz
+#	vsrcextract -C external/src/libzmq libzmq-${_libzmq_gitrev}.tar.gz
+#	vsrcextract -C external/src/miniupnp miniupnp-${_miniupnp_gitrev}.tar.gz
+#	vsrcextract -C external/src/rapidjson rapidjson-${_rapidjson_gitrev}.tar.gz
+#	vsrcextract -C external/src/robin-hood-hashing robin-hood-hashing-${_robinhoodhashing_gitrev}.tar.gz
+#	vsrcextract -C tests/googletest googletest-${_googletest_gitrev}.tar.gz
+#}
