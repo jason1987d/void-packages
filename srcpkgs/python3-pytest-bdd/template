@@ -1,0 +1,17 @@
+# Template file for 'python3-pytest-bdd'
+pkgname=python3-pytest-bdd
+version=8.1.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-poetry-core"
+depends="python3-pytest python3-Mako python3-packaging python3-typing_extensions python3-parse"
+short_desc="BDD library for the pytest runner"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/pytest-dev/pytest-bdd"
+distfiles="https://github.com/pytest-dev/pytest-bdd/archive/refs/tags/${version}.tar.gz"
+checksum=92162b4b92eea7092e07e978b42e552543fe66e4253534567825883cbaf9077b
+
+post_install() {
+	vlicense LICENSE.txt
+}
