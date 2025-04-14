@@ -1,21 +1,19 @@
 # Template file for 'qutebrowser'
 pkgname=qutebrowser
-version=3.4.0
+version=3.5.0
 revision=1
 build_style=python3-module
 hostmakedepends="python3-setuptools asciidoc"
 depends="python3-Jinja2 python3-yaml"
+checkdepends="python3-pytest python3-pytest-bdd python3-pytest-instafail python3-pytest-rerunfailures python3-pytest-qt python3-pytest-mock python3-pytest-benchmark"
 short_desc="Keyboard-focused browser with a minimal GUI"
 maintainer="Daniel Eyßer <daniel.eysser@gmail.com>"
 license="GPL-3.0-or-later"
 homepage="https://qutebrowser.org/"
 changelog="https://raw.githubusercontent.com/qutebrowser/qutebrowser/master/doc/changelog.asciidoc"
 distfiles="https://github.com/qutebrowser/qutebrowser/releases/download/v${version}/qutebrowser-${version}.tar.gz"
-checksum=814124c0ed337430e613a1da366d5e38904cb2049afb1505971456ca5ca6223e
+checksum=fa142c8d1c2825b068b71b3604a8b2d682e2ed84a14c3e68b6de7844331d80bb
 nostrip=yes
-# testing requires unpackaged plugins:
-# pytest-bdd, pytest-benchmark, pytest-instafail, pytest-rerunfailures
-make_check=no
 
 build_options="qt6 webkit"
 desc_option_qt6="Use Qt6 GUI and WebEngine backend"
