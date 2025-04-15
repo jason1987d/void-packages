@@ -1,0 +1,19 @@
+# Template file for 'gherkin-python'
+pkgname=gherkin-python
+version=32.1.1
+revision=1
+build_wrksrc="python"
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-typing_extensions"
+checkdepends="${depends} python3-pytest"
+short_desc="Parser and compiler for the Gherkin language (Python)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/cucumber/gherkin"
+distfiles="https://github.com/cucumber/gherkin/archive/refs/tags/v${version}.tar.gz"
+checksum=97606879d7e2a5acd4a637b514d39717a49292c8b0a2cc61a6eec790cbf0a60c
+
+post_install() {
+	vlicense LICENSE
+}
