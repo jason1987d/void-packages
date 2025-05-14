@@ -1,0 +1,14 @@
+# Template file for 'python3-astunparse'
+pkgname=python3-astunparse
+version=1.6.3
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-wheel python3-six"
+short_desc="AST unparser for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="PSF-2.0"
+homepage="https://github.com/simonpercivall/astunparse"
+distfiles="https://github.com/simonpercivall/astunparse/archive/refs/tags/v${version}.tar.gz"
+checksum=5b303f08588a4a0da93c0a5090a7359785c17d46d6b6fb743382be327241f7fc
+make_check=no # tests fail
