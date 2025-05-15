@@ -1,0 +1,14 @@
+# Template file for 'python3-safetensors'
+pkgname=python3-safetensors
+version=0.5.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools-rust maturin python3-wheel cargo"
+short_desc="Simple, safe way to store and distribute tensors (Python)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/huggingface/safetensors"
+distfiles="https://github.com/huggingface/safetensors/archive/refs/tags/v${version}.tar.gz"
+checksum=8c91c33013e54cbc7e055c4aa9565ddefa41ebd5a6de0dbdbbffaa6e921b4257
+build_wrksrc="bindings/python"
+make_check=no # too many tests with too many optional dependencies
