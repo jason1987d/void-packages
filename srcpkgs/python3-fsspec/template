@@ -1,0 +1,17 @@
+# Template file for 'python3-fsspec'
+pkgname=python3-fsspec
+version=2025.9.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel hatchling hatch-vcs"
+short_desc="Specification that Python filesystems should adhere to"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/fsspec/filesystem_spec"
+distfiles="${PYPI_SITE}/f/fsspec/fsspec-${version}.tar.gz"
+checksum=19fd429483d25d28b65ec68f9f4adc16c17ea2c7c7bf54ec61360d478fb19c19
+make_check=no # too many tests with optional dependencies
+
+post_install() {
+	vlicense LICENSE
+}
