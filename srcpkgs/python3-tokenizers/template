@@ -1,0 +1,16 @@
+# Template file for 'python3-tokenizers'
+pkgname=python3-tokenizers
+version=0.22.2
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel maturin cargo"
+depends="python3-hf_hub python3-fsspec python3-tiktoken"
+checkdepends="${depends} python3-pytest python3-pytest-asyncio python3-requests python3-datasets ruff ty"
+short_desc="Tokenizers optimized for Research and Production (Python)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/huggingface/tokenizers"
+distfiles="https://github.com/huggingface/tokenizers/archive/refs/tags/v${version}.tar.gz"
+checksum=ea401ee4db62dfd59c29d9d8c117d03263eb41a6d52b33d129b8d0d15c2c68cb
+build_wrksrc="bindings/python"
+make_check=no # pytest fixture 'model' not available, also file data/my-file.0.gz does not exist
