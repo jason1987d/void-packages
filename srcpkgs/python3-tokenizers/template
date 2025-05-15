@@ -1,0 +1,16 @@
+# Template file for 'python3-tokenizers'
+pkgname=python3-tokenizers
+version=0.21.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel maturin cargo"
+depends="python3-hf_hub"
+checkdepends="${depends} python3-pytest python3-requests python3-datasets python3-black"
+short_desc="Tokenizers optimized for Research and Production (Python)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/huggingface/tokenizers"
+distfiles="https://github.com/huggingface/tokenizers/archive/refs/tags/v${version}.tar.gz"
+checksum=aa0199aa5621e41f9be3500266dda027d824658d716e1ec3264bf02720279c79
+build_wrksrc="bindings/python"
+#make_check=no # too many tests with too many optional dependencies
