@@ -1,0 +1,16 @@
+# Template file for 'python3-scikit-build-cmake'
+pkgname=python3-scikit-build-cmake
+version=4.2.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-scikit-build-core cmake"
+makedepends="openssl-devel"
+depends="python3-importlib_metadata"
+checkdepends="${depends} python3-coverage python3-pytest python3-pytest-cov"
+short_desc="Infrastructure to build CMake Python wheels"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/scikit-build/cmake-python-distributions"
+distfiles="https://github.com/scikit-build/cmake-python-distributions/archive/refs/tags/${version}.tar.gz"
+checksum=84c4bfc4c8be89c210b8fa576d2406083b315ebd00328a7687692f254f160ca3
+make_check=no # AssertionError expect cmake 4.2.1
