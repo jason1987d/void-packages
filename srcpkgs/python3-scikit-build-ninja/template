@@ -1,0 +1,14 @@
+# Template file for 'python3-scikit-build-ninja'
+pkgname=python3-scikit-build-ninja
+version=1.13.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="cmake ninja python3-setuptools python3-setuptools_scm python3-wheel python3-scikit-build-core hatch-fancy-pypi-readme"
+checkdepends="${depends} python3-pytest python3-importlib_metadata"
+short_desc="Infrastructure to build Ninja Python wheels"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/scikit-build/ninja-python-distributions"
+distfiles="${PYPI_SITE}/n/ninja/ninja-${version}.tar.gz"
+checksum=4a40ce995ded54d9dc24f8ea37ff3bf62ad192b547f6c7126e7e25045e76f978
+make_check=no # AssertionError ninja version 1.11.1.git.kitware.jobserver-1 when 1.12.1 is installed
