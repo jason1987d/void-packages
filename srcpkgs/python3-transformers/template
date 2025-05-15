@@ -1,0 +1,14 @@
+# Template file for 'python3-transformers'
+pkgname=python3-transformers
+version=4.57.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-filelock python3-hf_hub python3-numpy python3-packaging python3-regex python3-requests python3-safetensors python3-tokenizers python3-tqdm python3-yaml"
+short_desc="Machine Learning for Pytorch, TensorFlow, and JAX"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/huggingface/transformers"
+distfiles="https://github.com/huggingface/transformers/archive/refs/tags/v${version}.tar.gz"
+checksum=425e9f2e4281fe977be496902b5b4cd79c2bf0a6dab9e516bc16d2c56ab2f487
+make_check=no # requires pytorch which is not successfully packaged yet
