@@ -1,0 +1,14 @@
+# Template file for 'python3-pyink'
+pkgname=python3-pyink
+version=25.12.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel hatchling hatch-vcs"
+depends="black python3-pathspec python3-mypy_extensions python3-tomli python3-packaging python3-typing_extensions python3-click python3-platformdirs python3-pytokens"
+checkdepends="${depends} python3-coverage python3-pytest python3-pytest-xdist python3-pytest-cov tox python3-pytest-black"
+short_desc="Python formatter forked from Black with different formatting"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/google/pyink"
+distfiles="${PYPI_SITE}/p/pyink/pyink-${version}.tar.gz"
+checksum=930a913fed2824ffbbd3c10847fad1171c2b075dd709a13dc435caea851de7b8
