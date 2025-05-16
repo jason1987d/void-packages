@@ -1,0 +1,15 @@
+# Template file for 'python3-nltk'
+pkgname=python3-nltk
+version=3.9.2
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-click python3-joblib python3-regex python3-tqdm python3-numpy python3-crfsuite python3-scikit-learn python3-scipy python3-matplotlib python3-requests python3-parsing nltk-data"
+checkdepends="${depends} python3-pylint python3-pytest python3-pytest-cov python3-pytest-mock tox"
+short_desc="Python natural language toolkit"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://www.nltk.org/"
+distfiles="https://github.com/nltk/nltk/archive/refs/tags/${version}.tar.gz"
+checksum=da61aeb8c8d3e2f59020f0c3216e56575634779f38dfec0ff23216671ca9813a
+make_check=no # unpackaged dependency twython
