@@ -1,0 +1,18 @@
+# Template file for 'python3-datasets'
+pkgname=python3-datasets
+version=4.6.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-filelock python3-dill python3-pandas python3-tqdm python3-xxhash python3-multiprocess python3-hf_hub python3-yaml python3-packaging python3-numpy python3-fsspec python3-requests python3-pyarrow python3-httpx"
+checkdepends="${depends} python3-pytest python3-pytest-xdist python3-absl python3-decorator python3-zstandard python3-py7zr python3-rarfile python3-Pillow python3-aiohttp python3-joblib python3-lz4 python3-SQLAlchemy2"
+# build these for checkdepends: python3-pyspark python3-moto python3-torchcodec python3-tensorflow python3-polars python3-pytest-datadir python3-joblibspark torchdata
+# possible circular loop: python3-pytorch python3-tensorflow python3-jax python3-jaxlib
+# note: checkdepends may not be complete! check https://github.com/huggingface/datasets/blob/main/setup.py
+short_desc="Datasets for ML models with data manipulation tools"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/huggingface/datasets"
+distfiles="https://github.com/huggingface/datasets/archive/refs/tags/${version}.tar.gz"
+checksum=abce4758687bfd8c4bd1e4e490aaffbb912fa8c360161e78ef5cfbb1f4fd4e0e
+make_check=no # unpackaged dependencies
