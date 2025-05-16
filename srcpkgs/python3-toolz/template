@@ -1,0 +1,18 @@
+# Template file for 'python3-toolz'
+pkgname=python3-toolz
+version=1.1.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-setuptools-git_versioning git"
+depends="python3-setuptools-git_versioning"
+checkdepends="python3-pytest tox wget"
+short_desc="Functional standard library for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/pytoolz/toolz"
+distfiles="https://github.com/pytoolz/toolz/archive/refs/tags/${version}.tar.gz"
+checksum=58d044517cd9b846937059c091a3a49f3a86d2d8a66703cbef5680f6d89f7536
+
+post_install() {
+	vlicense LICENSE.txt
+}
