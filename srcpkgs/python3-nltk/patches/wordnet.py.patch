@@ -1,0 +1,14 @@
+--- a/nltk/stem/wordnet.py
++++ b/nltk/stem/wordnet.py
+@@ -45,9 +45,9 @@
+ 
+     """
+ 
+-    morphy = wn.morphy
++#    morphy = wn.morphy
+ 
+-    _morphy = wn._morphy
++#    _morphy = wn._morphy
+ 
+     def lemmatize(self, word: str, pos: str = "n") -> str:
+         """Lemmatize `word` by picking the shortest of the possible lemmas,

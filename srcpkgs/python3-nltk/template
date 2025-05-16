@@ -1,0 +1,15 @@
+# Template file for 'python3-nltk'
+pkgname=python3-nltk
+version=3.9.1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-click python3-joblib python3-regex python3-tqdm python3-numpy python3-crfsuite python3-scikit-learn python3-scipy python3-matplotlib python3-requests python3-parsing nltk-data"
+checkdepends="${depends} python3-pylint python3-pytest python3-pytest-cov python3-pytest-mock tox"
+short_desc="Python natural language toolkit"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://www.nltk.org/"
+distfiles="https://github.com/nltk/nltk/archive/refs/tags/${version}.tar.gz"
+checksum=03e06c8c13e352133962c4395ebe0696905c9f1fbdead2d19deae37ba48eb47c
+make_check=no # possibly package twython, also LookupError "Resource wordnet not found" in the tests
