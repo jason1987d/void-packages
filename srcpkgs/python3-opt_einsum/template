@@ -1,0 +1,17 @@
+# Template file for 'python3-opt_einsum'
+pkgname=python3-opt_einsum
+version=3.4.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm hatchling hatch-vcs hatch-fancy-pypi-readme"
+checkdepends="python3-pytest"
+short_desc="Einsum functions in NumPy, Tensorflow, Dask and more"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/dgasmith/opt_einsum"
+distfiles="${PYPI_SITE}/o/opt_einsum/opt_einsum-${version}.tar.gz"
+checksum=96ca72f1b886d148241348783498194c577fa30a8faac108586b14f1ba4473ac
+
+post_install() {
+	vlicense LICENSE
+}
