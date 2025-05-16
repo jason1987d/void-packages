@@ -1,0 +1,22 @@
+# Template file for 'python3-crfsuite'
+pkgname=python3-crfsuite
+version=0.9.11
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-Cython"
+makedepends="python3-devel"
+checkdepends="python3-pytest tox python3-pytest-black python3-isort python3-flake8"
+short_desc="Python binding for crfsuite"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/scrapinghub/python-crfsuite"
+distfiles="${PYPI_SITE}/p/python_crfsuite/python_crfsuite-${version}.tar.gz"
+checksum=6eff965ca70567396d822c9a35ea74b0f7edb27d9471524997bdabe7a6da5f5a
+
+pre_build() {
+	cython pycrfsuite/_pycrfsuite.pyx --cplus -a -3 -I pycrfsuite
+}
+
+post_install() {
+	vlicense LICENSE.txt
+}
