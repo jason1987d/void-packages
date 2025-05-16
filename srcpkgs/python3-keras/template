@@ -1,0 +1,13 @@
+# Template file for 'python3-keras'
+pkgname=python3-keras
+version=3.11.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-absl python3-numpy python3-rich python3-h5py python3-namex python3-optree python3-ml_dtypes python3-packaging"
+short_desc="Deep Learning for humans"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/keras-team/keras"
+distfiles="https://github.com/keras-team/keras/archive/refs/tags/v${version}.tar.gz"
+checksum=49802a088c8afe7b914f4c58c4d2706cf468d4f0b49f5afdb937f509e8383add
