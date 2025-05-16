@@ -1,0 +1,20 @@
+# Template file for 'python3-ml_dtypes'
+pkgname=python3-ml_dtypes
+version=0.5.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+makedepends="python3-numpy python-devel"
+depends="python3-numpy python3-platformdirs"
+checkdepends="${depends} python3-pytest python3-absl python3-pytest-xdist python3-pyink python3-pylint"
+short_desc="Implementation of NumPy dtype machine learning extensions"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0,MPL-2.0"
+homepage="https://github.com/jax-ml/ml_dtypes"
+distfiles="https://${PYPI_SITE}/m/ml_dtypes/ml_dtypes-${version}.tar.gz"
+checksum=ac5b58559bb84a95848ed6984eb8013249f90b6bab62aa5acbad876e256002c9
+make_check=no # pypi tarball does not provide tests, but github tarball does not provide git submodule for third_party/eigen
+
+post_extract() {
+	vsed -i 's/setuptools~=75.7.0/setuptools/' pyproject.toml
+}
