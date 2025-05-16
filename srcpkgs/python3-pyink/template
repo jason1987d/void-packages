@@ -1,0 +1,15 @@
+# Template file for 'python3-pyink'
+pkgname=python3-pyink
+version=24.10.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel hatchling hatch-vcs"
+depends="black python3-pathspec python3-mypy_extensions python3-tomli python3-packaging python3-typing_extensions python3-click python3-platformdirs"
+checkdepends="${depends} python3-coverage python3-pytest python3-pytest-xdist python3-pytest-cov tox python3-pytest-black"
+short_desc="Python formatter forked from Black with different formatting"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/google/pyink"
+distfiles="${PYPI_SITE}/p/pyink/pyink-${version}.tar.gz"
+checksum=5ec4339aa4953f796e88d90bcac3e3472161e4c36dbde203d80f5f76721ac718
+make_check=no # some tests fail - TypeError, try again after merged into void-packages my update of python3-pytest-black 0.6.0 which is orphaned and stuck on 0.3.12
