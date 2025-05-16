@@ -1,0 +1,15 @@
+# Template file for 'python3-datasets'
+pkgname=python3-datasets
+version=3.6.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-filelock python3-dill python3-pandas python3-tqdm python3-xxhash python3-multiprocess python3-huggingface_hub python3-yaml python3-packaging python3-numpy python3-fsspec python3-requests python3-pyarrow"
+checkdepends="${depends} python3-absl"
+short_desc="Datasets for ML models with data manipulation tools"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/huggingface/datasets"
+distfiles="https://github.com/huggingface/datasets/archive/refs/tags/${version}.tar.gz"
+checksum=01a9f3dd52f0bcf4c08f949c9119224bf0052962f860fee0ee1e994a40a301b2
+make_check=no # may not have all dependencies
