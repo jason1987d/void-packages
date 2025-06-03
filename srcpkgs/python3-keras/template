@@ -11,3 +11,4 @@ license="Apache-2.0"
 homepage="https://github.com/keras-team/keras"
 distfiles="https://github.com/keras-team/keras/archive/refs/tags/v${version}.tar.gz"
 checksum=49802a088c8afe7b914f4c58c4d2706cf468d4f0b49f5afdb937f509e8383add
+make_check=no # unpackaged dependencies
