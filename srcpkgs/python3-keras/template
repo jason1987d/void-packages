@@ -1,6 +1,6 @@
 # Template file for 'python3-keras'
 pkgname=python3-keras
-version=3.11.3
+version=3.13.2
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
@@ -10,4 +10,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/keras-team/keras"
 distfiles="https://github.com/keras-team/keras/archive/refs/tags/v${version}.tar.gz"
-checksum=49802a088c8afe7b914f4c58c4d2706cf468d4f0b49f5afdb937f509e8383add
+checksum=5e8456cac2eed0ae1ab50cde07e8f4d1a294ccb49860319c946265510659fd08
+make_check=no # unpackaged dependencies
