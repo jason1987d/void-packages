@@ -1,0 +1,14 @@
+# Template file for 'python3-tensorstore'
+pkgname=python3-tensorstore
+version=0.1.73
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-setuptools_scm python3-numpy python3-devel cmake"
+depends="python3-numpy python3-ml_dtypes"
+short_desc="Library for reading and writing large multi-dimensional arrays"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/tensorstore"
+distfiles="https://github.com/google/tensorstore/archive/refs/tags/v${version}.tar.gz"
+checksum=c771586feaf1b736abcf81169dd0c6de9a4d00e2ab000f0e9f08ba68e4701d05
+make_check=no # come back and test this later
