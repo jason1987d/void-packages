@@ -1,0 +1,15 @@
+# Template file for 'python3-treescope'
+pkgname=python3-treescope
+version=0.1.10
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
+depends="python3-numpy"
+checkdepends="python3-pytest python3-absl python3-jax python3-torch python3-pydantic python3-omegaconf"
+short_desc="HTML pretty-printer for machine learning research in IPython notebooks"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google-deepmind/treescope"
+distfiles="https://github.com/google-deepmind/treescope/archive/refs/tags/v${version}.tar.gz"
+checksum=f49c89ce3a606ebf707393db043fb998435e6bbb89773ab44d3e75cdcf0d129e
+make_check=no # checkdepends results in almost circular dependencies
