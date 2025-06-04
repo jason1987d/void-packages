@@ -1,0 +1,14 @@
+# Template file for 'python3-optax'
+pkgname=python3-optax
+version=0.2.4
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
+depends="python3-absl python3-chex python3-jax python3-jaxlib python3-numpy python3-etils"
+short_desc="Gradient processing and optimization library for JAX"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google-deepmind/optax"
+distfiles="https://github.com/google-deepmind/optax/archive/refs/tags/v${version}.tar.gz"
+checksum=5f1d94664b61d93841a0a36465d63e0ad939db9e638f8cbeb15d3a452c2b7542
+make_check=no # not yet
