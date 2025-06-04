@@ -1,0 +1,20 @@
+# Template file for 'python3-jaxlib'
+pkgname=python3-jaxlib
+version=0.9.0
+revision=1
+build_style=python3-pep517
+make_build_target=jaxlib
+hostmakedepends="python3-setuptools python3-wheel clang21 tar which xxd"
+depends="python3-absl python3-ml_dtypes python3-numpy python3-scipy"
+short_desc="Composable transformations of Python+NumPy programs (library)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/jax-ml/jax"
+distfiles="https://github.com/jax-ml/jax/archive/refs/tags/jax-v${version}.tar.gz"
+checksum=8525c72ac7ea01851297df5b25ca4622c65299c265c87dfe78420bb29e7b1bb3
+
+export JAXLIB_RELEASE=${version}
+
+do_build() {
+	python3 build/build.py build --wheels=jaxlib --verbose
+}
