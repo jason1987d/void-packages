@@ -1,0 +1,18 @@
+# Template file for 'python3-chex'
+pkgname=python3-chex
+version=0.1.91
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
+depends="python3-absl python3-typing_extensions python3-jax python3-jaxlib python3-numpy python3-toolz python3-setuptools"
+checkdepends="${depends} python3-pytest python3-cloudpickle python3-dm-tree"
+short_desc="Library of utilities for helping to write reliable JAX code"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google-deepmind/chex"
+distfiles="https://github.com/google-deepmind/chex/archive/refs/tags/v${version}.tar.gz"
+checksum=0e67bc74c6914f4515c45927ff396c3d242e7fd9fe5c1da45ec937b85ccfaefc
+make_check=no # test failures:
+# FAILED chex/_src/asserts_test.py::TreeAssertionsTest::test_assert_tree_is_on_device
+# FAILED chex/_src/asserts_test.py::TreeAssertionsTest::test_assert_tree_is_on_host                                              
+# FAILED chex/_src/asserts_test.py::TreeAssertionsTest::test_assert_tree_is_sharded
