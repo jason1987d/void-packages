@@ -1,0 +1,14 @@
+# Template file for 'python3-flax'
+pkgname=python3-flax
+version=0.12.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-setuptools_scm"
+depends="python3-numpy python3-yaml python3-rich python3-typing_extensions python3-msgpack python3-jax python3-optax python3-orbax_checkpoint python3-tensorstore python3-treescope python3-orbax_export"
+short_desc="Neural network library for JAX designed for flexibility"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/flax"
+distfiles="https://github.com/google/flax/archive/refs/tags/v${version}.tar.gz"
+checksum=005d9b352373fe4a1c4f5fa61119a37d486fea20aac82b7cfd21622b5e84f0bf
+make_check=no # too many dependencies to package now
