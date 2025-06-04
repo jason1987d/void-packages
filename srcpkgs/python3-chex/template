@@ -1,0 +1,14 @@
+# Template file for 'python3-chex'
+pkgname=python3-chex
+version=0.1.89
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-absl python3-typing_extensions python3-jax python3-jaxlib python3-numpy python3-toolz python3-setuptools"
+short_desc="Library of utilities for helping to write reliable JAX code"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google-deepmind/chex"
+distfiles="https://github.com/google-deepmind/chex/archive/refs/tags/v${version}.tar.gz"
+checksum=66d87e476b4222a24d85b07941aa4097fa086460da9da08dadb6078f3b73aa87
+make_check=no # not yet
