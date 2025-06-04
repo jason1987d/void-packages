@@ -1,0 +1,14 @@
+# Template file for 'python3-etils'
+pkgname=python3-etils
+version=1.13.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
+depends="python3-typing_extensions python3-fsspec python3-zipp python3-tqdm python3-numpy python3-jax python3-absl python3-SimpleParsing"
+short_desc="GitHub - google/etils: Collection of eclectic utils for python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/etils"
+distfiles="https://github.com/google/etils/archive/refs/tags/v${version}.tar.gz"
+checksum=9daae4499336e6586e7025227ccdf37966f9778d37e9982895e6309d2dc13407
+make_check=no # need to package some difficult dependencies
