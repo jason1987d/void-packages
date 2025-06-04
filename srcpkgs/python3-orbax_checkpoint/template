@@ -1,0 +1,15 @@
+# Template file for 'python3-orbax_checkpoint'
+pkgname=python3-orbax_checkpoint
+version=0.11.32
+revision=1
+build_wrksrc=checkpoint
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
+depends="python3-absl python3-typing_extensions python3-msgpack python3-numpy python3-yaml python3-tensorstore python3-nest_asyncio python3-protobuf python3-humanize python3-simplejson python3-jax python3-etils python3-aiofiles python3-psutil"
+short_desc="Common checkpointing and persistence utilities for JAX users"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/orbax"
+distfiles="https://github.com/google/orbax/archive/refs/tags/v${version}.tar.gz"
+checksum=bb47e3d116377fb9b38c105fad4786b5ec57a8177fdd235de089e31d501ce43e
+make_check=no # all dependencies not packaged yet
