@@ -1,0 +1,14 @@
+# Template file for 'python3-jax'
+pkgname=python3-jax
+version=0.8.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-ml_dtypes python3-numpy python3-scipy python3-jaxlib python3-opt_einsum"
+short_desc="Composable transformations of Python+NumPy programs"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/jax-ml/jax"
+distfiles="https://github.com/jax-ml/jax/archive/refs/tags/jax-v${version}.tar.gz"
+checksum=864aa46b5a4475c70195bd3728d32224f5b5ae1c7dd9c70646ef1387b4b0b04b
+make_check=no # not right now
