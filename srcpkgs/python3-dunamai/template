@@ -1,19 +1,23 @@
 # Template file for 'python3-dunamai'
 pkgname=python3-dunamai
-version=1.25.0
+version=1.26.0
 revision=1
 build_style=python3-pep517
-hostmakedepends="python3-wheel hatchling python3-poetry-core"
-depends="python3 python3-packaging python3-poetry-core"
-makedepends="${depends}"
-checkdepends="git"
+hostmakedepends="python3-setuptools python3-wheel python3-poetry-core"
+depends="python3-packaging python3-importlib_metadata"
+checkdepends="${depends} python3-pytest python3-pytest-cov black python3-mypy git"
 short_desc="Dynamic versioning library and CLI"
-maintainer="Leah Neukirchen <leah@vuxu.org>"
+maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/mtkennerly/dunamai"
-distfiles="${PYPI_SITE}/d/dunamai/dunamai-${version}.tar.gz"
-checksum=a7f8360ea286d3dbaf0b6a1473f9253280ac93d619836ad4514facb70c0719d1
+distfiles="https://github.com/mtkennerly/dunamai/archive/refs/tags/v${version}.tar.gz"
+checksum=31ce2979c99a2897df5b03b49b11483a00e90559745042c82e8c2238ce32a37e
 
 post_install() {
 	vlicense LICENSE
+}
+
+pre_check() {
+	git config --global user.email "void@example.com"
+	git config --global user.name "void"
 }
