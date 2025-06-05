@@ -1,0 +1,19 @@
+# Template file for 'python3-SimpleParsing'
+pkgname=python3-SimpleParsing
+version=0.1.7
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel hatchling hatch-vcs python3-poetry-core python3-poetry-dynamic_versioning"
+depends="python3-yaml python3-tomli python3-tomli-w python3-typing_extensions python3-docstring-parser"
+checkdepends="${depends} python3-pytest"
+short_desc="Simple, Elegant, Typed Argument Parsing with argparse"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/lebrice/SimpleParsing"
+distfiles="https://github.com/lebrice/SimpleParsing/archive/refs/tags/v${version}.tar.gz"
+checksum=ca6c46ccaca7b0cadfd4376969af6120ec47893d8e591c67946245729a506c4b
+make_check=no # error: unrecognized arguments: --benchmark-autosave
+
+post_install() {
+	vlicense LICENSE
+}
