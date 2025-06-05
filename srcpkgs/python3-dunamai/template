@@ -1,0 +1,18 @@
+# Template file for 'python3-dunamai'
+pkgname=python3-dunamai
+version=1.25.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-poetry-core"
+depends="python3-packaging python3-importlib_metadata"
+short_desc="Dynamic versioning library and CLI"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/mtkennerly/dunamai"
+distfiles="https://github.com/mtkennerly/dunamai/archive/refs/tags/v${version}.tar.gz"
+checksum=ce64ea31e87722038e519558f58352e00274d6f1ab3ec61ec464991230d43349
+make_check=no # not yet
+
+post_install() {
+	vlicense LICENSE
+}
