@@ -1,0 +1,23 @@
+# Template file for 'python3-SimpleParsing'
+pkgname=python3-SimpleParsing
+version=0.1.8
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel hatchling hatch-vcs uv python3-uv-dynamic-versioning git"
+depends="python3-yaml python3-tomli python3-tomli-w python3-typing_extensions python3-docstring-parser"
+checkdepends="${depends} python3-pytest"
+short_desc="Simple, Elegant, Typed Argument Parsing with argparse"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/lebrice/SimpleParsing"
+distfiles="${PYPI_SITE}/s/simple-parsing/simple_parsing-${version}.tar.gz"
+checksum=19c2a9002ebd7ad281fce579f9b2a0aa0c4d67e1688cee0e8cdf6d8e98ec2c18
+make_check=no # need to package pytest_regressions
+
+pre_build() {
+	export UV_DYNAMIC_VERSIONING_OVERRIDE=0.1.8
+}
+
+post_install() {
+	vlicense LICENSE
+}
