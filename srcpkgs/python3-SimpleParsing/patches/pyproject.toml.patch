@@ -1,0 +1,19 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,6 +1,6 @@
+ [tool.poetry]
+ name = "simple-parsing"
+-version = "0.0.0"
++version = "0.1.7"
+ description = "A small utility for simplifying and cleaning up argument parsing scripts."
+ authors = ["Fabrice Normandin <fabrice.normandin@gmail.com>"]
+ license = "MIT"
+@@ -31,7 +31,7 @@
+ 
+ 
+ [tool.poetry-dynamic-versioning]
+-enable = true
++enable = false
+ 
+ [build-system]
+ requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
