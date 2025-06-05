@@ -1,0 +1,20 @@
+# Template file for 'python3-poetry-dynamic_versioning'
+pkgname=python3-poetry-dynamic_versioning
+version=1.9.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core python3-setuptools python3-wheel"
+depends="python3-dunamai python3-tomlkit python3-Jinja2 python3-poetry-core"
+checkdepends="${depends} python3-pytest pre-commit python3-pytest-black python3-mypy ruff"
+# may also require argparse-manpage
+short_desc="Plugin for Poetry to enable dynamic versioning based on VCS tags"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/mtkennerly/poetry-dynamic-versioning"
+distfiles="https://github.com/mtkennerly/poetry-dynamic-versioning/archive/refs/tags/v${version}.tar.gz"
+checksum=af63fd91dd393e3a88cfb71d8a3fce1c00eddd6bf6e4cb2493d45f57203ce19c
+make_check=no # tests/test_integration.py FileNotFoundError: [Errno 2] No such file or directory: 'poetry'
+
+post_install() {
+	vlicense LICENSE
+}
