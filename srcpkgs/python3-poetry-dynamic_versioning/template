@@ -1,0 +1,19 @@
+# Template file for 'python3-poetry-dynamic_versioning'
+pkgname=python3-poetry-dynamic_versioning
+version=1.10.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core python3-setuptools python3-wheel"
+depends="python3-dunamai python3-tomlkit python3-Jinja2 python3-poetry-core"
+checkdepends="${depends} python3-pytest pre-commit python3-pytest-black python3-mypy ruff python3-pip python3-poetry python3-rapidfuzz python3-crashtest"
+short_desc="Plugin for Poetry to enable dynamic versioning based on VCS tags"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/mtkennerly/poetry-dynamic-versioning"
+distfiles="https://github.com/mtkennerly/poetry-dynamic-versioning/archive/refs/tags/v${version}.tar.gz"
+checksum=8be1bf15af010488a332a6590bd48bcea639388b19c2d25764ef0fdc627ba11b
+make_check=no # dulwich issues
+
+post_install() {
+	vlicense LICENSE
+}
