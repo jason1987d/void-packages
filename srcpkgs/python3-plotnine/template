@@ -1,0 +1,19 @@
+# Template file for 'python3-plotnine'
+pkgname=python3-plotnine
+version=0.14.6
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
+depends="python3-matplotlib python3-pandas python3-mizani python3-numpy python3-scipy python3-statsmodels"
+checkdepends="${depends} python3-pytest python3-pytest-cov"
+short_desc="Grammar of Graphics for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/has2k1/plotnine"
+distfiles="${PYPI_SITE}/p/plotnine/plotnine-${version}.tar.gz"
+checksum=6e4d1cd17d360c18a3fccf9d838d5fa17859d29b6c1d722fa6f9bec89f269504
+make_check=no # unpackaged dependencies
+
+post_install() {
+	vlicense LICENSE
+}
