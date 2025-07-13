@@ -1,0 +1,20 @@
+# Template file for 'python3-plotnine'
+pkgname=python3-plotnine
+version=0.15.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
+depends="python3-matplotlib python3-pandas python3-mizani python3-numpy python3-scipy python3-statsmodels"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-scikit-learn python3-pyarrow"
+# need to package geopandas geodatasets scikit-misc polars adjustText
+short_desc="Grammar of Graphics for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/has2k1/plotnine"
+distfiles="${PYPI_SITE}/p/plotnine/plotnine-${version}.tar.gz"
+checksum=2e8130db4673e0daccb1fd1dfc9f2a6cd2e7843b14f861f4ab861dde1639045f
+make_check=no # unpackaged dependencies
+
+post_install() {
+	vlicense LICENSE
+}
