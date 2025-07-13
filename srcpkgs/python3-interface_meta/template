@@ -1,0 +1,17 @@
+# Template file for 'python3-interface_meta'
+pkgname=python3-interface_meta
+version=1.3.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-poetry-core python3-poetry-dynamic_versioning"
+checkdepends="python3-pytest"
+short_desc="Expose API with enforced method signatures and consistent documentation"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/matthewwardrop/interface_meta"
+distfiles="https://github.com/matthewwardrop/interface_meta/archive/refs/tags/v${version}.tar.gz"
+checksum=6a96da34ef2a319cab788f6b0cb8afca03186adcc21e1da36f4985329cf86511
+
+post_install() {
+	vlicense LICENSE
+}
