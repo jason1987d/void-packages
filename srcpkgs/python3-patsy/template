@@ -1,0 +1,18 @@
+# Template file for 'python3-patsy'
+pkgname=python3-patsy
+version=1.0.2
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-numpy"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-scipy"
+short_desc="Describing statistical models in Python using symbolic formulas"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-2-Clause"
+homepage="https://github.com/pydata/patsy"
+distfiles="https://github.com/pydata/patsy/archive/refs/tags/v${version}.tar.gz"
+checksum=f5982e48dec57de958188730fafba84fd4f87e0ebf532d82d72f2fec74f21187
+
+post_install() {
+	vlicense LICENSE.txt
+}
