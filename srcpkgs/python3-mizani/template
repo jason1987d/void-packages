@@ -1,0 +1,14 @@
+# Template file for 'python3-mizani'
+pkgname=python3-mizani
+version=0.14.4
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
+depends="python3-numpy python3-scipy python3-pandas python3-dateutil"
+checkdepends="${depends} python3-pytest python3-pytest-cov"
+short_desc="Hadley Wickham scales (graphics) package for python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/has2k1/mizani"
+distfiles="https://github.com/has2k1/mizani/archive/refs/tags/v${version}.tar.gz"
+checksum=c74120d69838973c93518d41dc1da040504cf169eef8262b45e7720d1cf3e597
