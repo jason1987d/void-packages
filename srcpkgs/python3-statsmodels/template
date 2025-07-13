@@ -1,0 +1,24 @@
+# Template file for 'python3-statsmodels'
+pkgname=python3-statsmodels
+version=0.14.6
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-Cython python3-numpy python3-scipy"
+makedepends="python3-devel"
+depends="python3-numpy python3-scipy python3-pandas python3-patsy python3-packaging python3-formulaic python3-matplotlib python3-colorama python3-joblib"
+checkdepends="${depends} python3-pytest python3-pytest-xdist python3-pytest-cov"
+short_desc="Statistical modeling and econometrics in Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/statsmodels/statsmodels"
+distfiles="${PYPI_SITE}/s/statsmodels/statsmodels-${version}.tar.gz"
+checksum=4d17873d3e607d398b85126cd4ed7aad89e4e9d89fc744cdab1af3189a996c2a
+make_check=no # some tests fail
+
+post_extract() {
+	vsed -i -e 's/setuptools_scm\[toml\]>=8,<9/setuptools_scm\[toml\]>=8/' pyproject.toml
+}
+
+post_install() {
+	vlicense LICENSE.txt
+}
