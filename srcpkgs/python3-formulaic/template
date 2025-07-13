@@ -1,0 +1,18 @@
+# Template file for 'python3-formulaic'
+pkgname=python3-formulaic
+version=1.2.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel hatchling hatch-vcs"
+depends="python3-interface_meta python3-narwhals python3-numpy python3-pandas python3-scipy python3-wrapt python3-typing_extensions python3-sympy"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-pyarrow"
+short_desc="Implementation of Wilkinson formulas for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/matthewwardrop/formulaic"
+distfiles="${PYPI_SITE}/f/formulaic/formulaic-${version}.tar.gz"
+checksum=dc79476baa2d811b35798893eb2f2c1e51edee8d7a9c1429b400e56f4e0beccc
+
+post_install() {
+	vlicense LICENSE
+}
