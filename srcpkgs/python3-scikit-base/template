@@ -1,0 +1,18 @@
+# Template file for 'python3-scikit-base'
+pkgname=python3-scikit-base
+version=0.13.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-toml"
+checkdepends="python3-pytest python3-pytest-cov python3-scikit-learn python3-coverage python3-scipy python3-numpy python3-pandas" # package python3-safety
+short_desc="Base classes and tools for scikit-learn-like parametric objects"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/sktime/skbase"
+distfiles="https://github.com/sktime/skbase/archive/refs/tags/v${version}.tar.gz"
+checksum=17c8f20b4bf2d4252e12e24d0182fcb2542771a876e049e52801bbcc59ba3221
+make_check=no # need to package python3-safety and possibly other things
+
+post_install() {
+	vlicense LICENSE
+}
