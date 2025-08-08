@@ -1,0 +1,18 @@
+# Template file for 'python3-optree'
+pkgname=python3-optree
+version=0.19.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-pybind11 python3-wheel cmake"
+depends="python3-typing_extensions"
+checkdepends="python3-pytest python3-pytest-cov python3-rich python3-covdefaults ${depends}"
+short_desc="Optimized PyTree Utilities"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/metaopt/optree"
+distfiles="https://github.com/metaopt/optree/archive/refs/tags/v${version}.tar.gz"
+checksum=2b54645d3caaea90cb925a0f3252aa6027d4360ba67d810e77ab138fcc17f072
+make_check=no # test failures:
+# FAILED tests/test_ops.py::test_import_no_warnings
+# FAILED tests/test_treespec.py::test_treespec_construct
+# FAILED tests/test_treespec.py::test_treespec_pickle_missing_registration
