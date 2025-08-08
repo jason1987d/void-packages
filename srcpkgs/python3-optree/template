@@ -1,0 +1,14 @@
+# Template file for 'python3-optree'
+pkgname=python3-optree
+version=0.17.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-pybind11 python3-wheel cmake"
+depends="python3-typing_extensions"
+short_desc="Optimized PyTree Utilities"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/metaopt/optree"
+distfiles="https://github.com/metaopt/optree/archive/refs/tags/v${version}.tar.gz"
+checksum=a7e104411fb7e94dadd58a5929189f6440d292407361332c1046e608ce41de3b
+make_check=no # checkdepends results in circular dependencies
