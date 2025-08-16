@@ -1,0 +1,11 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -28,7 +28,7 @@
+     # API temporarily restored and shim used. Please fix
+     # Setuptools will drop support for setup.py past 80
+     # min version for recursive glob package data support
+-    "setuptools>=62.3.0,<80.0",
++    "setuptools",
+     "wheel",
+     "astunparse",
+     "numpy",
