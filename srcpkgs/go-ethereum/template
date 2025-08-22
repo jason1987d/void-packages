@@ -1,0 +1,30 @@
+# Template file for 'go-ethereum'
+pkgname=go-ethereum
+version=1.16.4
+revision=1
+build_style=go
+go_import_path=github.com/ethereum/go-ethereum
+go_package="${go_import_path}/cmd/abidump
+ ${go_import_path}/cmd/abigen
+ ${go_import_path}/cmd/blsync
+ ${go_import_path}/cmd/clef
+ ${go_import_path}/cmd/devp2p
+ ${go_import_path}/cmd/era
+ ${go_import_path}/cmd/ethkey
+ ${go_import_path}/cmd/evm
+ ${go_import_path}/cmd/geth
+ ${go_import_path}/cmd/rlpdump"
+short_desc="Full suite of Go Ethereum utilities"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-only"
+homepage="https://github.com/ethereum/go-ethereum"
+distfiles="https://${go_import_path}/archive/v${version}.tar.gz"
+checksum=f4cbfa29765b520e87d2e46452cdc04d418c143a703e51c05e5b852b33844bbc
+system_accounts="_geth"
+_geth_homedir="/var/lib/geth"
+make_dirs="/var/lib/geth 0755 _geth _geth"
+make_check=no # some tests fail
+
+post_install() {
+	vsv geth
+}
