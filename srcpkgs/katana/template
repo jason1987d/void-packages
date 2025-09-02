@@ -1,0 +1,17 @@
+# Template file for 'katana'
+pkgname=katana
+version=1.3.0
+revision=1
+build_style=go
+go_import_path="github.com/projectdiscovery/katana"
+go_package="${go_import_path}/cmd/katana"
+short_desc="Crawling and spidering framework"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/projectdiscovery/katana"
+distfiles="https://github.com/projectdiscovery/katana/archive/refs/tags/v${version}.tar.gz"
+checksum=e49a8ac7e28e55b925cc8ebfb8d999dcb9ec8bb81e17f315573a3ccb17397d88
+
+post_install() {
+	vlicense LICENSE.md
+}
