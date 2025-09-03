@@ -1,0 +1,15 @@
+# Template file for 'lighthouse'
+pkgname=lighthouse
+version=7.1.0
+revision=1
+build_style=cargo
+make_install_args="--path lighthouse"
+hostmakedepends="pkg-config cmake clang perl"
+makedepends="openssl-devel libzstd-devel libclang"
+short_desc="Ethereum consensus client in Rust"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/sigp/lighthouse"
+distfiles="https://github.com/sigp/lighthouse/archive/refs/tags/v${version}.tar.gz"
+checksum=1d14834fc6157ae76a889644ef3d0be4ebd7025e161975a38254361ee000886b
+make_check=no # one test fails: graffiti_calculator::tests::check_graffiti_with_el_version_support
