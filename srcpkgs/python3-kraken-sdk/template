@@ -1,0 +1,19 @@
+# Template file for 'python3-kraken-sdk'
+pkgname=python3-kraken-sdk
+version=3.5.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
+depends="python3-requests python3-websockets python3-click python3-cloup python3-orjson python3-aiohttp"
+checkdepends="${depends} python3-pytest python3-pytest-asyncio python3-pytest-cov python3-pytest-mock python3-pytest-retry python3-pytest-timeout python3-pytest-flake8"
+short_desc="Command-line tool and SDK to access Kraken Crypto Asset Exchange API"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/btschwertfeger/Python-Kraken-SDK"
+distfiles="https://github.com/btschwertfeger/python-kraken-sdk/archive/refs/tags/v${version}.tar.gz"
+checksum=354eeae87d9007fef8f595ee6f07745dee5a97108cc3051a82b9e2bf0fd3106e
+make_check=no # need to update python3-pytest-flake8, issues there too
+
+pre_build() {
+	export SETUPTOOLS_SCM_PRETEND_VERSION_FOR_PYTHON_KRAKEN_SDK=${version}
+}
