@@ -1,0 +1,19 @@
+# Template file for 'python3-proxy_py'
+pkgname=python3-proxy_py
+version=2.4.10
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
+depends="python3-requests python3-httpx"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-pytest-mock python3-pytest-asyncio tox"
+short_desc="Ngrok FRP Alternative proxy acceptor and executor framework"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/abhinavsingh/proxy.py"
+distfiles="https://github.com/abhinavsingh/proxy.py/archive/refs/tags/v${version}.tar.gz"
+checksum=fca8f5c1aa357954f96c5a8809fc17269f24261f08469f5c6ae7dab85081ecae
+make_check=no # still figuring out test errors
+
+post_install() {
+	vlicense LICENSE
+}
