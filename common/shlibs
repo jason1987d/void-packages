@@ -4580,3 +4580,4 @@ libarrow_acero.so.2200 arrow-22.0.0_1
 libarrow_compute.so.2200 arrow-22.0.0_1
 libarrow_dataset.so.2200 arrow-22.0.0_1
 libparquet.so.2200 arrow-22.0.0_1
+libta-lib.so.0.6.4 ta-lib-0.6.4_1
