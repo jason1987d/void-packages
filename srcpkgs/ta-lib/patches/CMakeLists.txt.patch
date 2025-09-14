@@ -1,0 +1,20 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -478,7 +478,7 @@
+ 	)
+ 
+ 	install(TARGETS gen_code
+-		RUNTIME DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/bin"
++		RUNTIME DESTINATION bin
+ 	)
+ 
+ 	# Add post-build to always check to copy gen_code to ta-lib/bin directory
+@@ -550,7 +550,7 @@
+ 
+ 	# Automatically install ta_regtest in ta-lib/bin after a successful build.
+ 	install(TARGETS ta_regtest
+-		RUNTIME DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/bin"
++		RUNTIME DESTINATION bin
+ 	)
+ 
+ 	# Add a custom target to ensure ta_regtest is copied to ta-lib/bin directory
