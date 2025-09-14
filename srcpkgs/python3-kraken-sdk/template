@@ -1,0 +1,15 @@
+# Template file for 'python3-kraken-sdk'
+pkgname=python3-kraken-sdk
+version=3.2.6
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
+depends="python3-requests python3-websockets python3-click python3-cloup python3-orjson python3-aiohttp"
+checkdepends="${depends} python3-proxy_py python3-pytest python3-pytest-asyncio python3-pytest-cov python3-pytest-mock python3-pytest-retry python3-pytest-timeout"
+short_desc="Command-line tool and SDK to access Kraken Crypto Asset Exchange API"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/btschwertfeger/Python-Kraken-SDK"
+distfiles="${PYPI_SITE}/p/python_kraken_sdk/python_kraken_sdk-${version}.tar.gz"
+checksum=d8c5547abfb3978fabf8bcb115921824aeba3fc1d42681cea1949786f06c2b9c
+make_check=no # tests do not run so far
