@@ -1,0 +1,18 @@
+# Template file for 'python3-pytest-retry'
+pkgname=python3-pytest-retry
+version=1.7.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-pytest"
+checkdepends="${depends} python3-pytest-cov python3-pytest-mock python3-pytest-asyncio python3-pytest-timeout tox python3-pytest-flake8 python3-pytest-xdist python3-mypy"
+short_desc="Plugin for retrying flaky tests in CI environments"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/str0zzapreti/pytest-retry"
+distfiles="https://github.com/str0zzapreti/pytest-retry/archive/refs/tags/${version}.tar.gz"
+checksum=10efe171c1c59ea10b442d71034eae29d4f06a83a87293c41a58fd1ce82455a5
+
+post_install() {
+	vlicense LICENSE
+}
