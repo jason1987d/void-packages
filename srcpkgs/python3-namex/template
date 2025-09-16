@@ -1,0 +1,12 @@
+# Template file for 'python3-namex'
+pkgname=python3-namex
+version=0.1.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+short_desc="Tool to separate implementation of Python package and API surface"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/fchollet/namex"
+distfiles="${PYPI_SITE}/n/namex/namex-${version}.tar.gz"
+checksum=117f03ccd302cc48e3f5c58a296838f6b89c83455ab8683a1e85f2a430aa4306
