@@ -1,0 +1,24 @@
+# Template file for 'python3-curl_cffi'
+pkgname=python3-curl_cffi
+version=0.16.3
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-python-multipart libcurl curl unzip tar"
+makedepends="python3-devel libcurl-devel python3-cffi python3-certifi"
+depends="python3-cffi python3-certifi"
+checkdepends="${depends} python3-pytest python3-trustme python3-charset-normalize python3-pytest-trio python3-httpx python3-cryptography python3-trio python3-uvicorn python3-pytest-asyncio python3-python-multipart python3-typing_extensions"
+short_desc="Python binding for curl-impersonate fork via cffi"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/lexiforest/curl_cffi"
+distfiles="https://github.com/lexiforest/curl_cffi/archive/refs/tags/v${version}.tar.gz"
+checksum=cd113030b9939b9c4a17d97924bb52bc814dacbf048b58dd35a926d9f2f0928e
+make_check=no # requires proxy.py and litestar
+
+pre_build() {
+	make preprocess
+}
+
+post_install() {
+	vlicense LICENSE
+}
