@@ -1,0 +1,20 @@
+# Template file for 'python3-curl_cffi'
+pkgname=python3-curl_cffi
+version=0.15.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-python-multipart libcurl"
+makedepends="python3-devel libcurl-devel python3-cffi python3-certifi"
+depends="python3-cffi python3-certifi python3-rich"
+# also need curl-impersonate
+short_desc="Python binding for curl-impersonate fork via cffi"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/lexiforest/curl_cffi"
+distfiles="https://github.com/lexiforest/curl_cffi/archive/refs/tags/v${version}.tar.gz"
+checksum=1181c861432317dbe7cb85a4de6058cb6f04e08a04b486f290371f31d71be254
+make_check=no # unpackaged dependencies
+
+post_install() {
+	vlicense LICENSE
+}
