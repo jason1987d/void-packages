@@ -1,0 +1,18 @@
+# Template file for 'python3-parsel'
+pkgname=python3-parsel
+version=1.11.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+depends="python3-cssselect python3-jmespath python3-lxml python3-packaging python3-w3lib"
+checkdepends="${depends} python3-pytest tox python3-psutil python3-sybil"
+short_desc="Extract data from XML/HTML using XPath or CSS selectors (scrapy)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/scrapy/parsel"
+distfiles="https://github.com/scrapy/parsel/archive/refs/tags/v${version}.tar.gz"
+checksum=8cd41da38f67bc5feb829a5838ffc79d314b0895261704549024a8193a188c66
+
+post_install() {
+	vlicense LICENSE
+}
