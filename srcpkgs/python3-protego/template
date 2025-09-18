@@ -1,0 +1,18 @@
+# Template file for 'python3-protego'
+pkgname=python3-protego
+version=0.7.0
+revision=1
+build_style=python3-pep517
+make_check_args="--deselect benchmarks/test_comparison.py::test_probes_run[robotspy] --deselect benchmarks/test_comparison.py::test_probes_run[Robotexclusionrulesparser] --deselect benchmarks/test_comparison.py::test_table_is_valid_rst --deselect benchmarks/test_benchmarks.py::test_parse --deselect benchmarks/test_benchmarks.py::test_match"
+hostmakedepends="hatchling"
+checkdepends="python3-pytest tox python3-docutils"
+short_desc="Python robots.txt parser with support for modern conventions (scrapy)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/scrapy/protego"
+distfiles="https://github.com/scrapy/protego/archive/refs/tags/${version}.tar.gz"
+checksum=c258cbe48532d3e2da7432178a5377c3c5c3cdd203b69da7b8dcce44d67bfa5d
+
+post_install() {
+	vlicense LICENSE
+}
