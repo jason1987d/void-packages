@@ -1,0 +1,18 @@
+# Template file for 'python3-itemloaders'
+pkgname=python3-itemloaders
+version=1.4.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling python3-setuptools"
+depends="python3-itemadapter python3-jmespath python3-parsel"
+checkdepends="${depends} python3-pytest tox"
+short_desc="Library to populate items using XPath and CSS (scrapy)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/scrapy/itemloaders"
+distfiles="https://github.com/scrapy/itemloaders/archive/refs/tags/v${version}.tar.gz"
+checksum=d144b713217cf9f00044ac1886e8141c385406bf7bb80a2807fed3f4758241d6
+
+post_install() {
+	vlicense LICENSE
+}
