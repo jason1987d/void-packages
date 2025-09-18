@@ -1,0 +1,17 @@
+# Template file for 'python3-queuelib'
+pkgname=python3-queuelib
+version=1.10.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+checkdepends="python3-pytest tox"
+short_desc="Collection of persistent and non-persistent queues (scrapy)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/scrapy/queuelib"
+distfiles="https://github.com/scrapy/queuelib/archive/refs/tags/v${version}.tar.gz"
+checksum=dbafe14d77ccf8d14a32cd920244750be521f066bee50bd10708271b9bee14c9
+
+post_install() {
+	vlicense LICENSE
+}
