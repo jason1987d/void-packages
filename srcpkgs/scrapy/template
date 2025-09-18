@@ -1,0 +1,20 @@
+# Template file for 'scrapy'
+pkgname=scrapy
+version=2.14.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+depends="python3-Twisted python3-cryptography python3-cssselect python3-defusedxml python3-itemadapter python3-itemloaders python3-lxml python3-packaging python3-parsel python3-protego python3-openssl python3-queuelib python3-service_identity python3-tldextract python3-w3lib python3-zope.interface python3-pydispatcher mitmproxy"
+checkdepends="${depends} python3-pytest tox python3-sybil python3-testfixtures python3-pytest-twisted python3-pytest-cov python3-pexpect python3-pyftpdlib python3-attrs python3-coverage python3-pytest-xdist"
+# checkdepends need to package: python3-pytest-twisted python3-testfixtures python3-pyftpdlib ... may need other dependencies as well
+short_desc="High-level web crawling & scraping framework for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/scrapy/scrapy"
+distfiles="https://github.com/scrapy/scrapy/archive/refs/tags/${version}.tar.gz"
+checksum=5dd3a289ffe7c275ce98b0841d8e24658089ea7a006d3fbc482f137578ccc88b
+make_check=no # unpackaged dependencies
+
+post_install() {
+	vlicense LICENSE
+}
