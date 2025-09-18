@@ -1,0 +1,19 @@
+# Template file for 'python3-sybil'
+pkgname=python3-sybil
+version=10.1.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling hatch-vcs"
+checkdepends="python3-pytest python3-mypy python3-MyST-Parser python3-pytest-cov python3-seedir python3-testfixtures"
+# need to package python3-seedir python3-testfixtures and add python3-types-pyyaml too
+short_desc="Automated testing for the examples in your documentation"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/simplistix/sybil"
+distfiles="https://github.com/simplistix/sybil/archive/refs/tags/${version}.tar.gz"
+checksum=7f6c63ed762584ce55e5fa015f311adaf1a0d86b04973c988aabaea1a6adead6
+make_check=no # unpackaged dependencies
+
+post_install() {
+	vlicense LICENSE.txt
+}
