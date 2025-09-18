@@ -1,0 +1,17 @@
+# Template file for 'python3-protego'
+pkgname=python3-protego
+version=0.5.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+checkdepends="python3-pytest tox"
+short_desc="Python robots.txt parser with support for modern conventions (scrapy)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/scrapy/protego"
+distfiles="https://github.com/scrapy/protego/archive/refs/tags/${version}.tar.gz"
+checksum=04143cbb9e9f1261797146c85d99de186735cf612864b1d2a3505fa29f4f72cf
+
+post_install() {
+	vlicense LICENSE
+}
