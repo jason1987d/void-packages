@@ -1,16 +1,16 @@
 # Template file for 'python3-aiohttp'
 pkgname=python3-aiohttp
-version=3.9.5
-revision=3
+version=3.12.15
+revision=1
 build_style=python3-pep517
-hostmakedepends="python3-setuptools python3-wheel"
+hostmakedepends="python3-setuptools python3-wheel python3-pkgconfig"
 makedepends="python3-devel"
-depends="python3-aiosignal python3-attrs python3-frozenlist python3-multidict
- python3-yarl"
+depends="python3-aiosignal python3-attrs python3-frozenlist python3-multidict python3-yarl"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-proxy_py python3-re_assert python3-isal zlib-ng"
 short_desc="HTTP client/server for asyncio (PEP-3156)"
 maintainer="Michael Aldridge <maldridge@voidlinux.org>"
 license="Apache-2.0"
 homepage="https://aiohttp.readthedocs.io/"
 distfiles="${PYPI_SITE}/a/aiohttp/aiohttp-${version}.tar.gz"
-checksum=edea7d15772ceeb29db4aff55e482d4bcfb6ae160ce144f2682de02f6d693551
-make_check=no # Depends on proxy.py and re_assert
+checksum=4fc61385e9c98d72fcdf47e6dd81833f47b2f77c114c29cd64a361be57a763a2
+make_check=no # Still packaging more checkdeps
