@@ -1,0 +1,10 @@
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -1,6 +1,6 @@
+ [metadata]
+ name = proxy.py
+-version = attr: proxy.common.version.__version__
++version = 2.4.10
+ url = https://github.com/abhinavsingh/proxy.py
+ project_urls = 
+ 	Container Image: DockerHub = https://hub.docker.com/r/abhinavsingh/proxy.py
