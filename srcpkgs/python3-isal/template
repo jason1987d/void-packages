@@ -1,0 +1,23 @@
+# Template file for 'python3-isal'
+pkgname=python3-isal
+version=1.8.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-Cython nasm"
+makedepends="python3-devel"
+checkdepends="python3-pytest tox python3-pytest-timeout python3-coverage"
+short_desc="Python bindings for isa-l library (zlib gzip compression decompression)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="PSF-2.0"
+homepage="https://github.com/pycompression/python-isal"
+_isa_l_gitrev=c387163fcbca62701d646149564c550c78a4f985
+distfiles="${PYPI_SITE}/i/isal/isal-${version}.tar.gz
+ https://github.com/intel/isa-l/archive/${_isa_l_gitrev}.tar.gz"
+checksum="124233e9a31a62030a07aafd48c26689561926f4e10417ed3ea46c211218f2b4
+ 1f12d582f9cdcd44a721264ed7d610f06891abe77cb71fd9f607263c9986c79a"
+skip_extraction="${_isa_l_gitrev}.tar.gz"
+make_check=no # still troubleshooting No module named 'test'
+
+post_extract() {
+        vsrcextract -C src/isal/isa-l ${_isa_l_gitrev}.tar.gz
+}
