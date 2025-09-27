@@ -1,0 +1,15 @@
+# Template file for 'python3-zlib-ng'
+pkgname=python3-zlib-ng
+version=1.0.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm"
+makedepends="python3-devel"
+#checkdepends="python3-pytest python3-pytest-timeout python3-mypy python3-coverage python3-flake8 python3-pytest-flake8"
+short_desc="Replacement for Python's zlib and gzip modules using zlib-ng"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="PSF-2.0"
+homepage="https://github.com/pycompression/python-zlib-ng"
+distfiles="${PYPI_SITE}/z/zlib-ng/zlib_ng-${version}.tar.gz"
+checksum=c753cea73f9e803c246e9bf01a59eb652897ed8a19334ada0f968394c7f61650
+make_check=no # test_zlib_compliance No module named 'test'
