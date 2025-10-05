@@ -1,0 +1,65 @@
+# Template file for 'arrow'
+pkgname=arrow
+version=22.0.0
+revision=1
+build_style=cmake
+build_wrksrc=cpp
+configure_args="-DCMAKE_BOOTSTRAP=1 \
+	-DCMAKE_USE_OPENSSL=ON \
+	-DCMAKE_INSTALL_PREFIX=$ARROW_HOME \
+	-DCMAKE_INSTALL_LIBDIR=lib \
+	-DCMAKE_BUILD_TYPE=Release \
+	-DARROW_SIMD_LEVEL=AVX2 \
+	-DARROW_BUILD_STATIC=OFF \
+	-DCMAKE_INSTALL_PREFIX="/usr" \
+	-DARROW_DEPENDENCY_SOURCE=SYSTEM \
+	-DARROW_BUILD_UTILITIES=ON \
+	-DARROW_COMPUTE=ON \
+	-DARROW_CSV=ON \
+	-DARROW_CUDA=OFF \
+	-DARROW_DATASET=ON \
+	-DARROW_FILESYSTEM=ON \
+	-DARROW_FLIGHT=OFF \
+	-DARROW_GANDIVA=OFF \
+	-DARROW_GANDIVA_JAVA=OFF \
+	-DARROW_HDFS=OFF \
+	-DARROW_HIVESERVER2=OFF \
+	-DARROW_IPC=ON \
+	-DARROW_JSON=ON \
+	-DARROW_ORC=OFF \
+	-DARROW_PARQUET=ON \
+	-DARROW_PLASMA=OFF \
+	-DARROW_PLASMA_JAVA_CLIENT=OFF \
+	-DARROW_PYTHON=ON \
+	-DARROW_S3=OFF \
+	-DARROW_SUBSTRAIT=OFF \
+	-DARROW_TENSORFLOW=OFF \
+	-DARROW_WITH_BZ2=ON \
+	-DARROW_WITH_ZLIB=ON \
+	-DARROW_WITH_LZ4=ON \
+	-DARROW_WITH_SNAPPY=ON \
+	-DARROW_WITH_ZSTD=ON \
+	-DARROW_WITH_BROTLI=ON \
+	-DARROW_MIMALLOC=ON \
+	-DCMAKE_CXX_FLAGS="-DMIMALLOC_USE_SYSTEM=ON" \
+	-DPython3_EXECUTABLE=/usr/bin/python3"
+hostmakedepends="boost ninja python3-numpy python3-pip python3-setuptools_scm python3-wheel python3-Cython curl extra-cmake-modules protobuf git cmake"
+makedepends="libcurl-devel boost-devel snappy-devel brotli-devel thrift-devel rapidjson xsimd zlib-devel liblz4-devel libzstd-devel protobuf-devel openssl-devel re2-devel bzip2-devel libutf8proc-devel mimalloc-devel libevent-devel"
+depends="boost thrift protobuf snappy brotli openssl libutf8proc mimalloc liblz4 zlib libzstd abseil-cpp re2 libgcc"
+short_desc="Toolbox for fast data interchange and in-memory analytics"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://arrow.apache.org"
+distfiles="https://github.com/apache/arrow/archive/refs/tags/apache-arrow-${version}.tar.gz"
+checksum=8a95e6c7b9bec2bc0058feb73efe38ad6cfd49a0c7094db29b37ecaa8ab16051
+make_check=no # not yet
+
+arrow-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/cmake
+	}
+}
