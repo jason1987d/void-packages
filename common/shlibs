@@ -4544,3 +4544,4 @@ libfwupd.so.3 fwupd-2.0.16_1
 libcmark-gfm.so.0 cmark-gfm-0.29.0.gfm.13_1
 libcmark-gfm-extensions.so.0 cmark-gfm-0.29.0.gfm.13_1
 libmimalloc.so.3 mimalloc-3.0.10_1
+libthrift.so.0.22.0 thrift-0.22.0_1
