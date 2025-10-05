@@ -4591,3 +4591,8 @@ libfyaml.so.0 libfyaml-0.9.6_1
 libcpptrace.so.1 cpptrace-1.0.4_1
 libmimalloc.so.3 mimalloc-3.0.10_1
 libthrift.so.0.22.0 thrift-0.22.0_1
+libarrow.so.2200 arrow-22.0.0_1
+libarrow_acero.so.2200 arrow-22.0.0_1
+libarrow_compute.so.2200 arrow-22.0.0_1
+libarrow_dataset.so.2200 arrow-22.0.0_1
+libparquet.so.2200 arrow-22.0.0_1
