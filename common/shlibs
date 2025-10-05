@@ -4569,3 +4569,8 @@ libglycin-gtk4-2.so.0 glycin-gtk4-2.0.7_1
 libresvg.so.0.46 libresvg0-0.46.0_1
 libmimalloc.so.3 mimalloc-3.0.10_1
 libthrift.so.0.22.0 thrift-0.22.0_1
+libarrow.so.2200 arrow-22.0.0_1
+libarrow_acero.so.2200 arrow-22.0.0_1
+libarrow_compute.so.2200 arrow-22.0.0_1
+libarrow_dataset.so.2200 arrow-22.0.0_1
+libparquet.so.2200 arrow-22.0.0_1
