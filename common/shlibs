@@ -4575,3 +4575,8 @@ libgpiod.so.3 libgpiod-2.2_4
 libgpiodcxx.so.2 libgpiod-2.2_4
 libmimalloc.so.3 mimalloc-3.0.10_1
 libthrift.so.0.22.0 thrift-0.22.0_1
+libarrow.so.2200 arrow-22.0.0_1
+libarrow_acero.so.2200 arrow-22.0.0_1
+libarrow_compute.so.2200 arrow-22.0.0_1
+libarrow_dataset.so.2200 arrow-22.0.0_1
+libparquet.so.2200 arrow-22.0.0_1
