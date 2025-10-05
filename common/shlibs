@@ -4545,3 +4545,8 @@ libcmark-gfm.so.0 cmark-gfm-0.29.0.gfm.13_1
 libcmark-gfm-extensions.so.0 cmark-gfm-0.29.0.gfm.13_1
 libmimalloc.so.3 mimalloc-3.0.10_1
 libthrift.so.0.22.0 thrift-0.22.0_1
+libarrow.so.2200 arrow-22.0.0_1
+libarrow_acero.so.2200 arrow-22.0.0_1
+libarrow_compute.so.2200 arrow-22.0.0_1
+libarrow_dataset.so.2200 arrow-22.0.0_1
+libparquet.so.2200 arrow-22.0.0_1
