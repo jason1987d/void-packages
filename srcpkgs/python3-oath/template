@@ -1,0 +1,17 @@
+# Template file for 'python3-oath'
+pkgname=python3-oath
+version=1.4.4
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+checkdepends="python3-pytest"
+short_desc="Python implementation of HOTP, TOTP and OCRA algorithms from OATH"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/bdauvergne/python-oath"
+distfiles="https://github.com/bdauvergne/python-oath/archive/refs/tags/v${version}.tar.gz"
+checksum=74f39e1ad6c5af1cec66c3f56534bf26b5ef575b82fc14d6e40442f42f60dfdd
+
+post_install() {
+	vlicense COPYING
+}
