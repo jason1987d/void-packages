@@ -1,0 +1,26 @@
+# Template file for 'lighthouse'
+pkgname=lighthouse
+version=8.1.0
+revision=1
+build_style=cargo
+make_install_args="--path lighthouse"
+hostmakedepends="pkg-config cmake clang perl"
+makedepends="openssl-devel libzstd-devel libclang"
+short_desc="Ethereum consensus client in Rust"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/sigp/lighthouse"
+distfiles="https://github.com/sigp/lighthouse/archive/refs/tags/v${version}.tar.gz"
+checksum=427bab4f400967711f172f2858ce21db365babd82812cccedd30f01cc9cbf830
+make_check=no # test failures:
+# column_verification::rpc_columns_with_invalid_header_signature
+# events::blob_sidecar_event_on_process_rpc_blobs
+# events::data_column_sidecar_event_on_process_rpc_columns
+# store_tests::test_import_historical_data_columns_batch_no_block_found
+system_accounts=_lighthouse
+_lighthouse_homedir="/var/lib/lighthouse"
+make_dirs="/var/lib/lighthouse 0755 _lighthouse _lighthouse"
+
+post_install() {
+	vsv lighthouse
+}
