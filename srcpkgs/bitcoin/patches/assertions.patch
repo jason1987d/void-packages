@@ -1,0 +1,13 @@
+--- a/src/util/check.h	2025-10-09 15:04:52.000000000 -0500
++++ b/src/util/check.h	2025-11-15 19:11:11.912291903 -0600
+@@ -64,10 +64,6 @@
+     return std::forward<T>(val);
+ }
+ 
+-#if defined(NDEBUG)
+-#error "Cannot compile without assertions!"
+-#endif
+-
+ /** Helper for Assert() */
+ void assertion_fail(std::string_view file, int line, std::string_view func, std::string_view assertion);
+ 
