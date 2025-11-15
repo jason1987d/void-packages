@@ -1,0 +1,19 @@
+# Template file for 'python3-typer'
+pkgname=python3-typer
+version=0.24.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-pdm-backend"
+depends="python3-click python3-rich python3-shellingham python3-typing_extensions python3-annotated_doc"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-pytest-xdist python3-pytest-sugar python3-mypy ruff"
+short_desc="Build great CLIs - Based on Python type hints"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/fastapi/typer"
+distfiles="https://github.com/fastapi/typer/archive/refs/tags/${version}.tar.gz"
+checksum=f036de371e5440b577aadfcf465dcf9f46ca11d194d3ae2ca4fe00f4c2a5c63f
+make_check=no # https://github.com/fastapi/typer/issues/1537
+
+post_install() {
+	vlicense LICENSE
+}
