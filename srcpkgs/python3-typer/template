@@ -1,0 +1,19 @@
+# Template file for 'python3-typer'
+pkgname=python3-typer
+version=0.21.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-pdm-backend"
+depends="python3-click python3-rich python3-shellingham python3-typing_extensions"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-pytest-xdist python3-pytest-sugar python3-mypy ruff"
+short_desc="Build great CLIs - Based on Python type hints"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/fastapi/typer"
+distfiles="https://github.com/fastapi/typer/archive/refs/tags/${version}.tar.gz"
+checksum=e63f4a06d97e120e0d6ea045a5ae18fb6995fd7852bb2a287d62e8985ca5dfe1
+make_check=no # tests/test_tutorial/test_subcommands/test_tutorial003.py:172: AssertionError
+
+post_install() {
+	vlicense LICENSE
+}
