@@ -1,0 +1,18 @@
+# Template file for 'python3-typer'
+pkgname=python3-typer
+version=0.20.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-pdm-backend"
+depends="python3-click python3-rich python3-shellingham python3-typing_extensions"
+short_desc="Build great CLIs - Based on Python type hints"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/fastapi/typer"
+distfiles="https://github.com/fastapi/typer/archive/refs/tags/${version}.tar.gz"
+checksum=d8eab2686b97664c8724a939310d71944dbda8ef2481d51d0144448df186389a
+make_check=no # not now
+
+post_install() {
+	vlicense LICENSE
+}
