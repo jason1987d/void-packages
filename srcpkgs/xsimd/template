@@ -1,15 +1,14 @@
 # Template file for 'xsimd'
 pkgname=xsimd
-reverts="11.2.0_1"
-version=11.1.0
-revision=2
+version=13.2.0
+revision=1
 build_style=cmake
-short_desc="C++ wrappers for SIMD intrinsics and parallelized, optimized mathematical functions"
-maintainer="John <me@johnnynator.dev>"
+short_desc="C++ wrappers SIMD intrinsics and parallelized optimized math functions"
+maintainer="Jason Elswick <jason@jasondavid.us>"
 license="BSD-3-Clause"
 homepage="https://github.com/xtensor-stack/xsimd"
 distfiles="https://github.com/xtensor-stack/xsimd/archive/refs/tags/${version}.tar.gz"
-checksum=aa54dba8daade472656eba0d27154f072fec06ee3831aefcac69a5f6c7dbbae7
+checksum=edd8cd3d548c185adc70321c53c36df41abe64c1fe2c67bc6d93c3ecda82447a
 
 if [ -z "$CROSS_BUILD" ]; then
 	configure_args="-DBUILD_TESTS=ON"
