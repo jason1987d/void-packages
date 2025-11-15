@@ -1,0 +1,18 @@
+# Template file for 'python3-setuptools_git_versioning'
+pkgname=python3-setuptools-git_versioning
+version=2.1.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-packaging python3-tomli python3-setuptools"
+short_desc="Use git repo data for building a version number according PEP-440"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/dolfinus/setuptools-git-versioning"
+distfiles="https://github.com/dolfinus/setuptools-git-versioning/archive/refs/tags/v${version}.tar.gz"
+checksum=36a5c9bd91d75f12faba2c6fd87b1b1807cb9eabeca2ce0951f14ad4f47642e0
+make_check=no # not now
+
+post_install() {
+	vlicense LICENSE
+}
