@@ -1,0 +1,16 @@
+# Template file for 'urlinsane'
+pkgname=urlinsane
+version=0.8.2
+revision=1
+build_style=go
+go_import_path="github.com/rangertaha/urlinsane"
+go_package="${go_import_path}/cmd"
+#hostmakedepends=""
+#makedepends=""
+#depends=""
+short_desc="Typosquatting for OSINT designed to operate on multilingual domains"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://rangertaha.github.io/urlinsane/"
+distfiles="https://github.com/rangertaha/urlinsane/archive/refs/tags/${version}.tar.gz"
+checksum=df917579e3aca0ace3211de68ab6a27ac58db541fd03e11277aa8bb376341e88
