@@ -1,0 +1,15 @@
+# Template file for 'python3-goose3'
+pkgname=python3-goose3
+version=3.1.21
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-pyahocorasick python3-Pillow python3-cssselect python3-requests python3-dateutil python3-BeautifulSoup4 python3-lxml python3-langdetect"
+#checkdepends="${depends} python3-pytest python3-requests-mock flake8 python3-nltk python3-jieba python3-fugashi"
+short_desc="Python 3 compatible version of goose article extractor"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/goose3/goose3"
+distfiles="https://github.com/goose3/goose3/archive/refs/tags/v${version}.tar.gz"
+checksum=e90ef45a56136130159f9d4b484ce6c9f3ba8d15de99028d73d4e70df6159a9e
+make_check=no # unpackaged dependencies python3-jieba python3-fugashi with other dependencies that fail to compile
