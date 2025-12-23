@@ -1,0 +1,19 @@
+# Template file for 'sherlock'
+pkgname=sherlock
+version=0.16.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core"
+depends="python3-certifi python3-colorama python3-pysocks python3-requests python3-requests-futures python3-stem python3-pandas python3-openpyxl python3-tomli"
+checkdepends="${depends} python3-pytest python3-rstr python3-pytest-xdist python3-jsonschema"
+short_desc="Hunt down social media accounts by username across social networks"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/sherlock-project/sherlock"
+distfiles="https://github.com/sherlock-project/sherlock/archive/refs/tags/v${version}.tar.gz"
+checksum=997a7c22ed5c179438c91c27e8430b43e1d0fceb79d345e478a390d599a4016f
+make_check=no # tests with 9gag 404 errors, why?
+
+post_install() {
+	vlicense LICENSE
+}
