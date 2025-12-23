@@ -1,0 +1,14 @@
+# Template file for 'python3-requests-futures'
+pkgname=python3-requests-futures
+version=1.1.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-requests python3-certifi python3-charset-normalizer python3-idna python3-urllib3"
+checkdepends="${depends} python3-pytest python3-greenlet python3-pytest-cov python3-pytest-httpbin python3-Werkzeug"
+short_desc="Asynchronous Python HTTP Requests for Humans using Futures"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/ross/requests-futures"
+distfiles="https://github.com/ross/requests-futures/archive/refs/tags/v${version}.tar.gz"
+checksum=b993d8eef69555d44c7d7767f5d744745c3819ebd7e92fdd278ce2349a5dff5a
