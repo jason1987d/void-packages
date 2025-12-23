@@ -1,0 +1,17 @@
+# Template file for 'python3-rstr'
+pkgname=python3-rstr
+version=3.2.2
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
+checkdepends="python3-pytest"
+short_desc="Generator for random strings for fuzz testing and dummy data"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-2-Clause"
+homepage="https://github.com/leapfrogonline/rstr"
+distfiles="${PYPI_SITE}/r/rstr/rstr-${version}.tar.gz"
+checksum=c4a564d4dfb4472d931d145c43d1cf1ad78c24592142e7755b8866179eeac012
+
+post_install() {
+	vlicense LICENSE.txt
+}
