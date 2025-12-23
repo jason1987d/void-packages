@@ -1,0 +1,10 @@
+--- a/setup.py
++++ b/setup.py
+@@ -27,7 +27,6 @@
+         'impacket',
+         'pyasn1',
+         'pycryptodome',
+-        'configparser',
+         'termcolor',
+     ],
+     entry_points={
