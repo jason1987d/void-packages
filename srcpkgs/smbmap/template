@@ -1,0 +1,13 @@
+# Template file for 'smbmap'
+pkgname=smbmap
+version=1.10.8
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+depends="impacket python3-pyasn1 python3-pycryptodome python3-termcolor"
+short_desc="SMB enumeration tool"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/ShawnDEvans/smbmap"
+distfiles="https://github.com/ShawnDEvans/${pkgname}/archive/refs/tags/v${version}.tar.gz"
+checksum=c7a84c74920ebedae6b7230acd47daae461906bda9a7965aa0d996fae17f867d
