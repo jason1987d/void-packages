@@ -1,0 +1,22 @@
+# Template file for 'python3-tiktoken'
+pkgname=python3-tiktoken
+version=0.12.0
+revision=1
+build_style=python3-pep517
+build_helper=rust
+make_check_args="--import-mode=append"
+hostmakedepends="python3-setuptools python3-wheel python3-setuptools-rust rust cargo"
+depends="python3-regex python3-requests python3-blobfile"
+checkdepends="${depends} python3-pytest python3-hypothesis"
+short_desc="BPE tokeniser for use with OpenAI's models"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/openai/tiktoken"
+changelog="CHANGELOG.md"
+distfiles="https://github.com/openai/tiktoken/archive/refs/tags/${version}.tar.gz"
+checksum=2e1ad31b47086480b168460c3c5794e868544bfcd7c781343599f72179794cbe
+make_check=no # circular import error for blobfile tests
+
+post_install() {
+	vlicense LICENSE
+}
