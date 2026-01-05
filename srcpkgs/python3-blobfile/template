@@ -1,0 +1,16 @@
+# Template file for 'python3-blobfile'
+pkgname=python3-blobfile
+version=3.2.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-pycryptodomex python3-urllib3 python3-lxml python3-filelock"
+checkdepends="${depends} python3-pytest python3-xmltodict python3-numpy"
+short_desc="Read Google Cloud Storage, Azure Blobs, local paths with same interface"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Unlicense"
+homepage="https://github.com/blobfile/blobfile"
+changelog="CHANGES.md"
+distfiles="https://github.com/blobfile/blobfile/archive/refs/tags/v${version}.tar.gz"
+checksum=0f3404a05aff1f2effa2b328852bff37de90ee49f910148110caace22890949c
+make_check=no # azure blob location URL connection error
