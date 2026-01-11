@@ -1,0 +1,61 @@
+# Template file for 'p2pool'
+pkgname=p2pool
+version=4.13
+revision=1
+_randomx_gitrev=d341d6a61c2e85fa7b103d3f5b82e5f4c9e8880a
+_cppzmq_gitrev=57cc98f8fc01e9195a6579315468adb69dea1328
+_curl_gitrev=a781b68efb44847cec87a8625211563ca148770c
+_grpc_gitrev=b40fe4ffc46d292c08374bc38f6580658593104c
+_libuv_gitrev=012b1e9698f38fd325760a45faa5c212a8f6aaf2
+_libzmq_gitrev=1fce1ef0054ac560c307735216800abba53236a6
+_miniupnp_gitrev=88a1515ea872b037889020c01c07dbcf6e5f5dd7
+_rapidjson_gitrev=43a1db7dbab5680b351f723ba3baeb86f7bb0b38
+_robinhoodhashing_gitrev=4213dd109f03b49c68b52074d929e6f221803bed
+_googletest_gitrev=52eb8108c5bdec04579160ae17225d66034bd723
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON -DProtobuf_PROTOC_EXECUTABLE=/usr/bin/protoc -DgRPC_CARES_PROVIDER=package -DgRPC_PROTOBUF_PROVIDER=package
+ -DgRPC_SSL_PROVIDER=package -DgRPC_ZLIB_PROVIDER=package
+ -DgRPC_ABSL_PROVIDER=package -DgRPC_RE2_PROVIDER=package"
+hostmakedepends="curl git pkg-config protobuf protobuf-c"
+makedepends="libuv-devel czmq-devel libsodium-devel gpm-devel libcurl-devel libidn2-devel abseil-cpp-devel protobuf-devel protobuf-c-devel zlib-devel re2-devel"
+depends="xmrig curl zeromq"
+short_desc="Decentralized pool for Monero mining"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/SChernykh/p2pool"
+distfiles="https://github.com/SChernykh/${pkgname}/archive/refs/tags/v${version}.tar.gz
+ https://github.com/tevador/RandomX/archive/${_randomx_gitrev}.tar.gz>randomx-${_randomx_gitrev}.tar.gz
+ https://github.com/SChernykh/cppzmq/archive/${_cppzmq_gitrev}.tar.gz>cppzmq-${_cppzmq_gitrev}.tar.gz
+ https://github.com/SChernykh/grpc/archive/${_grpc_gitrev}.tar.gz>grpc-${_grpc_gitrev}.tar.gz
+ https://github.com/curl/curl/archive/${_curl_gitrev}.tar.gz>curl-${_curl_gitrev}.tar.gz
+ https://github.com/libuv/libuv/archive/${_libuv_gitrev}.tar.gz>libuv-${_libuv_gitrev}.tar.gz
+ https://github.com/SChernykh/libzmq/archive/${_libzmq_gitrev}.tar.gz>libzmq-${_libzmq_gitrev}.tar.gz
+ https://github.com/miniupnp/miniupnp/archive/${_miniupnp_gitrev}.tar.gz>miniupnp-${_miniupnp_gitrev}.tar.gz
+ https://github.com/Tencent/rapidjson/archive/${_rapidjson_gitrev}.tar.gz>rapidjson-${_rapidjson_gitrev}.tar.gz
+ https://github.com/SChernykh/robin-hood-hashing/archive/${_robinhoodhashing_gitrev}.tar.gz>robin-hood-hashing-${_robinhoodhashing_gitrev}.tar.gz
+ https://github.com/google/googletest/archive/${_googletest_gitrev}.tar.gz>googletest-${_googletest_gitrev}.tar.gz"
+checksum="8d71c265310a16538b138a07747f46ba672b9bf3e3e3dbb1d33d57f5ee4b0f73
+ cae668a2a63d65b5621b9b5be3e92ed5148d8c8db3ce681c36896e479431a788
+ ad89751dc79c16ea2f27dc7a70c7be19379d3ac1ca13abdb29c88be8e91daf00
+ 779a5bfcd2bcfd0dc6eb482343f17baa6291f28057493ff61c9a63a9a52da44e
+ ae5b4873360c43b35954348b64de17ae390c31af5d40e3f56cd9f41f761e4dda
+ ff870efaf99b82981e2a21112a132f9861523b0d2e4f369359854b1cbb41f927
+ de4d33bbf4466cb5e033f8f0f042044f2b92f340809c078f944ee00da80424e5
+ c6a933b08353299e963c52b2ec967f4e2a01a0d47a96a9a4158825d062e07418
+ 47553548351842e69fa8f6fbf97a4d819d8df33955257492c3b83936a3461dee
+ e3da6d36beb5f13cd41eeb52739954055a7c535d326a070a57c34b6b8ff87786
+ 745c55415660044610f7fcd3af7a6420d5de16a7dbb9ebfe2e131275676232be"
+skip_extraction="randomx-${_randomx_gitrev}.tar.gz cppzmq-${_cppzmq_gitrev}.tar.gz curl-${_curl_gitrev}.tar.gz grpc-${_grpc_gitrev}.tar.gz libuv-${_libuv_gitrev}.tar.gz libzmq-${_libzmq_gitrev}.tar.gz miniupnp-${_miniupnp_gitrev}.tar.gz rapidjson-${_rapidjson_gitrev}.tar.gz robin-hood-hashing-${_robinhoodhashing_gitrev}.tar.gz googletest-${_googletest_gitrev}.tar.gz"
+
+post_extract() {
+	vsrcextract -C external/src/RandomX randomx-${_randomx_gitrev}.tar.gz
+	vsrcextract -C external/src/cppzmq cppzmq-${_cppzmq_gitrev}.tar.gz
+	vsrcextract -C external/src/curl curl-${_curl_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc grpc-${_grpc_gitrev}.tar.gz
+	vsrcextract -C external/src/libuv libuv-${_libuv_gitrev}.tar.gz
+	vsrcextract -C external/src/libzmq libzmq-${_libzmq_gitrev}.tar.gz
+	vsrcextract -C external/src/miniupnp miniupnp-${_miniupnp_gitrev}.tar.gz
+	vsrcextract -C external/src/rapidjson rapidjson-${_rapidjson_gitrev}.tar.gz
+	vsrcextract -C external/src/robin-hood-hashing robin-hood-hashing-${_robinhoodhashing_gitrev}.tar.gz
+	vsrcextract -C tests/googletest googletest-${_googletest_gitrev}.tar.gz
+}
