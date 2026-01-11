@@ -1,6 +1,6 @@
 # Template file for 'xmrig'
 pkgname=xmrig
-version=6.22.2
+version=6.25.0
 revision=1
 build_style=cmake
 makedepends="libuv-devel openssl-devel libhwloc-devel"
@@ -9,7 +9,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/xmrig/xmrig"
 distfiles="https://github.com/xmrig/xmrig/archive/refs/tags/v${version}.tar.gz"
-checksum=34759ca9c1b2486ecb7b6bc267c76a6f365d401b2b6de6d667e0a13ae30882a2
+checksum=55e415792f2a4ef2430cb26829b0b7d96fc52f51c6274831e9fe76b8aef28593
 make_check=no # no tests from upstream provided
 
 post_extract() {
