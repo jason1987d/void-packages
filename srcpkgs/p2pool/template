@@ -1,0 +1,128 @@
+# Template file for 'p2pool'
+pkgname=p2pool
+version=4.14
+revision=1
+_randomx_gitrev=1343007c617513618688b5473e8d2b72e485f35a
+_cppzmq_gitrev=041f755b7980af4a8022f1adf511cc6bd6139e2b
+_curl_gitrev=a781b68efb44847cec87a8625211563ca148770c
+_grpc_gitrev=f310102b02b61271098c9bd074b72647f3eee9cb
+_libuv_gitrev=4ae2852bbbb59c631899aec47dd455c2fb0252f0
+_libzmq_gitrev=8d18911edfc4826f7d2ff3b8637ca31d1b6fa43e
+_miniupnp_gitrev=bdbda466eda360bb3cac093110655b0127a6847b
+_rapidjson_gitrev=43a1db7dbab5680b351f723ba3baeb86f7bb0b38
+_robinhoodhashing_gitrev=4213dd109f03b49c68b52074d929e6f221803bed
+_googletest_gitrev=52eb8108c5bdec04579160ae17225d66034bd723
+_grpc_abseil_cpp_gitrev=76bb24329e8bf5f39704eb10d21b9a80befa7c81
+_grpc_benchmark_gitrev=344117638c8ff7e239044fd0fa7085839fc03021
+_grpc_bloaty_gitrev=60209eb1ccc34d5deefb002d1b7f37545204f7f2
+_grpc_boringssl_with_bazel_gitrev=617634bc015344093f5ea0b0a5b653c924cfa20d
+_grpc_cares_gitrev=6360e96b5cf8e5980c887ce58ef727e53d77243a
+_grpc_envoy_api_gitrev=78f198cf96ecdc7120ef640406770aa01af775c4
+_grpc_googleapis_gitrev=2f9af297c84c55c8b871ba4495e01ade42476c92
+_grpc_googletest_gitrev=2dd1c131950043a8ad5ab0d2dda0e0970596586a
+_grpc_opencensus_proto_gitrev=4aa53e15cbf1a47bc9087e6cfdca214c1eea4e89
+_grpc_opentelemetry_gitrev=60fa8754d890b5c55949a8c68dcfd7ab5c2395df
+_grpc_opentelemetry_cpp_gitrev=ced79860f8c8a091a2eabfee6d47783f828a9b59
+_grpc_protobuf_gitrev=74211c0dfc2777318ab53c2cd2c317a2ef9012de
+_grpc_protoc_gen_validate_gitrev=fab737efbb4b4d03e7c771393708f75594b121e4
+_grpc_re2_gitrev=0c5616df9c0aaa44c9440d87422012423d91c7d1
+_grpc_xds_gitrev=3a472e524827f72d1ad621c4983dd5af54c46776
+_grpc_zlib_gitrev=09155eaa2f9270dc4ed1fa13e2b4b2613e6e4851
+
+build_style=cmake
+configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+hostmakedepends="curl git pkg-config protobuf protobuf-c"
+makedepends="libuv-devel czmq-devel libcurl-devel"
+depends="xmrig curl zeromq"
+short_desc="Decentralized pool for Monero mining"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://github.com/SChernykh/p2pool"
+distfiles="https://github.com/SChernykh/${pkgname}/archive/refs/tags/v${version}.tar.gz
+ https://github.com/tevador/RandomX/archive/${_randomx_gitrev}.tar.gz>randomx-${_randomx_gitrev}.tar.gz
+ https://github.com/SChernykh/cppzmq/archive/${_cppzmq_gitrev}.tar.gz>cppzmq-${_cppzmq_gitrev}.tar.gz
+ https://github.com/SChernykh/grpc/archive/${_grpc_gitrev}.tar.gz>grpc-${_grpc_gitrev}.tar.gz
+ https://github.com/curl/curl/archive/${_curl_gitrev}.tar.gz>curl-${_curl_gitrev}.tar.gz
+ https://github.com/libuv/libuv/archive/${_libuv_gitrev}.tar.gz>libuv-${_libuv_gitrev}.tar.gz
+ https://github.com/SChernykh/libzmq/archive/${_libzmq_gitrev}.tar.gz>libzmq-${_libzmq_gitrev}.tar.gz
+ https://github.com/miniupnp/miniupnp/archive/${_miniupnp_gitrev}.tar.gz>miniupnp-${_miniupnp_gitrev}.tar.gz
+ https://github.com/Tencent/rapidjson/archive/${_rapidjson_gitrev}.tar.gz>rapidjson-${_rapidjson_gitrev}.tar.gz
+ https://github.com/SChernykh/robin-hood-hashing/archive/${_robinhoodhashing_gitrev}.tar.gz>robin-hood-hashing-${_robinhoodhashing_gitrev}.tar.gz
+ https://github.com/google/googletest/archive/${_googletest_gitrev}.tar.gz>googletest-${_googletest_gitrev}.tar.gz
+ https://github.com/abseil/abseil-cpp/archive/${_grpc_abseil_cpp_gitrev}.tar.gz>grpc-abseil-cpp-${_grpc_abseil_cpp_gitrev}.tar.gz
+ https://github.com/google/benchmark/archive/${_grpc_benchmark_gitrev}.tar.gz>grpc-benchmark-${_grpc_benchmark_gitrev}.tar.gz
+https://github.com/google/bloaty/archive/${_grpc_bloaty_gitrev}.tar.gz>grpc-bloaty-${_grpc_bloaty_gitrev}.tar.gz
+ https://github.com/google/boringssl/archive/${_grpc_boringssl_with_bazel_gitrev}.tar.gz>grpc-boringssl-with-bazel-${_grpc_boringssl_with_bazel_gitrev}.tar.gz
+ https://github.com/c-ares/c-ares/archive/${_grpc_cares_gitrev}.tar.gz>grpc-cares-${_grpc_cares_gitrev}.tar.gz
+ https://github.com/envoyproxy/data-plane-api/archive/${_grpc_envoy_api_gitrev}.tar.gz>grpc-envoy-api-${_grpc_envoy_api_gitrev}.tar.gz
+ https://github.com/googleapis/googleapis/archive/${_grpc_googleapis_gitrev}.tar.gz>grpc-googleapis-${_grpc_googleapis_gitrev}.tar.gz
+ https://github.com/google/googletest/archive/${_googletest_gitrev}.tar.gz>googletest-${_grpc_googletest_gitrev}.tar.gz
+ https://github.com/census-instrumentation/opencensus-proto/archive/${_grpc_opencensus_proto_gitrev}.tar.gz>grpc-opencensus-proto-${_grpc_opencensus_proto_gitrev}.tar.gz
+ https://github.com/open-telemetry/opentelemetry-proto/archive/${_grpc_opentelemetry_gitrev}.tar.gz>grpc-opentelemetry-${_grpc_opentelemetry_gitrev}.tar.gz
+ https://github.com/open-telemetry/opentelemetry-cpp/archive/${_grpc_opentelemetry_cpp_gitrev}.tar.gz>grpc-opentelemetry-cpp-${_grpc_opentelemetry_cpp_gitrev}.tar.gz
+ https://github.com/protocolbuffers/protobuf/archive/${_grpc_protobuf_gitrev}.tar.gz>grpc-protobuf-${_grpc_protobuf_gitrev}.tar.gz
+ https://github.com/bufbuild/protoc-gen-validate/archive/${_grpc_protoc_gen_validate_gitrev}.tar.gz>grpc-protoc-gen-validate-${_grpc_protoc_gen_validate_gitrev}.tar.gz
+ https://github.com/google/re2/archive/${_grpc_re2_gitrev}.tar.gz>grpc-re2-{$_grpc_re2_gitrev}.tar.gz
+ https://github.com/cncf/xds/archive/${_grpc_xds_gitrev}.tar.gz>grpc-xds-${_grpc_xds_gitrev}.tar.gz
+ https://github.com/madler/zlib/archive/${_grpc_zlib_gitrev}.tar.gz>grpc-zlib-${_grpc_zlib_gitrev}.tar.gz"
+checksum="d0b70bb013131a13a5cb3c86df822612f262d8115ce730b94da89f4681f4abf4
+ f4c730f816a91b87b25c634615bdeb797190cb49048570d102c9a5484850db58
+ 3983244857433250f599384a379de1dddba2e6f95b562072b9d6146e0503af9e
+ 144bfc12b3e75a74e8e30355025c1a4b7fe930b91b1aaf787ab086b048cfd202
+ ae5b4873360c43b35954348b64de17ae390c31af5d40e3f56cd9f41f761e4dda
+ 257df3a432ee36e33209699c812cc0a38f9d8d43068ba33388416c55d4cd2e0f
+ 0ff4d5aef7589bc57a8bca5ecdab3a4a452fe34a0d154ef77c17fc3d12591537
+ 9714ceaad9550e60ae165f67342ed6b543834ca78bf9e3d371941e4fc021e776
+ 47553548351842e69fa8f6fbf97a4d819d8df33955257492c3b83936a3461dee
+ e3da6d36beb5f13cd41eeb52739954055a7c535d326a070a57c34b6b8ff87786
+ 745c55415660044610f7fcd3af7a6420d5de16a7dbb9ebfe2e131275676232be
+ ed8f7d9f39139c449e79fd19765e23c96fdb774172d32d191323d3e3ea06e5ff
+ 8e7b955f04bc6984e4f14074d0d191474f76a6c8e849e04a9dced49bc975f2d4
+ 41f8c47cd2bbad1ae9702109f91025fc65853e26ee54729d5c4799ebab846b62
+ 9fd4258b6c530059c1b85192c940f3ae5f5f9f0cb4213ce77f892f3eef62437c
+ bf26e5b25e259911914a85ae847b6d723488adb5af4f8bdeb9d0871a318476e3
+ ddd3beedda1178a79e0d988f76f362002aced09749452515853f106e22bd2249
+ 5bb6b0253ccf64b53d6c7249625a7e3f6c3bc6402abd52d3778bfa48258703a0
+ 745c55415660044610f7fcd3af7a6420d5de16a7dbb9ebfe2e131275676232be
+ 27b7982d3ab3a0a66e09d997bbb373e1c83a48abad6da09bbc866428f443a727
+ 97a9f8c705fc7423881d209ac1dab926121b420ee88e3f066874dbf8123e33f7
+ a85a22521de7426c3e019d50e18d0af16e0391e0353923308eb168b3e624aea1
+ d0e3a75876a81e1536028bb9cf9181382b198da4cc6fa6aef86879ef629ac807
+ 03878594b614e5d2c2e4e159358316e638c3883d02c26d41e47d171b02839afd
+ 05a1960729d1053f170ba1ac52bd442cd47cdfbb95348f935fa1921439a9b80c
+ dc305e20c9fa80822322271b50aa2ffa917bf4fd3973bcec52bfc28dc32c5927
+ 18337cdb32562003c39d9f7322b9a166ad4abfb2b909566428e11f96d2385586"
+skip_extraction="randomx-${_randomx_gitrev}.tar.gz cppzmq-${_cppzmq_gitrev}.tar.gz curl-${_curl_gitrev}.tar.gz grpc-${_grpc_gitrev}.tar.gz libuv-${_libuv_gitrev}.tar.gz libzmq-${_libzmq_gitrev}.tar.gz miniupnp-${_miniupnp_gitrev}.tar.gz rapidjson-${_rapidjson_gitrev}.tar.gz robin-hood-hashing-${_robinhoodhashing_gitrev}.tar.gz googletest-${_googletest_gitrev}.tar.gz grpc-abseil-cpp-${_grpc_abseil_cpp_gitrev}.tar.gz grpc-benchmark-${_grpc_benchmark_gitrev}.tar.gz grpc-bloaty-${_grpc_bloaty_gitrev}.tar.gz grpc-boringssl-with-bazel-${_grpc_boringssl_with_bazel_gitrev}.tar.gz grpc-cares-${_grpc_cares_gitrev}.tar.gz grpc-envoy-api-${_grpc_envoy_api_gitrev}.tar.gz grpc-googleapis-${_grpc_googleapis_gitrev}.tar.gz googletest-${_grpc_googletest_gitrev}.tar.gz grpc-opencensus-proto-${_grpc_opencensus_proto_gitrev}.tar.gz grpc-opentelemetry-${_grpc_opentelemetry_gitrev}.tar.gz grpc-opentelemetry-cpp-${_grpc_opentelemetry_cpp_gitrev}.tar.gz grpc-protobuf-${_grpc_protobuf_gitrev}.tar.gz grpc-protoc-gen-validate-${_grpc_protoc_gen_validate_gitrev}.tar.gz grpc-re2-{$_grpc_re2_gitrev}.tar.gz grpc-xds-${_grpc_xds_gitrev}.tar.gz grpc-zlib-${_grpc_zlib_gitrev}.tar.gz"
+
+post_extract() {
+	vsrcextract -C external/src/RandomX randomx-${_randomx_gitrev}.tar.gz
+	vsrcextract -C external/src/cppzmq cppzmq-${_cppzmq_gitrev}.tar.gz
+	vsrcextract -C external/src/curl curl-${_curl_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc grpc-${_grpc_gitrev}.tar.gz
+	vsrcextract -C external/src/libuv libuv-${_libuv_gitrev}.tar.gz
+	vsrcextract -C external/src/libzmq libzmq-${_libzmq_gitrev}.tar.gz
+	vsrcextract -C external/src/miniupnp miniupnp-${_miniupnp_gitrev}.tar.gz
+	vsrcextract -C external/src/rapidjson rapidjson-${_rapidjson_gitrev}.tar.gz
+	vsrcextract -C external/src/robin-hood-hashing robin-hood-hashing-${_robinhoodhashing_gitrev}.tar.gz
+	vsrcextract -C tests/googletest googletest-${_googletest_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/abseil-cpp grpc-abseil-cpp-${_grpc_abseil_cpp_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/benchmark grpc-benchmark-${_grpc_benchmark_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/bloaty grpc-bloaty-${_grpc_bloaty_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/boringssl-with-bazel grpc-boringssl-with-bazel-${_grpc_boringssl_with_bazel_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/cares/cares grpc-cares-${_grpc_cares_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/envoy-api grpc-envoy-api-${_grpc_envoy_api_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/googleapis grpc-googleapis-${_grpc_googleapis_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/googletest googletest-${_grpc_googletest_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/opencensus-proto grpc-opencensus-proto-${_grpc_opencensus_proto_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/opentelemetry grpc-opentelemetry-${_grpc_opentelemetry_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/opentelemetry-cpp grpc-opentelemetry-cpp-${_grpc_opentelemetry_cpp_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/protobuf grpc-protobuf-${_grpc_protobuf_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/protoc-gen-validate grpc-protoc-gen-validate-${_grpc_protoc_gen_validate_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/re2 grpc-re2-{$_grpc_re2_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/xds grpc-xds-${_grpc_xds_gitrev}.tar.gz
+	vsrcextract -C external/src/grpc/third_party/zlib grpc-zlib-${_grpc_zlib_gitrev}.tar.gz
+}
+
+do_install() {
+	vbin build/p2pool
+}
