@@ -1,0 +1,42 @@
+# Template file for 'python3-polars'
+pkgname=python3-polars
+version=1.37.1
+revision=1
+build_style=python3-pep517
+build_helper="rust"
+hostmakedepends="python3-setuptools python3-wheel maturin cargo pkg-config python3-wheel"
+makedepends="rust-std libzstd-devel"
+depends="python3-numpy python3-pandas python3-pyarrow python3-pydantic python3-fsspec python3-matplotlib python3-SQLAlchemy2 python3-orjson python3-pytz"
+short_desc="Extremely fast Query Engine for DataFrames"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/pola-rs/polars"
+distfiles="https://github.com/pola-rs/polars/archive/refs/tags/py-${version}.tar.gz"
+checksum=a8187ed8e08d6f64d21538e1ed5e85098eb767fcefc449f12aeed7c8a938699d
+build_wrksrc=py-polars
+make_check=no # too many dependencies
+export RUSTC_BOOTSTRAP=1
+
+post_install() {
+	vlicense LICENSE
+}
+
+python3-polars-runtime32_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - 32 bit runtime"
+	archs=("x86")
+	pkg_install() {
+		maturin build -o dist --release --locked --strip --compatibility linux --manifest-path runtime/polars-runtime-32/Cargo.toml
+		python -m installer --destdir="$PKGDESTDIR" "dist/polars_runtime_32-${version}-cp310-abi3-linux_x86_64.whl"
+	}
+}
+
+python3-polars-runtime64_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - 64 bit runtime"
+	archs=("x86_64 aarch64")
+	pkg_install() {
+		maturin build -o dist --release --locked --strip --compatibility linux --manifest-path runtime/polars-runtime-64/Cargo.toml
+		python -m installer --destdir="$PKGDESTDIR" "dist/polars_runtime_64-${version}-cp310-abi3-linux_x86_64.whl"
+	}
+}
