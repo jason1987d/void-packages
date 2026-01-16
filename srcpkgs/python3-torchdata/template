@@ -1,0 +1,18 @@
+# Template file for 'python3-torchdata'
+pkgname=python3-torchdata
+version=0.11.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-scikit-build-cmake python3-scikit-build-ninja python3-pytorch"
+depends="python3-pytorch python3-requests python3-urllib3"
+short_desc="PyTorch repo for data loading and utilities shared by PyTorch libraries"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/meta-pytorch/data"
+distfiles="https://github.com/meta-pytorch/data/archive/refs/tags/v${version}.tar.gz"
+checksum=945c53a8587567624aaad2d66204fbae9acb9535696554c53ffeb83320c308b9
+make_check=no # not yet
+
+post_install() {
+	vlicense LICENSE
+}
