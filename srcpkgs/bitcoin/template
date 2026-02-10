@@ -1,32 +1,31 @@
 # Template file for 'bitcoin'
 pkgname=bitcoin
-version=25.1
+version=29.3.knots20260210
 revision=1
-build_style=gnu-configure
-configure_args="--with-incompatible-bdb --disable-ccache --disable-static
- --enable-hardening --with-boost=${XBPS_CROSS_BASE}/usr --with-gui"
-hostmakedepends="automake libtool pkg-config yasm"
-makedepends="db-devel boost-headers miniupnpc-devel qt5-tools-devel
- libevent-devel qrencode-devel sqlite-devel"
+build_style=cmake
+configure_args="-DBUILD_TESTS=ON -DBUILD_TX=ON -DBUILD_GUI=ON -DBUILD_CLI=ON -DBUILD_DAEMON=ON -WITH_CCACHE=OFF"
+hostmakedepends="automake libtool pkg-config yasm librsvg-utils ImageMagick"
+makedepends="db-devel boost-devel-minimal miniupnpc-devel qt5-tools-devel
+ libevent-devel qrencode-devel sqlite-devel capnproto-devel librsvg-devel"
 short_desc="Bitcoin is a peer-to-peer network based digital currency"
-maintainer="Daniel A. Maierhofer <git@damadmai.at>"
+maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
-homepage="https://bitcoincore.org/"
-distfiles="https://bitcoincore.org/bin/bitcoin-core-${version}/bitcoin-${version}.tar.gz
- https://raw.githubusercontent.com/bitcoin-core/packaging/main/debian/bitcoin-qt.desktop
- https://raw.githubusercontent.com/bitcoin/bitcoin/v${version}/share/pixmaps/bitcoin128.png"
-checksum="bec2a598d8dfa8c2365b77f13012a733ec84b8c30386343b7ac1996e901198c9
- 0a46bbadda140599e807be38999e6848c89f9c3523d26fede02d34d62d50f632
- ad880c8459ecfdb96abe6a4689af06bdd27906e0edcd39d0915482f2da91e722"
-conflicts="litecoin" # Both provide libbitcoinconsensus.so.0
+homepage="https://bitcoinknots.org/"
+distfiles="https://github.com/bitcoinknots/bitcoin/archive/refs/tags/v${version}.tar.gz"
+checksum=6f61fa3a33e9f519c6234f87288a8408e97667e45eea27c2cf21041e46e3a84b
 skip_extraction="bitcoin-qt.desktop bitcoin128.png"
+CFLAGS="-UNDEBUG"
+CXXFLAGS="-UNDEBUG"
+
+system_accounts="_bitcoin"
+_bitcoin_homedir="/var/lib/bitcoin"
+make_dirs="/var/lib/bitcoin 0755 _bitcoin _bitcoin"
 
 if [ "$CROSS_BUILD" ]; then
 	hostmakedepends+=" qt5-host-tools"
 fi
 
 pre_configure() {
-	autoreconf -fi
 	case "$XBPS_TARGET_MACHINE" in
 	aarch64*)
 		CFLAGS=${CFLAGS/armv8-a/armv8-a+crc+crypto}
@@ -40,21 +39,8 @@ pre_build() {
 }
 
 post_install() {
-	rm "${DESTDIR}"/usr/bin/{test,bench}_bitcoin
-
 	vlicense COPYING
-}
-
-bitcoin-devel_package() {
-	depends="${sourcepkg}>=${version}_${revision}"
-	conflicts="litecoin" # Both provide libbitcoinconsensus.so.0
-	short_desc+=" - development files"
-	pkg_install() {
-		vmove usr/include
-		vmove usr/lib/pkgconfig
-		vmove "usr/lib/*.so"
-		vdoc doc/shared-libraries.md # Provides information on libbitcoinconsensus
-	}
+	vsv bitcoind
 }
 
 bitcoin-qt_package() {
@@ -63,8 +49,8 @@ bitcoin-qt_package() {
 	pkg_install() {
 		vmove usr/bin/bitcoin-qt
 		vmove usr/share/man/man1/bitcoin-qt.1
-		vinstall ${XBPS_SRCDISTDIR}/${sourcepkg}-${version}/bitcoin-qt.desktop 644 usr/share/applications
-		vinstall ${XBPS_SRCDISTDIR}/${sourcepkg}-${version}/bitcoin128.png 644 usr/share/pixmaps
+		#vinstall ${XBPS_SRCDISTDIR}/${sourcepkg}-${version}/bitcoin-qt.desktop 644 usr/share/applications
+		#vinstall ${XBPS_SRCDISTDIR}/${sourcepkg}-${version}/bitcoin128.png 644 usr/share/pixmaps
 		vlicense COPYING
 		rm "${DESTDIR}"/usr/bin/test_bitcoin-qt
 	}
