@@ -1,0 +1,26 @@
+# Template file for 'vuls'
+pkgname=vuls
+version=0.39.3
+revision=1
+_integration_gitrev=9b7a17582cd4f4521f71fe64757c7397a47a36c3
+build_style=go
+go_import_path="github.com/future-architect/vuls"
+go_package="github.com/future-architect/vuls/cmd/vuls"
+go_ldflags="-X 'github.com/future-architect/vuls/config.Version=${version}'"
+hostmakedepends="git"
+depends="sqlite"
+short_desc="Agentless vulnerability scanner"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="GPL-3.0-or-later"
+homepage="https://vuls.io/"
+distfiles="https://github.com/future-architect/vuls/archive/refs/tags/v${version}.tar.gz
+ https://github.com/vulsio/integration/archive/${_integration_gitrev}.tar.gz>integration-${_integration_gitrev}.tar.gz"
+checksum="c582817132f5fca07f93670a22e519ca91697c10dbc6dd9c049885292346acb1
+ 696af0ec0c424b9cbd79eb8bafd8d34384106abd460e0ff73d4aa3dbea9a80da"
+skip_extraction="integration-${_integration_gitrev}.tar.gz"
+
+export GOEXPERIMENT=jsonv2
+
+post_extract() {
+	vsrcextract -C ${wrksrc}/integration "integration-${_integration_gitrev}.tar.gz"
+}
