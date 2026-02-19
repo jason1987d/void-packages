@@ -1,0 +1,18 @@
+# Template file for 'python3-orderly_set'
+pkgname=python3-orderly_set
+version=5.5.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-flit_core"
+checkdepends="python3-pytest python3-pytest-benchmark python3-pytest-cov python3-dotenv"
+short_desc="Orderly Set previously known as Ordered Set"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/seperman/orderly-set"
+changelog="https://github.com/seperman/orderly-set/blob/master/CHANGELOG.md"
+distfiles="https://github.com/seperman/orderly-set/archive/refs/tags/${version}.tar.gz"
+checksum=82377eae21716165f2b0b6b632b4c7eddfc0ccf841f378bf6e5401867eb09faa
+
+post_install() {
+	vlicense MIT-LICENSE
+}
