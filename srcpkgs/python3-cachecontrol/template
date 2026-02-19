@@ -1,0 +1,13 @@
+# Template file for 'python3-cachecontrol'
+pkgname=python3-cachecontrol
+version=0.14.4
+revision=1
+build_style=python3-pep517
+hostmakedepends="uv"
+depends="python3-requests python3-msgpack python3-redis"
+short_desc="Algorithms caching httplib2 for use with requests"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/psf/cachecontrol"
+distfiles="https://github.com/psf/cachecontrol/archive/refs/tags/v${version}.tar.gz"
+checksum=d862b0f313c852c618510fbce464b5eb58b02dbe3a146952c5a7b7cb4957431d
