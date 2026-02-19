@@ -1,0 +1,21 @@
+# Template file for 'python3-pytest-randomly'
+pkgname=python3-pytest-randomly
+version=4.0.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-pytest"
+# also add factory-boy model-bakery
+checkdepends="python3-pytest python3-pytest-xdist python3-Faker python3-coverage python3-numpy"
+short_desc="Pytest plugin to randomly order tests and control random.seed"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/pytest-dev/pytest-randomly"
+changelog="https://github.com/pytest-dev/pytest-randomly/blob/main/CHANGELOG.rst"
+distfiles="https://github.com/pytest-dev/pytest-randomly/archive/refs/tags/${version}.tar.gz"
+checksum=dc0ad4fc1ff37344b37026063b9587596052215c670094439d68e0eab72cd684
+make_check=no # unpackaged dependencies factory-boy model-bakery
+
+post_install() {
+	vlicense LICENSE
+}
