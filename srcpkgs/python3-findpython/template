@@ -1,0 +1,18 @@
+# Template file for 'python3-findpython'
+pkgname=python3-findpython
+version=0.7.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-pdm-backend"
+depends="python3-packaging python3-platformdirs"
+checkdepends="${depends} python3-pytest"
+short_desc="Utility to find python versions on your system"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/frostming/findpython"
+distfiles="${PYPI_SITE}/f/findpython/findpython-${version}.tar.gz"
+checksum=9f29e6a3dabdb75f2b39c949772c0ed26eab15308006669f3478cdab0d867c78
+
+post_install() {
+	vlicense LICENSE
+}
