@@ -1,0 +1,18 @@
+# Template file for 'python3-pbs-installer'
+pkgname=python3-pbs-installer
+version=2026.2.11
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-pdm-backend"
+depends="python3-httpx python3-zstandard"
+short_desc="Installer for Python Build Standalone"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/frostming/pbs-installer"
+distfiles="${PYPI_SITE}/p/pbs-installer/pbs_installer-${version}.tar.gz"
+checksum=7eb2730aaa8e2a9aa51db3871e494d058dbab64328deec1fc7bdbbc68578167f
+make_check=no # no tests exist
+
+post_install() {
+	vlicense LICENSE
+}
