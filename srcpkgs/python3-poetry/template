@@ -1,0 +1,20 @@
+# Template file for 'python3-poetry'
+pkgname=python3-poetry
+version=2.3.2
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core"
+depends="python3-poetry-core python3-build python3-dulwich python3-fastjsonschema python3-installer python3-keyring python3-packaging python3-pkginfo python3-platformdirs python3-pyproject-hooks python3-requests python3-requests-toolbelt python3-shellingham python3-tomli python3-tomlkit python3-trove-classifiers python3-virtualenv python3-cleo python3-cachecontrol python3-xattr python3-pbs-installer python3-findpython"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-pytest-mock python3-pytest-randomly python3-deepdiff python3-coverage python3-jaraco.classes python3-pytest-xdist python3-responses python3-rapidfuzz python3-dulwich"
+short_desc="Python packaging and dependency management made easy"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/python-poetry/poetry"
+changelog="https://github.com/python-poetry/poetry/blob/main/CHANGELOG.md"
+distfiles="https://github.com/python-poetry/poetry/archive/refs/tags/${version}.tar.gz"
+checksum=7a0ca140271797449b8ce789955cdaf1fd66c7783ebb4b62989957041a02b550
+make_check=no # ImportError: cannot import name 'PEELED_TAG_SUFFIX' from 'dulwich.protocol' (due to dulwich version mismatch)
+
+post_install() {
+	vlicense LICENSE
+}
