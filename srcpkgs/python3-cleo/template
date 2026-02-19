@@ -1,0 +1,19 @@
+# Template file for 'python3-cleo'
+pkgname=python3-cleo
+version=2.1.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core"
+depends="python3-rapidfuzz python3-crashtest"
+short_desc="Create beautiful and testable command-line interfaces"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/python-poetry/cleo"
+changelog="https://github.com/python-poetry/cleo/blob/main/CHANGELOG.md"
+distfiles="https://github.com/python-poetry/cleo/archive/refs/tags/${version}.tar.gz"
+checksum=f5905052d783d540271de62b546c8ad89792e8c2787a59c41b0d8c8c31934093
+make_check=no # not right now, 2.1.0 is outdated anyway pending version 3.0.0
+
+post_install() {
+	vlicense LICENSE
+}
