@@ -1,0 +1,20 @@
+# Template file for 'python3-deepdiff'
+pkgname=python3-deepdiff
+version=8.6.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-flit_core"
+depends="python3-orderly_set"
+checkdepends="${depends} python3-pytest python3-numpy python3-pytz python3-pydantic python3-click"
+short_desc="Deep Difference and search of any Python object/data"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/seperman/deepdiff"
+changelog="https://github.com/seperman/deepdiff/blob/master/CHANGELOG.md"
+distfiles="https://github.com/seperman/deepdiff/archive/refs/tags/${version}.tar.gz"
+checksum=3c538a4966b18c5c006498363403d6e0626fdb5a9ab5825e38bdc715be00c74f
+make_check=no # unpackaged dependencies
+
+post_install() {
+	vlicense LICENSE
+}
