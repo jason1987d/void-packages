@@ -1,0 +1,20 @@
+# Template file for 'python3-dm-tree'
+pkgname=python3-dm-tree
+version=0.1.9
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel cmake abseil-cpp git"
+makedepends="python3-devel"
+depends="python3-absl python3-attrs python3-numpy python3-wrapt python3-six"
+checkdepends="${depends} python3-pytest"
+short_desc="Library for working with nested data structures"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google-deepmind/tree"
+distfiles="https://github.com/google-deepmind/tree/archive/refs/tags/${version}.tar.gz"
+checksum=d736ec355daf39c93633373a160120cdd45717e6717d105efed722d2cd2cfcc9
+make_check=no # ImportError: cannot import name '_tree' from 'tree' (consider renaming '/builddir/python3-dm-tree-0.1.9/tree/__init__.py' if it has the same name as a library you intended to import)
+
+post_extract() {
+	sed -i '/cmake_args = \[/a \        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",' setup.py
+}
