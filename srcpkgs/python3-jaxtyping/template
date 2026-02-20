@@ -1,0 +1,18 @@
+# Template file for 'python3-jaxtyping'
+pkgname=python3-jaxtyping
+version=0.3.9
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+depends="python3-wadler_lindig"
+short_desc="Type annotations, runtime checking for shape, dtype of JAX/NumPy/PyTorch"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/patrick-kidger/jaxtyping"
+distfiles="https://github.com/patrick-kidger/jaxtyping/archive/refs/tags/v${version}.tar.gz"
+checksum=c4ca5fc37869f57e0bc6d55aa8318e09dd863b76e14ca2c1d5a05c28211eebe4
+make_check=no # unpackaged dependencies
+
+post_install() {
+	vlicense LICENSE
+}
