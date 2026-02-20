@@ -1,0 +1,16 @@
+# Template file for 'python3-orbax_export'
+pkgname=python3-orbax_export
+version=0.11.33
+revision=1
+build_wrksrc=export
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
+depends="python3-absl python3-dataclasses_json python3-jaxtyping python3-numpy python3-etils python3-protobuf python3-jax python3-jaxlib python3-orbax_checkpoint"
+checkdepends="${depends} python3-pytest python3-pytest-xdist python3-requests python3-chex"
+short_desc="Common checkpointing and persistence utilities for JAX users (export)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/orbax"
+distfiles="https://github.com/google/orbax/archive/refs/tags/v${version}.tar.gz"
+checksum=a3af7121b30b531f96f84310f677552c92b417532f9a80113137de0da6206929
+make_check=no # unpackaged dependency tf-nightly (tensorflow)
