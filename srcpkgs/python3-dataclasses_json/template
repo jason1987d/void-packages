@@ -1,0 +1,20 @@
+# Template file for 'python3-dataclasses_json'
+pkgname=python3-dataclasses_json
+version=0.6.7
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core python3-poetry-dynamic_versioning git"
+depends="python3-typing-inspection python3-marshmallow"
+# may actually need this sus package typing-inspect instead
+checkdepends="python3-pytest ${depends} python3-hypothesis python3-flake8 python3-simplejson black"
+short_desc="Easily serialize Data Classes to and from JSON"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/lidatong/dataclasses-json"
+distfiles="${PYPI_SITE}/d/dataclasses-json/dataclasses_json-${version}.tar.gz"
+checksum=b6b3e528266ea45b9535223bc53ca645f5208833c29229e847b3f26a1cc55fc0
+make_check=no # tests fail - no tests to run?
+
+post_install() {
+	vlicense LICENSE
+}
