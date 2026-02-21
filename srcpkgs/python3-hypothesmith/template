@@ -1,0 +1,16 @@
+# Template file for 'python3-hypothesmith'
+pkgname=python3-hypothesmith
+version=0.3.3
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+depends="python3-hypothesis python3-libcst"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-lark black python3-parso python3-pytest-black"
+short_desc="Hypothesis strategies for generating Python programs, like CSmith"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MPL-2.0"
+homepage="https://github.com/Zac-HD/hypothesmith"
+changelog="https://github.com/Zac-HD/hypothesmith/blob/master/CHANGELOG.md"
+distfiles="${PYPI_SITE}/h/hypothesmith/hypothesmith-${version}.tar.gz"
+checksum=96c14802d6c8e85d8975264176878db54b28d2ed921fdbfedc2e6b8ce3c81716
+make_check=no # FAILED tests/test_syntactic.py::test_black_autoformatter_from_grammar - black...
