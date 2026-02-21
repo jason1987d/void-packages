@@ -1,0 +1,19 @@
+# Template file for 'python3-typing_inspect'
+pkgname=python3-typing_inspect
+version=0.9.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+depends="python3-mypy_extensions python3-typing_extensions"
+checkdepends="${depends} python3-pytest python3-flake8"
+short_desc="Runtime inspection utilities for Python typing module"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/ilevkivskyi/typing_inspect"
+distfiles="https://github.com/ilevkivskyi/typing_inspect/archive/refs/tags/${version}.tar.gz"
+checksum=0078245c1e58670fa3ce00bfe6b15c36f6b97b0d75a6fbc3b498d5effd453835
+#make_check=no # unpackaged dependency flake8-bugbear
+
+post_install() {
+	vlicense LICENSE
+}
