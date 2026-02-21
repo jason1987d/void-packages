@@ -1,0 +1,20 @@
+# Template file for 'python3-libcst'
+pkgname=python3-libcst
+version=1.8.6
+revision=1
+build_style=python3-pep517
+build_helper=rust
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-setuptools-rust python3-wheel rust cargo"
+depends="python3-yaml"
+short_desc="Concrete syntax tree parser and serializer library for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/Instagram/LibCST"
+changelog="https://github.com/Instagram/LibCST/blob/main/CHANGELOG.md"
+distfiles="${PYPI_SITE}/l/libcst/libcst-${version}.tar.gz"
+checksum=f729c37c9317126da9475bdd06a7208eb52fcbd180a6341648b45a56b4ba708b
+make_check=no # unpackaged dependencies
+
+post_install() {
+	vlicense LICENSE
+}
