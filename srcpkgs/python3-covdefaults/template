@@ -1,0 +1,19 @@
+# Template file for 'python3-covdefaults'
+pkgname=python3-covdefaults
+version=2.3.0
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-coverage"
+checkdepends="pre-commit tox ${depends} python3-pytest"
+short_desc="Coverage plugin to provide sensible default settings"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/asottile/covdefaults"
+distfiles="https://github.com/asottile/covdefaults/archive/refs/tags/v${version}.tar.gz"
+checksum=adc3b7da4fb7ed00ba1daeb8de1a20580e4875983311079ee57b7544f462bae5
+make_check=no # AttributeError: type object 'Plugins' has no attribute 'load_plugins'
+
+post_install() {
+	vlicense LICENSE
+}
