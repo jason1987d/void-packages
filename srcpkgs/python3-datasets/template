@@ -1,6 +1,6 @@
 # Template file for 'python3-datasets'
 pkgname=python3-datasets
-version=4.6.0
+version=4.6.1
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
@@ -14,5 +14,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/huggingface/datasets"
 distfiles="https://github.com/huggingface/datasets/archive/refs/tags/${version}.tar.gz"
-checksum=abce4758687bfd8c4bd1e4e490aaffbb912fa8c360161e78ef5cfbb1f4fd4e0e
+checksum=b3e387a39bf9e1e35a4de61a093042da7d5309b7bd04ab30db986b1fcf22f38b
 make_check=no # unpackaged dependencies
