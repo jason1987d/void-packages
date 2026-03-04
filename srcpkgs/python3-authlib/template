@@ -1,6 +1,6 @@
 # Template file for 'python3-authlib'
 pkgname=python3-authlib
-version=1.6.8
+version=1.6.9
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
@@ -12,7 +12,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="BSD-3-Clause"
 homepage="https://authlib.org/"
 distfiles="https://github.com/lepture/authlib/archive/refs/tags/v${version}.tar.gz"
-checksum=ca5610af2c3a2bdd0628ceb35c2f343cfc41956f20cc924796955e13b41aaae5
+checksum=ce10a845ac8066757d658e45c41d160dfbd728da7a29056ebd4e190c051da687
 make_check=no # too many dependencies to build, see checkdepends, some not built yet
 
 post_install() {
