@@ -1,6 +1,6 @@
 # Template file for 'python3-jaxlib'
 pkgname=python3-jaxlib
-version=0.9.0.1
+version=0.9.1
 revision=1
 build_style=python3-pep517
 make_build_target=jaxlib
@@ -11,7 +11,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="GPL-3.0-or-later"
 homepage="https://github.com/jax-ml/jax"
 distfiles="https://github.com/jax-ml/jax/archive/refs/tags/jax-v${version}.tar.gz"
-checksum=5da025820419009fe0e40f5ffb503015b4fff12d212afc6252ebcd37bf6f611e
+checksum=1bdae0c3311165437461e9afe05b76de2adb9ce86b557b4bd270b0ec411ff27d
 
 export JAXLIB_RELEASE=${version}
 
