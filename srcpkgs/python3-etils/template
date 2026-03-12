@@ -1,6 +1,6 @@
 # Template file for 'python3-etils'
 pkgname=python3-etils
-version=1.13.0
+version=1.14.0
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
@@ -10,5 +10,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/google/etils"
 distfiles="https://github.com/google/etils/archive/refs/tags/v${version}.tar.gz"
-checksum=9daae4499336e6586e7025227ccdf37966f9778d37e9982895e6309d2dc13407
+checksum=99d6d2992b1a256bd921ae210dd9f00e6a100428edb71d15d8ce05fb70ba3fd1
 make_check=no # need to package some difficult dependencies
