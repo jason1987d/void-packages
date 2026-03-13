@@ -1,6 +1,6 @@
 # Template file for 'python3-hf_xet'
 pkgname=python3-hf_xet
-version=1.4.0
+version=1.4.2
 revision=1
 build_style=python3-pep517
 build_wrksrc=hf_xet
@@ -13,5 +13,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/huggingface/xet-core"
 distfiles="https://github.com/huggingface/xet-core/archive/refs/tags/v${version}.tar.gz"
-checksum=22421659a4779ebdec136de590bb7b0b42832928ac9662b1221b50c6e7ea0561
+checksum=d76e2000f7be34783d61fe78fffb78fe245e1b00f3e9ef07535cfc2a51b16b27
 make_check=no # no python tests provided
