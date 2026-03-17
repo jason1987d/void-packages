@@ -1,0 +1,16 @@
+# Template file for 'bpf-linker'
+pkgname=bpf-linker
+version=0.10.3
+revision=1
+build_style=cargo
+hostmakedepends="llvm21 clang21"
+short_desc="Simple BPF static linker"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT, Apache-2.0"
+homepage="https://github.com/aya-rs/bpf-linker"
+distfiles="https://github.com/aya-rs/bpf-linker/archive/refs/tags/v${version}.tar.gz"
+checksum=74419c3cf8229ad17ecb84c7f4659081ab6ede03ec4840384ba4cfe1aadda28b
+
+post_install() {
+	vlicense LICENSE-MIT
+}
