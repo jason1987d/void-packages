@@ -1,6 +1,6 @@
 # Template file for 'python3-puccinialin'
 pkgname=python3-puccinialin
-version=0.1.8
+version=0.1.9
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-flit_core"
@@ -10,8 +10,8 @@ short_desc="Install rust into a cache dir for rust-based builds"
 maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/konstin/puccinialin"
-distfiles="https://github.com/konstin/puccinialin/archive/refs/tags/v${version}.tar.gz"
-checksum=b682d367f3ab804d39637672e99121d120d0abbcce8fb8b54507b7832446095a
+distfiles="https://github.com/konstin/puccinialin/archive/refs/tags/${version}.tar.gz"
+checksum=83cf79183ceaef0a483b0cacd8a913a1c2e7ed6f42a9eb1c1cc75648171c91b9
 make_check=no # only tests use docker
 
 post_install() {
