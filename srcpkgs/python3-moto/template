@@ -1,0 +1,16 @@
+# Template file for 'python3-moto'
+pkgname=python3-moto
+version=5.1.22
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-boto3 python3-cryptography python3-requests python3-xmltodict python3-Werkzeug python3-dateutil python3-responses python3-Jinja2 python3-botocore"
+# options.extras_require has quite a bit more for (check)depends
+short_desc="Mock out tests based on AWS infrastructure"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/getmoto/moto"
+changelog="https://github.com/getmoto/moto/blob/master/CHANGELOG.md"
+distfiles="https://github.com/getmoto/moto/archive/refs/tags/${version}.tar.gz"
+checksum=d684ab3230685b9295a98120802bcfb1617edbf62f2cc583be771339c40fc08a
+make_check=no # unpackaged dependencies
