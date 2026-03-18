@@ -1,0 +1,19 @@
+# Template file for 'python3-pytest-datadir'
+pkgname=python3-pytest-datadir
+version=1.8.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-setuptools_scm"
+depends="python3-pytest"
+checkdepends="${depends} tox"
+short_desc="Pytest plugin for manipulating test data directories and files"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/gabrielcnr/pytest-datadir"
+changelog="https://github.com/gabrielcnr/pytest-datadir/blob/master/CHANGELOG.rst"
+distfiles="${PYPI_SITE}/p/pytest-datadir/pytest_datadir-${version}.tar.gz"
+checksum=7a15faed76cebe87cc91941dd1920a9a38eba56a09c11e9ddf1434d28a0f78eb
+
+post_install() {
+	vlicense LICENSE
+}
