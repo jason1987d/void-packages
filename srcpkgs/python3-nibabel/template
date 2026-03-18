@@ -1,0 +1,20 @@
+# Template file for 'python3-nibabel'
+pkgname=python3-nibabel
+version=5.4.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling hatch-vcs"
+depends="python3-numpy python3-packaging"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-pytest-httpserver python3-pytest-xdist python3-coverage"
+# may also need to package pytest-doctestplus pytest-run-parallel
+short_desc="Python package to access a cacophony of neuro-imaging file formats"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/nipy/nibabel"
+changelog="https://github.com/nipy/nibabel/blob/master/Changelog"
+distfiles="https://github.com/nipy/nibabel/archive/refs/tags/${version}.tar.gz"
+checksum=746953c1143df3b7572c5ea47b51201ff6fed1ace282c1e8adaae2dc595a4a89
+
+post_install() {
+	vlicense COPYING
+}
