@@ -4587,3 +4587,6 @@ libarrow_compute.so.2200 arrow-22.0.0_1
 libarrow_dataset.so.2200 arrow-22.0.0_1
 libparquet.so.2200 arrow-22.0.0_1
 libta-lib.so.0.6.4 ta-lib-0.6.4_1
+libtorch.so python3-torchcodec-0.10.0_1
+libtorch_cpu.so python3-torchcodec-0.10.0_1
+libc10.so python3-pytorch-2.9.1_1
