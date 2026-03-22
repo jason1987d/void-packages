@@ -1,6 +1,6 @@
 # Template file for 'python3-optax'
 pkgname=python3-optax
-version=0.2.7
+version=0.2.8
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
@@ -11,4 +11,4 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/google-deepmind/optax"
 distfiles="https://github.com/google-deepmind/optax/archive/refs/tags/v${version}.tar.gz"
-checksum=7f40861598c3794be052908c15f8f9afc71c37a2ba2f411e1c3596ce66975fda
+checksum=c5864f15c7f9ddfa3f703d8a1f73d5a516db07d220fb0a434741d23f45da4559
