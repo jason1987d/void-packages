@@ -1,6 +1,6 @@
 # Template file for 'python3-nibabel'
 pkgname=python3-nibabel
-version=5.4.1
+version=5.4.2
 revision=1
 build_style=python3-pep517
 hostmakedepends="hatchling hatch-vcs"
@@ -13,7 +13,7 @@ license="MIT"
 homepage="https://github.com/nipy/nibabel"
 changelog="https://github.com/nipy/nibabel/blob/master/Changelog"
 distfiles="https://github.com/nipy/nibabel/archive/refs/tags/${version}.tar.gz"
-checksum=746953c1143df3b7572c5ea47b51201ff6fed1ace282c1e8adaae2dc595a4a89
+checksum=f9366449f4e58742b06e672fc9376bd24fa4a43e43f4f36e89090b5d1d9deada
 
 post_install() {
 	vlicense COPYING
