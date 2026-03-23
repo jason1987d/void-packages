@@ -1,6 +1,6 @@
 # Template file for 'python3-flax'
 pkgname=python3-flax
-version=0.12.5
+version=0.12.6
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel python3-setuptools_scm"
@@ -10,5 +10,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/google/flax"
 distfiles="https://github.com/google/flax/archive/refs/tags/v${version}.tar.gz"
-checksum=6b9bbbbdf78ecbd68381bd6d9d4f427db083ad5d95d5de159125826b3786741c
+checksum=2968db2d81c9eda6b1d151c3ff88a2d6b6fcdef78eda9fb1da06b162266a4ed5
 make_check=no # too many dependencies to package now
