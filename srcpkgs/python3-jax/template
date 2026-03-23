@@ -1,6 +1,6 @@
 # Template file for 'python3-jax'
 pkgname=python3-jax
-version=0.9.1
+version=0.9.2
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
@@ -10,5 +10,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/jax-ml/jax"
 distfiles="https://github.com/jax-ml/jax/archive/refs/tags/jax-v${version}.tar.gz"
-checksum=1bdae0c3311165437461e9afe05b76de2adb9ce86b557b4bd270b0ec411ff27d
+checksum=9e67faaa74be4539e397fe61317568545f9ea325ddf1f7f534929d508786f29e
 make_check=no # not right now
