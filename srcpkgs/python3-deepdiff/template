@@ -1,6 +1,6 @@
 # Template file for 'python3-deepdiff'
 pkgname=python3-deepdiff
-version=8.6.1
+version=8.6.2
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-flit_core"
@@ -12,7 +12,7 @@ license="MIT"
 homepage="https://github.com/seperman/deepdiff"
 changelog="https://github.com/seperman/deepdiff/blob/master/CHANGELOG.md"
 distfiles="https://github.com/seperman/deepdiff/archive/refs/tags/${version}.tar.gz"
-checksum=3c538a4966b18c5c006498363403d6e0626fdb5a9ab5825e38bdc715be00c74f
+checksum=610c8a685e335e360dbf3506a1f3038a4c47fe882c4bab367b984ef21a190c43
 make_check=no # unpackaged dependencies
 
 post_install() {
