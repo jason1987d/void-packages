@@ -1,6 +1,6 @@
 # Template file for 'python3-scikit-build-cmake'
 pkgname=python3-scikit-build-cmake
-version=4.3.0
+version=4.3.1
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel python3-scikit-build-core cmake"
@@ -12,5 +12,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/scikit-build/cmake-python-distributions"
 distfiles="https://github.com/scikit-build/cmake-python-distributions/archive/refs/tags/${version}.tar.gz"
-checksum=da8b6276880ffb3aa561bb4cf19f40ef2d1d1d69f30cf19672a33c2a1f68277f
+checksum=9e9d79d773ebda2bdebd88b8af1857fc758d8cb701382729fb0c1b04ebf2b109
 make_check=no # AssertionError expect cmake 4.2.3
