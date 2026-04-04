@@ -1,0 +1,24 @@
+# Template file for 'cargo-generate'
+pkgname=cargo-generate
+version=0.23.8
+revision=1
+build_style=cargo
+short_desc="Cargo make me a project"
+hostmakedepends="pkg-config libgit2-1.9 libssh2 curl"
+makedepends="openssl-devel libgit2-1.9-devel libssh2-devel"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0, MIT"
+homepage="https://github.com/cargo-generate/cargo-generate"
+changelog="https://github.com/cargo-generate/cargo-generate/blob/main/CHANGELOG.md"
+distfiles="https://github.com/cargo-generate/cargo-generate/archive/refs/tags/v${version}.tar.gz"
+checksum=52455036c3ec98567de0d2529621b93d5811de48e67c2e0a25798578f85ad3f7
+
+pre_build() {
+	export LIBGIT2_NO_VENDOR=1
+	export LIBSSH2_SYS_USE_PKG_CONFIG=1
+}
+
+post_install() {
+	vlicense LICENSE-APACHE
+	vlicense LICENSE-MIT
+}
