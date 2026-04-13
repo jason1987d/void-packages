@@ -1,6 +1,6 @@
 # Template file for 'python3-transformers'
 pkgname=python3-transformers
-version=5.5.3
+version=5.5.4
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
@@ -10,5 +10,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/huggingface/transformers"
 distfiles="https://github.com/huggingface/transformers/archive/refs/tags/v${version}.tar.gz"
-checksum=6066f72f200702fc03ae3c6beb12968dee4092688d61d252da865fbe016bc82e
+checksum=d9d5a35421d6e6b533b43f5766564ba1e89ee9b1b5f60230546ff6c4a1bef7eb
 make_check=no # too many unpackaged dependencies
