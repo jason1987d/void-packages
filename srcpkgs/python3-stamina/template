@@ -1,6 +1,6 @@
 # Template file for 'python3-stamina'
 pkgname=python3-stamina
-version=25.2.0
+version=26.1.0
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-setuptools_scm hatchling hatch-vcs hatch-fancy-pypi-readme"
@@ -11,7 +11,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/hynek/stamina"
 distfiles="${PYPI_SITE}/s/stamina/stamina-${version}.tar.gz"
-checksum=fdff938789e8a0c4c496e1ee8a08ee3c7c3351239f235b53e60d4f5964d07e19
+checksum=0214d05fdf5102c518194a4aac7520ce53cf660550ae3b940701aad88cf50c17
 make_check=no # requires pytest-9.0 which not updated in void yet
 
 post_install() {
