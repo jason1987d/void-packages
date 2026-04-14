@@ -1,6 +1,6 @@
 # Template file for 'python3-poetry'
 pkgname=python3-poetry
-version=2.3.3
+version=2.3.4
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-poetry-core"
@@ -12,7 +12,7 @@ license="MIT"
 homepage="https://github.com/python-poetry/poetry"
 changelog="https://github.com/python-poetry/poetry/blob/main/CHANGELOG.md"
 distfiles="https://github.com/python-poetry/poetry/archive/refs/tags/${version}.tar.gz"
-checksum=efa24a68f3748cb853e4a5427f5e32f8136527f16b621d9705f062c8c4cc8f23
+checksum=b43c5875b583769636f336725aebf8d423c991841546c60c40ef536d468423c8
 make_check=no # ImportError: cannot import name 'PEELED_TAG_SUFFIX' from 'dulwich.protocol' (due to dulwich version mismatch)
 
 post_install() {
