@@ -1,6 +1,6 @@
 # Template file for 'python3-orbax_export'
 pkgname=python3-orbax_export
-version=0.11.34
+version=0.11.36
 revision=1
 build_wrksrc=export
 build_style=python3-pep517
@@ -12,5 +12,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/google/orbax"
 distfiles="https://github.com/google/orbax/archive/refs/tags/v${version}.tar.gz"
-checksum=d62210c15b2b5ccaebead103bf2dddb6d2c6eed9564eb6e8c30ff5fda7ce8a70
+checksum=49f94562228b9ae1dbe6037fcd589cf95754c5ae59dbc7cce25300e37f310df7
 make_check=no # unpackaged dependency tf-nightly (tensorflow)
