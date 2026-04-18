@@ -1,6 +1,6 @@
 # Template file for 'python3-docstring-parser'
 pkgname=python3-docstring-parser
-version=0.17.0
+version=0.18.0
 revision=1
 build_style=python3-pep517
 hostmakedepends="hatchling"
@@ -10,7 +10,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/rr-/docstring_parser"
 distfiles="https://github.com/rr-/docstring_parser/archive/refs/tags/${version}.tar.gz"
-checksum=b45774fae6298c40851e8cfa459c2d630683f47730209adc90963c1aaa181f9b
+checksum=88fa8a7a3b251ec0f34da4cb0443ec17ec3d054ffd748087f7c19dd85019a93d
 
 post_install() {
 	vlicense LICENSE.md
