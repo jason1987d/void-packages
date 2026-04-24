@@ -1,6 +1,6 @@
 # Template file for 'python3-scikit-build-cmake'
 pkgname=python3-scikit-build-cmake
-version=4.3.1
+version=4.3.2
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel python3-scikit-build-core cmake"
@@ -12,5 +12,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/scikit-build/cmake-python-distributions"
 distfiles="https://github.com/scikit-build/cmake-python-distributions/archive/refs/tags/${version}.tar.gz"
-checksum=9e9d79d773ebda2bdebd88b8af1857fc758d8cb701382729fb0c1b04ebf2b109
-make_check=no # AssertionError expect cmake 4.2.3
+checksum=f2f259a3c2887b05abd29e50d0e7b356a4f36b1bac1829dbb041810b8dca4f71
+make_check=no # AssertionError expect cmake version the same version as this package
