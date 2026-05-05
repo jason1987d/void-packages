@@ -1,6 +1,6 @@
 # Template file for 'python3-pytest-randomly'
 pkgname=python3-pytest-randomly
-version=4.0.1
+version=4.1.0
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools"
@@ -13,7 +13,7 @@ license="MIT"
 homepage="https://github.com/pytest-dev/pytest-randomly"
 changelog="https://github.com/pytest-dev/pytest-randomly/blob/main/CHANGELOG.rst"
 distfiles="https://github.com/pytest-dev/pytest-randomly/archive/refs/tags/${version}.tar.gz"
-checksum=dc0ad4fc1ff37344b37026063b9587596052215c670094439d68e0eab72cd684
+checksum=8efb1148c73d6649db3e1a38de426063d9c4b89a4ff990717d44b6513f0a2323
 make_check=no # unpackaged dependencies factory-boy model-bakery
 
 post_install() {
