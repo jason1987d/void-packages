@@ -1,6 +1,6 @@
 # Template file for 'python3-optree'
 pkgname=python3-optree
-version=0.19.0
+version=0.19.1
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-pybind11 python3-wheel cmake"
@@ -11,8 +11,10 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/metaopt/optree"
 distfiles="https://github.com/metaopt/optree/archive/refs/tags/v${version}.tar.gz"
-checksum=2b54645d3caaea90cb925a0f3252aa6027d4360ba67d810e77ab138fcc17f072
+checksum=6c4d57c7a5e786c4ab189c25e5ff6e3c40d90a99420eacfe52bc7aedad5c90ac
 make_check=no # test failures:
-# FAILED tests/test_ops.py::test_import_no_warnings
-# FAILED tests/test_treespec.py::test_treespec_construct
-# FAILED tests/test_treespec.py::test_treespec_pickle_missing_registration
+#FAILED tests/concurrent/test_subinterpreters.py::test_import_in_subinterpreter_before_main
+#FAILED tests/concurrent/test_subinterpreters.py::test_import_in_subinterpreters_concurrently
+#FAILED tests/test_ops.py::test_import_no_warnings - helpers.CalledProcessErro...
+#FAILED tests/test_treespec.py::test_treespec_construct - assert 1 in (0, <Sig...
+#FAILED tests/test_treespec.py::test_treespec_pickle_missing_registration
