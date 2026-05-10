@@ -1,7 +1,7 @@
 # Template file for 'python3-yaml'
 pkgname=python3-yaml
-version=6.0.2
-revision=3
+version=6.0.3
+revision=1
 build_style=python3-module
 hostmakedepends="python3-setuptools python3-Cython"
 makedepends="libyaml-devel python3-devel"
@@ -13,7 +13,7 @@ license="MIT"
 homepage="https://github.com/yaml/pyyaml"
 changelog="https://raw.githubusercontent.com/yaml/pyyaml/master/CHANGES"
 distfiles="${PYPI_SITE}/p/pyyaml/pyyaml-${version}.tar.gz"
-checksum=d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e
+checksum=d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f
 
 post_install() {
 	vlicense LICENSE
