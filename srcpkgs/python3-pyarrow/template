@@ -1,17 +1,16 @@
 # Template file for 'python3-pyarrow'
 pkgname=python3-pyarrow
-version=22.0.0
+version=24.0.0
 revision=1
 build_style=python3-pep517
 build_wrksrc=python
-hostmakedepends="python3-setuptools python3-setuptools_scm python3-Cython python3-wheel python3-numpy python3-cffi python3-pandas python3-fsspec git cmake ninja"
+hostmakedepends="python3-setuptools python3-setuptools_scm python3-Cython python3-wheel python3-numpy python3-cffi python3-pandas python3-fsspec git cmake ninja python3-scikit-build-core python3-libcst python3-yaml"
 makedepends="python3-devel arrow-devel"
 checkdepends="python3-pytest python3-hypothesis python3-cffi python3-pytz python3-pandas"
 short_desc="Toolbox for data interchange and in-memory analytics (Python)"
 maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://arrow.apache.org/"
-#distfiles="${PYPI_SITE}/p/pyarrow/pyarrow-${version}.tar.gz"
 distfiles="https://github.com/apache/arrow/archive/refs/tags/apache-arrow-${version}.tar.gz"
-checksum=8a95e6c7b9bec2bc0058feb73efe38ad6cfd49a0c7094db29b37ecaa8ab16051
+checksum=94e18d188f26324c4da6bb3a723fec1536ae88b8308bada28d53c0b8d5206b28
 make_check=no # not yet
