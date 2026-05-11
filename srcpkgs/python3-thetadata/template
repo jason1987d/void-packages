@@ -1,0 +1,14 @@
+# Template file for 'python3-thetadata'
+pkgname=python3-thetadata
+version=1.0.4
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+depends="python3-grpcio python3-httpx python3-pandas python3-polars python3-protobuf python3-zstandard"
+# need to update protobuf and zstandard
+short_desc="Python client library for ThetaData market data APIs"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://thetadata.net"
+distfiles="${PYPI_SITE}/t/thetadata/thetadata-${version}.tar.gz"
+checksum=43473ca43b0ba51284333b4f25ca63a2347242e45b76b556efadce59411ac842
