@@ -1,6 +1,6 @@
 # Template file for 'python3-moto'
 pkgname=python3-moto
-version=5.2.0
+version=5.2.1
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools"
@@ -12,5 +12,5 @@ license="Apache-2.0"
 homepage="https://github.com/getmoto/moto"
 changelog="https://github.com/getmoto/moto/blob/master/CHANGELOG.md"
 distfiles="https://github.com/getmoto/moto/archive/refs/tags/${version}.tar.gz"
-checksum=372d9ba0722b5681a022de04f0cbdd60802f751da42749bdd1d716e6ec6655bb
+checksum=0e619a61a9ba63fd5c8be231e1307b6195488c1202c6e9995d74dbd1fdd2851a
 make_check=no # unpackaged dependencies
