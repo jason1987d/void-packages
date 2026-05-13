@@ -1,6 +1,6 @@
 # Template file for 'python3-transformers'
 pkgname=python3-transformers
-version=5.8.0
+version=5.8.1
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
@@ -10,5 +10,10 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/huggingface/transformers"
 distfiles="https://github.com/huggingface/transformers/archive/refs/tags/v${version}.tar.gz"
-checksum=73971b1ccd3cd6f1bb649c158ed6d8b93b3700b9513cf7131f1a43b2ff1ae0f0
+checksum=96a00298741607f8efae34d9b59fc861ac9a8e73362b5a6589ccae8b41c5a057
 make_check=no # too many unpackaged dependencies
+
+pre_build() {
+	sed -i 's/tokenizers>=0.22.0,<=0.23.0/tokenizers/g' setup.py
+	sed -i 's/tokenizers>=0.22.0,<=0.23.0/tokenizers/g' src/transformers/dependency_versions_table.py
+}
