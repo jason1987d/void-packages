@@ -1,6 +1,6 @@
 # Template file for 'python3-hf_hub'
 pkgname=python3-hf_hub
-version=1.14.0
+version=1.15.0
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
@@ -14,5 +14,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/huggingface/huggingface_hub"
 distfiles="https://github.com/huggingface/huggingface_hub/archive/refs/tags/v${version}.tar.gz"
-checksum=528160a48b90317aa8d370d14d0d2deb5a2e188786f4f3888d3351cd1ca96ecc
+checksum=334bc4824fd44e889fbab13734f8a2b0bc40bd940728c55394c7fc8137f3b4c7
 make_check=no # too many tests with too many optional dependencies
