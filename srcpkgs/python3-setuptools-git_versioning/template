@@ -1,6 +1,6 @@
 # Template file for 'python3-setuptools_git_versioning'
 pkgname=python3-setuptools-git_versioning
-version=3.0.1
+version=3.1.0
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
@@ -11,7 +11,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/dolfinus/setuptools-git-versioning"
 distfiles="${PYPI_SITE}/s/setuptools-git-versioning/setuptools_git_versioning-${version}.tar.gz"
-checksum=c8a599bacf163b5d215552b5701faf5480ffc4d65426a5711a010b802e1590eb
+checksum=612dfcf184addac9e1c2216f4f229724b2390e5bf613fb925ae80b84f2529172
 make_check=no # tests do not actually run
 
 post_install() {
