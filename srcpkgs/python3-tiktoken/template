@@ -1,6 +1,6 @@
 # Template file for 'python3-tiktoken'
 pkgname=python3-tiktoken
-version=0.12.0
+version=0.13.0
 revision=1
 build_style=python3-pep517
 build_helper=rust
@@ -14,7 +14,7 @@ license="MIT"
 homepage="https://github.com/openai/tiktoken"
 changelog="CHANGELOG.md"
 distfiles="https://github.com/openai/tiktoken/archive/refs/tags/${version}.tar.gz"
-checksum=2e1ad31b47086480b168460c3c5794e868544bfcd7c781343599f72179794cbe
+checksum=76a503662cb5cb3adace6660d9938c1d66130efeb859ce0e45c8460bb1665f74
 make_check=no # circular import error for blobfile tests
 
 post_install() {
