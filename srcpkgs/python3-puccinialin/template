@@ -1,6 +1,6 @@
 # Template file for 'python3-puccinialin'
 pkgname=python3-puccinialin
-version=0.1.11
+version=0.1.12
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-flit_core"
@@ -11,7 +11,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/konstin/puccinialin"
 distfiles="https://github.com/konstin/puccinialin/archive/refs/tags/v${version}.tar.gz"
-checksum=d91cb1381c297a3a638b944bb27c45f911a6bfea5c995d8d0b9736a82706ea4a
+checksum=e20a1ca2cb4152821a582f8713055e880f59d547b34bad0b6a4b540906628a61
 make_check=no # only tests use docker
 
 post_install() {
