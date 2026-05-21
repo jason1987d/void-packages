@@ -1,6 +1,6 @@
 # Template file for 'python3-orbax_checkpoint'
 pkgname=python3-orbax_checkpoint
-version=0.11.39
+version=0.11.40
 revision=1
 build_wrksrc=checkpoint
 build_style=python3-pep517
@@ -11,5 +11,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/google/orbax"
 distfiles="https://github.com/google/orbax/archive/refs/tags/v${version}.tar.gz"
-checksum=07ff56c49d9878acda80c94cd25cb416f177b59d28cdc6449d11a1cbcb928500
+checksum=6dc99798f223d20646251da724deec8e53a5ddea1c305789cb4e19bf205f2167
 make_check=no # all dependencies not packaged yet
