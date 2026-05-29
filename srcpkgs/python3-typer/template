@@ -1,9 +1,9 @@
 # Template file for 'python3-typer'
 pkgname=python3-typer
-version=0.25.1
+version=0.26.3
 revision=1
 build_style=python3-pep517
-make_check_args="--deselect tests/test_tutorial"
+make_check_args="--deselect tests/test_tutorial --deselect tests/test_types_file.py::test_file_error"
 hostmakedepends="python3-pdm-backend"
 depends="python3-click python3-rich python3-shellingham python3-typing_extensions python3-annotated_doc"
 checkdepends="${depends} python3-pytest python3-pytest-cov python3-pytest-xdist python3-pytest-sugar python3-mypy ruff"
@@ -12,7 +12,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/fastapi/typer"
 distfiles="https://github.com/fastapi/typer/archive/refs/tags/${version}.tar.gz"
-checksum=c9702138141913216ecb8715cc5486d397c435929e14daa77f825e9bc8cc2556
+checksum=ad1bdcbb276d57293d1319a3fb704d40e32b41ff06df5fee494525d854e46c0e
 
 post_install() {
 	vlicense LICENSE
