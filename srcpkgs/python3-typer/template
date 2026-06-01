@@ -1,6 +1,6 @@
 # Template file for 'python3-typer'
 pkgname=python3-typer
-version=0.26.3
+version=0.26.4
 revision=1
 build_style=python3-pep517
 make_check_args="--deselect tests/test_tutorial --deselect tests/test_types_file.py::test_file_error"
@@ -12,7 +12,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/fastapi/typer"
 distfiles="https://github.com/fastapi/typer/archive/refs/tags/${version}.tar.gz"
-checksum=ad1bdcbb276d57293d1319a3fb704d40e32b41ff06df5fee494525d854e46c0e
+checksum=5923ad85aef52d1ff1ab024ee6e7f76d64888622f48dcf4450a6320224c4f983
 
 post_install() {
 	vlicense LICENSE
