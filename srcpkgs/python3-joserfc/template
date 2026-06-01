@@ -1,6 +1,6 @@
 # Template file for 'python3-joserfc'
 pkgname=python3-joserfc
-version=1.6.5
+version=1.6.8
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools"
@@ -11,8 +11,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="BSD-3-Clause"
 homepage="https://github.com/authlib/joserfc"
 distfiles="https://github.com/authlib/joserfc/archive/refs/tags/${version}.tar.gz"
-checksum=e42393774f34e8e12a772923629a67a29d83bfb9af4fc6292c8905dbd903a8a5
-make_check=no # https://github.com/authlib/joserfc/issues/94
+checksum=b9c45083ee27276dbb6fdf187f4f56ae1bb9734898e8fd419c1d23beec1a999e
 
 post_install() {
 	vlicense LICENSE
