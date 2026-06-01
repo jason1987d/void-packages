@@ -1,10 +1,10 @@
 # Template file for 'python3-hf_hub'
 pkgname=python3-hf_hub
-version=1.15.0
+version=1.17.0
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel"
-depends="python3-filelock python3-yaml python3-packaging python3-fsspec python3-requests python3-tqdm python3-typing_extensions python3-hf_xet python3-httpx python3-shellingham python3-typer python3-authlib python3-fastapi python3-itsdangerous" 
+depends="python3-filelock python3-yaml python3-packaging python3-fsspec python3-requests python3-tqdm python3-typing_extensions python3-hf_xet python3-httpx python3-shellingham python3-typer python3-authlib python3-fastapi python3-itsdangerous python3-click" 
 checkdepends="${depends} python3-pytest python3-pytest-cov python3-pytest-env python3-pytest-xdist python3-pytest-asyncio python3-pytest-rerunfailures python3-pytest-mock python3-jedi python3-Jinja2 python3-urllib3 python3-numpy python3-duckdb python3-Pillow"
 # may need urllib3 < 2.0 or disable VCR.py tests
 # also need many other checkdepends for optional features
@@ -14,5 +14,5 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/huggingface/huggingface_hub"
 distfiles="https://github.com/huggingface/huggingface_hub/archive/refs/tags/v${version}.tar.gz"
-checksum=334bc4824fd44e889fbab13734f8a2b0bc40bd940728c55394c7fc8137f3b4c7
+checksum=96b6a4b785d5e2654c2c75ca01231b8fb83a83af45ac8c8e05ccb6fe744104e2
 make_check=no # too many tests with too many optional dependencies
