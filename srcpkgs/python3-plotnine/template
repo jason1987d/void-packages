@@ -1,6 +1,6 @@
 # Template file for 'python3-plotnine'
 pkgname=python3-plotnine
-version=0.15.4
+version=0.15.5
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-setuptools_scm python3-wheel"
@@ -12,7 +12,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/has2k1/plotnine"
 distfiles="${PYPI_SITE}/p/plotnine/plotnine-${version}.tar.gz"
-checksum=4cc47539575670dbcbeed9cd44d0c3bb7973f815f679136ff3b70314266719b4
+checksum=9bc5e06a7d9558f4252374348fde0125112c571ef76ccefdd8f507d007ee55b9
 make_check=no # unpackaged dependencies
 
 post_install() {
