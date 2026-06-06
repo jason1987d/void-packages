@@ -1,6 +1,6 @@
 # Template file for 'python3-formulaic'
 pkgname=python3-formulaic
-version=1.2.1
+version=1.2.2
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel hatchling hatch-vcs"
@@ -11,7 +11,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/matthewwardrop/formulaic"
 distfiles="${PYPI_SITE}/f/formulaic/formulaic-${version}.tar.gz"
-checksum=dc79476baa2d811b35798893eb2f2c1e51edee8d7a9c1429b400e56f4e0beccc
+checksum=c99e8f11ff7d327eaecaf63855ca69b7fa0da100ad6c0041ef80912fbac667e6
 
 post_install() {
 	vlicense LICENSE
