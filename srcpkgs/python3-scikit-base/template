@@ -1,6 +1,6 @@
 # Template file for 'python3-scikit-base'
 pkgname=python3-scikit-base
-version=1.0.0
+version=1.0.1
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel python3-toml"
@@ -10,7 +10,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="BSD-3-Clause"
 homepage="https://github.com/sktime/skbase"
 distfiles="https://github.com/sktime/skbase/archive/refs/tags/v${version}.tar.gz"
-checksum=bdb1230a41992b91f5614a26033788a8644e2df13ac2a9a79a881b0eb35d62be
+checksum=e3f59e3d5dac6375c7180a84284991cd8f3a05b00f74147b49675e1f170aced2
 make_check=no # need to package python3-safety and possibly other things
 
 post_install() {
