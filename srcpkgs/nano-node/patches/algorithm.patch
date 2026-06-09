@@ -1,0 +1,10 @@
+--- a/nano/lib/numbers.hpp	2025-08-20 06:27:03.000000000 -0500
++++ b/nano/lib/numbers.hpp	2026-06-19 20:45:53.435408410 -0500
+@@ -6,6 +6,7 @@
+ #include <boost/multiprecision/cpp_int.hpp>
+ 
+ #include <array>
++#include <algorithm>
+ #include <compare>
+ #include <limits>
+ #include <ostream>

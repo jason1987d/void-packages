@@ -1,0 +1,547 @@
+# Template file for 'nano-node'
+pkgname=nano-node
+version=28.2
+revision=1
+build_style=cmake
+configure_args="-DNANO_GUI=ON -DFAIL_ON_WARNINGS=OFF -DFLATBUFFERS_STRICT_MODE=OFF"
+makedepends="qt5-devel"
+_boost_gitrev=65c1319bb92fe7a9a4abd588eff5818d9c2bccf9
+_cpptoml_gitrev=539965005606a481ae29b723e21aa254d3c29c62
+_cryptopp_gitrev=511806c0eba8ba5b5cedd4b4a814e96df92864a6
+_flatbuffers_gitrev=01834de25e4bf3975a9a00e816292b1ad0fe184b
+_fmt_gitrev=a0b8a92e3d1532361c2f7feb63babc5c18d00ef2
+_gtest_gitrev=f8d7d77c06936315286eb55f8de22cd23c188571
+_gtest_parallel_gitrev=f4d65b555894b301699c7c3c52906f72ea052e83
+_lmdb_gitrev=c7b3cc4df6dfe8f0772fb509bdc74777667caa43
+_magic_enum_gitrev=e55b9b54d5cf61f8e117cafb17846d7d742dd3b4
+_miniupnp_gitrev=7f189988a0decca0ab7da89000051ab91751f70d
+_phc_winner_argon2_gitrev=65b4d3520292c5eafbc45a69a37cfc0568853c76
+_rocksdb_gitrev=d9787264a8eb0528966ded06499dff46a4f8739c
+_spdlog_gitrev=7e635fca68d014934b4af8a1cf874f63989352b7
+_boost_algorithm_gitrev=32c5a6327cfdca5d41ce0f1d8849b811886daa2f
+_boost_align_gitrev=5ad7df63cd792fbdb801d600b93cad1a432f0151
+_boost_any_gitrev=aee53090c04bd0a263480fae25fddddcef54ca82
+_boost_array_gitrev=23f6b27c0d9916b9932baac898ae3009817a9153
+_boost_asio_gitrev=c28d453674dd2071fdc8cce5ffabcb54c910f466
+_boost_assert_gitrev=242fdfb1373127331cb229379b50b1dba0f53e49
+_boost_atomic_gitrev=fbdb5f44d4ace030d8a8836cc4f3738bcc1c6d72
+_boost_beast_gitrev=fee9be0be10c9c9a22ac1505a710d1d8ed5a3dfb
+_boost_bind_gitrev=97776ec7ba6217ecdfb8fd777dec85117de6f188
+_boost_chrono_gitrev=ee0d6d543a37d9b7243682549e9ae359eb89daa9
+_boost_circular_buffer_gitrev=a08a5b55ee82e0c2487523471379ac53a23935dc
+_boost_concept_check_gitrev=37c9bddf0bdefaaae0ca5852c1a153d9fc43f278
+_boost_config_gitrev=2bd6f0dfc52ff1fb1bd502361f4d0c750ce51d93
+_boost_container_gitrev=e08a064896048daa306b82d7525e5b524051fb42
+_boost_container_hash_gitrev=6d214eb776456bf17fbee20780a034a23438084f
+_boost_context_gitrev=1bde50e400547e29336afe7ea0cd693d8c884fb6
+_boost_conversion_gitrev=9f285ef0c43c101e49b37bf5e6085e8d635887dc
+_boost_core_gitrev=622476533c60b979d0b6a406d601c88219092cdb
+_boost_coroutine_gitrev=1e1347c0b1910b9310ec1719edad8b0bf2fd03c8
+_boost_date_time_gitrev=85e637cb325208c2af9af791c3a1948b4888c6cd
+_boost_describe_gitrev=50719b212349f3d1268285c586331584d3dbfeb5
+_boost_detail_gitrev=804767983fb6f77f8e0fd975f23d1facee6f224b
+_boost_dll_gitrev=6c60dde50bf67138c90cc84938111866813feaff
+_boost_dynamic_bitset_gitrev=8e20aa1462bf6dcadc338835df529a6d568431b1
+_boost_endian_gitrev=900fe18a117daa9ce023529b006f122ad4116749
+_boost_exception_gitrev=ece51fe0f7b8273ffc3fa626c3d1442f7af24ef9
+_boost_filesystem_gitrev=41a990ef14760d487c8c3b234f5e3e59178140df
+_boost_foreach_gitrev=cc2f75ae30492b9de69b3b692f5c59afcb7dea5e
+_boost_format_gitrev=9c6964ae01169974da56ba0d3f32ff2627604776
+_boost_function_gitrev=1204b7d20091c1ac65fb02a1d5991a82098e4f77
+_boost_function_types_gitrev=895335874d67987ada0d8bf6ca1725e70642ed49
+_boost_functional_gitrev=6a573e4b8333ee63ee62ce95558c3667348db233
+_boost_fusion_gitrev=53da4e0b2c8cd4969b09fa646d314ac0c414c1ff
+_boost_integer_gitrev=c37a3402beff5da04790d054bd7292920b433046
+_boost_interprocess_gitrev=9fc4ee7dd7277d86c691921007856aca99c3c1ac
+_boost_intrusive_gitrev=b9b83bd9e691cde4f116d8a0bd4e09b91e70ce4f
+_boost_io_gitrev=342e4c6d10d586058818daa84201a2d301357a53
+_boost_iostreams_gitrev=6be38c3449a64b15213c6a490d357c9a2ac2470b
+_boost_iterator_gitrev=4914e1f40abf6ba1e6e2ad196cdac557b0783cf3
+_boost_lambda_gitrev=1555e9c7fff978d94359fc3f6312187e1e2647d5
+_boost_lexical_cast_gitrev=ff2f0496b02f8b186b737b35693b446041aa545d
+_boost_log_gitrev=9a906e2f540680ff35a20207f9a1a9a3b889f52b
+_boost_logic_gitrev=145778490c2d332c1411df6a5274a4b53ec3e091
+_boost_math_gitrev=4c2cdc2cf67060db2053a5db10da344cf7d42681
+_boost_move_gitrev=70c57e804f6c287c0ee3ab39c2ef1bb9ec9c02e5
+_boost_mp11_gitrev=d0f3481b210a3baf49ce16d7b595ba5f4bee8ce6
+_boost_mpl_gitrev=b37b709cbdb6b2c285fb808dab985aa005786351
+_boost_multi_index_gitrev=d702a48363997f65fb717346f6694e0703902f8a
+_boost_multiprecision_gitrev=b484d2f158df88e04470e7da4bcc59bf63f65688
+_boost_numeric_conversion_gitrev=50a1eae942effb0a9b90724323ef8f2a67e7984a
+_boost_optional_gitrev=c60db27762ff9cc16529e069c3c15f2fa898f994
+_boost_parameter_gitrev=ea493c7cd7703be5ccaac01bcb6ccc781dd03b91
+_boost_phoenix_gitrev=8913607a3788cb82d48ed461ea59c919b7bad3df
+_boost_pool_gitrev=ec7da07ed13e0c61e50d945b574a12ae7ec83cf4
+_boost_predef_gitrev=9aca7f5b609a731106a6d70e8dca9a4196dca968
+_boost_preprocessor_gitrev=c4ea7e40d365ba28faecef8917d5c3f1e0121bf9
+_boost_process_gitrev=9561ebad1c1170ed7a489fc1ced8425f34ce84bc
+_boost_program_options_gitrev=27f927694547277f845ae855e80b96be252f826c
+_boost_property_tree_gitrev=8080ecd14f2d952a4bb7ae869fc0f54f54f5a31f
+_boost_proto_gitrev=7f924934689b940f3a72212ab0f714ec6fd6e34b
+_boost_random_gitrev=29ac88879985418c6284587485d0ad8c36e33cbc
+_boost_range_gitrev=2bb6b636796f7b008196888613f51f5bb347c77d
+_boost_ratio_gitrev=d5b33caa7d564be9be6d962b18659b7741d764ac
+_boost_rational_gitrev=564623136417068916495e2b24737054d607347c
+_boost_regex_gitrev=4cbcd3078e6ae10d05124379623a1bf03fcb9350
+_boost_scope_gitrev=db963eab9cd9244edde0488423effbcb8200ea62
+_boost_scope_exit_gitrev=60baaae454b2da887a31cf939e22015b6263c9e4
+_boost_serialization_gitrev=a20c4d97c37e5f437c8ba78f296830edb79cff9e
+_boost_smart_ptr_gitrev=1650077eee2c62d05d9deeff06a75c058648101a
+_boost_spirit_gitrev=43112c3f055fa109f20b8e8e6e50d0a016da742a
+_boost_stacktrace_gitrev=cbf0df774dd7baa2af5a7d28662fd58b90ea8c3d
+_boost_static_assert_gitrev=ba72d3340f3dc6e773868107f35902292f84b07e
+_boost_static_string_gitrev=bff5cb65a5cb9151aacaf56abe80125e0128f43a
+_boost_system_gitrev=5d5ecb74a7eabbc7968a6a7d8dcf17c291649105
+_boost_test_gitrev=4161c7be9806c09c2fea50c0215bd8bd7ff4997e
+_boost_thread_gitrev=aec18d337f41d8e3081ee65f5cf3b5090179ab0e
+_boost_throw_exception_gitrev=6ff2e5dca53fc50bef54ef3eeaaed83d35cbc061
+_boost_tokenizer_gitrev=90106f155bd72b62aaca0d9ad826f4132030dba0
+_boost_tuple_gitrev=b67941dd7d03536a854b96f001954792311ab515
+_boost_type_index_gitrev=e37bc99e85e85bcac420ac1d4c1a8a5bca280d47
+_boost_type_traits_gitrev=cc6fc3daa8e20c4a70b563d67ceb4c34d8c1c4d7
+_boost_typeof_gitrev=4bc9de322cd44373435540d4e6c8f207892fc9a0
+_boost_unordered_gitrev=d61719a196a6022d9dc68f5118c16c881bb5a0d4
+_boost_utility_gitrev=31de9279d826c8a6ae6126c0c4a8a32ea9f0edff
+_boost_variant_gitrev=b33ff4f811a27d4dc4a4c8a840310523de4df4f8
+_boost_variant2_gitrev=f9bdafd3ca0f5025012f60a405b559888513a9be
+_boost_winapi_gitrev=c5fb9c86e8b9ea460fc6d7255d15d69d4d2705ae
+short_desc="Digital currency - ticker is: XNO and currency symbol is: Ӿ"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/nanocurrency/nano-node"
+distfiles="https://github.com/nanocurrency/nano-node/archive/refs/tags/V${version}.tar.gz
+ https://github.com/boostorg/boost/archive/${_boost_gitrev}.tar.gz>boost-${_boost_gitrev}.tar.gz
+ https://github.com/skystrife/cpptoml/archive/${_cpptoml_gitrev}.tar.gz>cpptoml-${_cpptoml_gitrev}.tar.gz
+ https://github.com/weidai11/cryptopp/archive/${_cryptopp_gitrev}.tar.gz>cryptopp-${_cryptopp_gitrev}.tar.gz
+ https://github.com/google/flatbuffers/archive/${_flatbuffers_gitrev}.tar.gz>flatbuffers-${_flatbuffers_gitrev}.tar.gz
+ https://github.com/fmtlib/fmt/archive/${_fmt_gitrev}.tar.gz>fmt-${_fmt_gitrev}.tar.gz
+ https://github.com/google/googletest/archive/${_gtest_gitrev}.tar.gz>gtest-${_gtest_gitrev}.tar.gz
+ https://github.com/google/gtest-parallel/archive/${_gtest_parallel_gitrev}.tar.gz>gtest-parallel-${_gtest_parallel_gitrev}.tar.gz
+ https://github.com/LMDB/lmdb/archive/${_lmdb_gitrev}.tar.gz>lmdb-${_lmdb_gitrev}.tar.gz
+ https://github.com/Neargye/magic_enum/archive/${_magic_enum_gitrev}.tar.gz>magic-enum-${_magic_enum_gitrev}.tar.gz
+ https://github.com/miniupnp/miniupnp/archive/${_miniupnp_gitrev}.tar.gz>miniupnp-${_miniupnp_gitrev}.tar.gz
+ https://github.com/P-H-C/phc-winner-argon2/archive/${_phc_winner_argon2_gitrev}.tar.gz>phc-winner-argon2-${_phc_winner_argon2_gitrev}.tar.gz
+ https://github.com/facebook/rocksdb/archive/${_rocksdb_gitrev}.tar.gz>rocksdb-${_rocksdb_gitrev}.tar.gz
+ https://github.com/gabime/spdlog/archive/${_spdlog_gitrev}.tar.gz>spdlog-${_spdlog_gitrev}.tar.gz
+ https://github.com/boostorg/algorithm/archive/${_boost_algorithm_gitrev}.tar.gz>boost-algorithm-${_boost_algorithm_gitrev}.tar.gz
+ https://github.com/boostorg/align/archive/${_boost_align_gitrev}.tar.gz>boost-align-${_boost_align_gitrev}.tar.gz
+ https://github.com/boostorg/any/archive/${_boost_any_gitrev}.tar.gz>boost-any-${_boost_any_gitrev}.tar.gz
+ https://github.com/boostorg/array/archive/${_boost_array_gitrev}.tar.gz>boost-array-${_boost_array_gitrev}.tar.gz
+ https://github.com/boostorg/asio/archive/${_boost_asio_gitrev}.tar.gz>boost-asio-${_boost_asio_gitrev}.tar.gz
+ https://github.com/boostorg/assert/archive/${_boost_assert_gitrev}.tar.gz>boost-assert-${_boost_assert_gitrev}.tar.gz
+ https://github.com/boostorg/atomic/archive/${_boost_atomic_gitrev}.tar.gz>boost-atomic-${_boost_atomic_gitrev}.tar.gz
+ https://github.com/boostorg/beast/archive/${_boost_beast_gitrev}.tar.gz>boost-beast-${_boost_beast_gitrev}.tar.gz
+ https://github.com/boostorg/bind/archive/${_boost_bind_gitrev}.tar.gz>boost-bind-${_boost_bind_gitrev}.tar.gz
+ https://github.com/boostorg/chrono/archive/${_boost_chrono_gitrev}.tar.gz>boost-chrono-${_boost_chrono_gitrev}.tar.gz
+ https://github.com/boostorg/circular_buffer/archive/${_boost_circular_buffer_gitrev}.tar.gz>boost-circular_buffer-${_boost_circular_buffer_gitrev}.tar.gz
+ https://github.com/boostorg/concept_check/archive/${_boost_concept_check_gitrev}.tar.gz>boost-concept_check-${_boost_concept_check_gitrev}.tar.gz
+ https://github.com/boostorg/config/archive/${_boost_config_gitrev}.tar.gz>boost-config-${_boost_config_gitrev}.tar.gz
+ https://github.com/boostorg/container/archive/${_boost_container_gitrev}.tar.gz>boost-container-${_boost_container_gitrev}.tar.gz
+ https://github.com/boostorg/container_hash/archive/${_boost_container_hash_gitrev}.tar.gz>boost-container_hash-${_boost_container_hash_gitrev}.tar.gz
+ https://github.com/boostorg/context/archive/${_boost_context_gitrev}.tar.gz>boost-context-${_boost_context_gitrev}.tar.gz
+ https://github.com/boostorg/conversion/archive/${_boost_conversion_gitrev}.tar.gz>boost-conversion-${_boost_conversion_gitrev}.tar.gz
+ https://github.com/boostorg/core/archive/${_boost_core_gitrev}.tar.gz>boost-core-${_boost_core_gitrev}.tar.gz
+ https://github.com/boostorg/coroutine/archive/${_boost_coroutine_gitrev}.tar.gz>boost-coroutine-${_boost_coroutine_gitrev}.tar.gz
+ https://github.com/boostorg/date_time/archive/${_boost_date_time_gitrev}.tar.gz>boost-date_time-${_boost_date_time_gitrev}.tar.gz
+ https://github.com/boostorg/describe/archive/${_boost_describe_gitrev}.tar.gz>boost-describe-${_boost_describe_gitrev}.tar.gz
+ https://github.com/boostorg/detail/archive/${_boost_detail_gitrev}.tar.gz>boost-detail-${_boost_detail_gitrev}.tar.gz
+ https://github.com/boostorg/dll/archive/${_boost_dll_gitrev}.tar.gz>boost-dll-${_boost_dll_gitrev}.tar.gz
+ https://github.com/boostorg/dynamic_bitset/archive/${_boost_dynamic_bitset_gitrev}.tar.gz>boost-dynamic_bitset-${_boost_dynamic_bitset_gitrev}.tar.gz
+ https://github.com/boostorg/endian/archive/${_boost_endian_gitrev}.tar.gz>boost-endian-${_boost_endian_gitrev}.tar.gz
+ https://github.com/boostorg/exception/archive/${_boost_exception_gitrev}.tar.gz>boost-exception-${_boost_exception_gitrev}.tar.gz
+ https://github.com/boostorg/filesystem/archive/${_boost_filesystem_gitrev}.tar.gz>boost-filesystem-${_boost_filesystem_gitrev}.tar.gz
+ https://github.com/boostorg/foreach/archive/${_boost_foreach_gitrev}.tar.gz>boost-foreach-${_boost_foreach_gitrev}.tar.gz
+ https://github.com/boostorg/format/archive/${_boost_format_gitrev}.tar.gz>boost-format-${_boost_format_gitrev}.tar.gz
+ https://github.com/boostorg/function/archive/${_boost_function_gitrev}.tar.gz>boost-function-${_boost_function_gitrev}.tar.gz
+ https://github.com/boostorg/functional/archive/${_boost_functional_gitrev}.tar.gz>boost-functional-${_boost_functional_gitrev}.tar.gz
+ https://github.com/boostorg/function_types/archive/${_boost_function_types_gitrev}.tar.gz>boost-function_types-${_boost_function_types_gitrev}.tar.gz
+ https://github.com/boostorg/fusion/archive/${_boost_fusion_gitrev}.tar.gz>boost-fusion-${_boost_fusion_gitrev}.tar.gz
+ https://github.com/boostorg/integer/archive/${_boost_integer_gitrev}.tar.gz>boost-integer-${_boost_integer_gitrev}.tar.gz
+ https://github.com/boostorg/interprocess/archive/${_boost_interprocess_gitrev}.tar.gz>boost-interprocess-${_boost_interprocess_gitrev}.tar.gz
+ https://github.com/boostorg/intrusive/archive/${_boost_intrusive_gitrev}.tar.gz>boost-intrusive-${_boost_intrusive_gitrev}.tar.gz
+ https://github.com/boostorg/io/archive/${_boost_io_gitrev}.tar.gz>boost-io-${_boost_io_gitrev}.tar.gz
+ https://github.com/boostorg/iostreams/archive/${_boost_iostreams_gitrev}.tar.gz>boost-iostreams-${_boost_iostreams_gitrev}.tar.gz
+ https://github.com/boostorg/iterator/archive/${_boost_iterator_gitrev}.tar.gz>boost-iterator-${_boost_iterator_gitrev}.tar.gz
+ https://github.com/boostorg/lambda/archive/${_boost_lambda_gitrev}.tar.gz>boost-lambda-${_boost_lambda_gitrev}.tar.gz
+ https://github.com/boostorg/lexical_cast/archive/${_boost_lexical_cast_gitrev}.tar.gz>boost-lexical_cast-${_boost_lexical_cast_gitrev}.tar.gz
+ https://github.com/boostorg/log/archive/${_boost_log_gitrev}.tar.gz>boost-log-${_boost_log_gitrev}.tar.gz
+ https://github.com/boostorg/logic/archive/${_boost_logic_gitrev}.tar.gz>boost-logic-${_boost_logic_gitrev}.tar.gz
+ https://github.com/boostorg/math/archive/${_boost_math_gitrev}.tar.gz>boost-math-${_boost_math_gitrev}.tar.gz
+ https://github.com/boostorg/move/archive/${_boost_move_gitrev}.tar.gz>boost-move-${_boost_move_gitrev}.tar.gz
+ https://github.com/boostorg/mp11/archive/${_boost_mp11_gitrev}.tar.gz>boost-mp11-${_boost_mp11_gitrev}.tar.gz
+ https://github.com/boostorg/mpl/archive/${_boost_mpl_gitrev}.tar.gz>boost-mpl-${_boost_mpl_gitrev}.tar.gz
+ https://github.com/boostorg/multi_index/archive/${_boost_multi_index_gitrev}.tar.gz>boost-multi_index-${_boost_multi_index_gitrev}.tar.gz
+ https://github.com/boostorg/multiprecision/archive/${_boost_multiprecision_gitrev}.tar.gz>boost-multiprecision-${_boost_multiprecision_gitrev}.tar.gz
+ https://github.com/boostorg/numeric_conversion/archive/${_boost_numeric_conversion_gitrev}.tar.gz>boost-numeric_conversion-${_boost_numeric_conversion_gitrev}.tar.gz
+ https://github.com/boostorg/optional/archive/${_boost_optional_gitrev}.tar.gz>boost-optional-${_boost_optional_gitrev}.tar.gz
+ https://github.com/boostorg/parameter/archive/${_boost_parameter_gitrev}.tar.gz>boost-parameter-${_boost_parameter_gitrev}.tar.gz
+ https://github.com/boostorg/phoenix/archive/${_boost_phoenix_gitrev}.tar.gz>boost-phoenix-${_boost_phoenix_gitrev}.tar.gz
+ https://github.com/boostorg/pool/archive/${_boost_pool_gitrev}.tar.gz>boost-pool-${_boost_pool_gitrev}.tar.gz
+ https://github.com/boostorg/predef/archive/${_boost_predef_gitrev}.tar.gz>boost-predef-${_boost_predef_gitrev}.tar.gz
+ https://github.com/boostorg/preprocessor/archive/${_boost_preprocessor_gitrev}.tar.gz>boost-preprocessor-${_boost_preprocessor_gitrev}.tar.gz
+ https://github.com/boostorg/process/archive/${_boost_process_gitrev}.tar.gz>boost-process-${_boost_process_gitrev}.tar.gz
+ https://github.com/boostorg/program_options/archive/${_boost_program_options_gitrev}.tar.gz>boost-program_options-${_boost_program_options_gitrev}.tar.gz
+ https://github.com/boostorg/property_tree/archive/${_boost_property_tree_gitrev}.tar.gz>boost-property_tree-${_boost_property_tree_gitrev}.tar.gz
+ https://github.com/boostorg/proto/archive/${_boost_proto_gitrev}.tar.gz>boost-proto-${_boost_proto_gitrev}.tar.gz
+ https://github.com/boostorg/random/archive/${_boost_random_gitrev}.tar.gz>boost-random-${_boost_random_gitrev}.tar.gz
+ https://github.com/boostorg/range/archive/${_boost_range_gitrev}.tar.gz>boost-range-${_boost_range_gitrev}.tar.gz
+ https://github.com/boostorg/ratio/archive/${_boost_ratio_gitrev}.tar.gz>boost-ratio-${_boost_ratio_gitrev}.tar.gz
+ https://github.com/boostorg/rational/archive/${_boost_rational_gitrev}.tar.gz>boost-rational-${_boost_rational_gitrev}.tar.gz
+ https://github.com/boostorg/regex/archive/${_boost_regex_gitrev}.tar.gz>boost-regex-${_boost_regex_gitrev}.tar.gz
+ https://github.com/boostorg/scope/archive/${_boost_scope_gitrev}.tar.gz>boost-scope-${_boost_scope_gitrev}.tar.gz
+ https://github.com/boostorg/scope_exit/archive/${_boost_scope_exit_gitrev}.tar.gz>boost-scope_exit-${_boost_scope_exit_gitrev}.tar.gz
+ https://github.com/boostorg/serialization/archive/${_boost_serialization_gitrev}.tar.gz>boost-serialization-${_boost_serialization_gitrev}.tar.gz
+ https://github.com/boostorg/smart_ptr/archive/${_boost_smart_ptr_gitrev}.tar.gz>boost-smart_ptr-${_boost_smart_ptr_gitrev}.tar.gz
+ https://github.com/boostorg/spirit/archive/${_boost_spirit_gitrev}.tar.gz>boost-spirit-${_boost_spirit_gitrev}.tar.gz
+ https://github.com/boostorg/stacktrace/archive/${_boost_stacktrace_gitrev}.tar.gz>boost-stacktrace-${_boost_stacktrace_gitrev}.tar.gz
+ https://github.com/boostorg/static_assert/archive/${_boost_static_assert_gitrev}.tar.gz>boost-static_assert-${_boost_static_assert_gitrev}.tar.gz
+ https://github.com/boostorg/static_string/archive/${_boost_static_string_gitrev}.tar.gz>boost-static_string-${_boost_static_string_gitrev}.tar.gz
+ https://github.com/boostorg/system/archive/${_boost_system_gitrev}.tar.gz>boost-system-${_boost_system_gitrev}.tar.gz
+ https://github.com/boostorg/test/archive/${_boost_test_gitrev}.tar.gz>boost-test-${_boost_test_gitrev}.tar.gz
+ https://github.com/boostorg/thread/archive/${_boost_thread_gitrev}.tar.gz>boost-thread-${_boost_thread_gitrev}.tar.gz
+ https://github.com/boostorg/throw_exception/archive/${_boost_throw_exception_gitrev}.tar.gz>boost-throw_exception-${_boost_throw_exception_gitrev}.tar.gz
+ https://github.com/boostorg/tokenizer/archive/${_boost_tokenizer_gitrev}.tar.gz>boost-tokenizer-${_boost_tokenizer_gitrev}.tar.gz
+ https://github.com/boostorg/tuple/archive/${_boost_tuple_gitrev}.tar.gz>boost-tuple-${_boost_tuple_gitrev}.tar.gz
+ https://github.com/boostorg/type_index/archive/${_boost_type_index_gitrev}.tar.gz>boost-type_index-${_boost_type_index_gitrev}.tar.gz
+ https://github.com/boostorg/typeof/archive/${_boost_typeof_gitrev}.tar.gz>boost-typeof-${_boost_typeof_gitrev}.tar.gz
+ https://github.com/boostorg/type_traits/archive/${_boost_type_traits_gitrev}.tar.gz>boost-type_traits-${_boost_type_traits_gitrev}.tar.gz
+ https://github.com/boostorg/unordered/archive/${_boost_unordered_gitrev}.tar.gz>boost-unordered-${_boost_unordered_gitrev}.tar.gz
+ https://github.com/boostorg/utility/archive/${_boost_utility_gitrev}.tar.gz>boost-utility-${_boost_utility_gitrev}.tar.gz
+ https://github.com/boostorg/variant/archive/${_boost_variant_gitrev}.tar.gz>boost-variant-${_boost_variant_gitrev}.tar.gz
+ https://github.com/boostorg/variant2/archive/${_boost_variant2_gitrev}.tar.gz>boost-variant2-${_boost_variant2_gitrev}.tar.gz
+ https://github.com/boostorg/winapi/archive/${_boost_winapi_gitrev}.tar.gz>boost-winapi-${_boost_winapi_gitrev}.tar.gz"
+checksum="43ad106561d29970ad6a9ff96442dc89df8c774ba6e6879e782793059413c37b
+ b172786ac2afba881046eb8e19fbe6629aeef5e4bc0dc69d134a5ebc2fd30402
+ 190c74e09d7fbb5022e64564657a6b2a1f80392bea2b8dc7a1e61d3e1c886e6b
+ a92a0b4bf452bc86e8b3e0815ca46ef7bb45ca0e5377cb68c5154a390f73dfed
+ 5a1f2a116b49a1aaa3563c3d9e3baf6ea256eebf57c7bc144a2d28aa73deba7b
+ 2da863d7d454814286c48ef90c9b461a5d27834f026ed9472eed53bd6abbc426
+ 7ff5db23de232a39cbb5c9f5143c355885e30ac596161a6b9fc50c4538bfbf01
+ 0c088468090055d72d87c73a946220a94db3d53ecf943b799ad4c09d7eb8801f
+ d3c650343dca9cb828d6a48e98db4fc4d75229b8e59570cade1026330ca336a6
+ bdb15ee58b44988a493b514194ca7e770b7c69d8af0c93d4447bcfa5fc044e3a
+ cf79e5ca8ca4d0552ffc5252a247f53f7abdf6a70cdc0ef098833512c8729110
+ a92b572b18ec80146b325e52a4677cf91a4afa34b02bbdfae753f4b3abf8c240
+ 02ad2e4e43128c679eb741275bab793281be88d05636c26ba6fc202087f2bd1e
+ 1010aa76cdea700e8c693aa29e58ceb0ea51c8f020e2b15c81318e2c05562aec
+ ea149d5ea35af6b32567a2dc2d565f7232f733ae92430f37cf2da448ec910cf5
+ 3a4084cf20e79df5389874fb8711f7beb8dc461575cea467fc1679b33ea8a8c1
+ 9850d63eb251a3cf98a0840fe31677e8adfe9c85664982e47ff2963522deb7b9
+ 17688c0162008de10a38768f4789e5b990e614ab8b79da20b4dbea68b91da7b9
+ cbaa6a2070398f47d0f6a2155edba68c201e51d7fade49d3444090f0f7193f09
+ c1fe2492afe35a2a5efa51455ea20e861cd7c1853945c1245092a5fcadeaf27a
+ 2df12d94056ac5307f2d13c3d47438885e0f8aafbde98b8b55a317df087285b0
+ daa0c353cd54fc731526f0840c8a8f7f316468636b2511403aebdb85ec346c83
+ 1cdc98ffdc0f67daf198ef6863493bd86adc95ffceea28598dea3087a643534b
+ d5b33a2af0588ac91d553ae6dd07fb3586ebfda66d55d8f4561b4ca048a30f91
+ 49e409c545776e67531392506cb3d8a152c50b6d532fa5ea880a5cf088213a7e
+ 47ddb4ede1c3c66add658ff6ba421d4d820c643a4a004b52dc5f05fe85b5cefc
+ 11da26288de6045219422d79d4a9aecbb9943af24ccee27ea19a081fb64d4f85
+ 19863945fd81c49158c27a798177c42a484f77ff869faef08df42df69da5c1f8
+ 9cdb45ba911c9e14e2073292429a6d53ae6cc76f7ad5a63e4f643c622a028660
+ b05e400bc9e960daf0d84b3fa40934604b697c3f06748f24c9632a4722423a3f
+ cc61826cd88d3d82e7465db74f7845388ae24a7cd9bbe72d11d014964ba54584
+ c784cb5b2fc094c6c766c3ae3eb6cb562fd08e49c3283f0385f663f317e6cb6c
+ 1ef5391d7a2687ca6cf6ab3662d341d64510f5d62636354e10402e4b0cbf33b7
+ ccc3445566a0cde8950e86433a118050c81bc9099000629115c6344b838bd89f
+ 17f1c4c3252b97b0f2d537d5266f967a34899bfc2ba86b48117a35e882135b7a
+ 3069ec8f254fab85d236e8ccc79eac48f1f4154b64ea888c848dfefcc0c55129
+ c26f4072b8fb6c43818948123bb01e9164407455073aaad7a7874ff66192bd44
+ 9914ceeb667bd576f3088b24f6fc5500c056ef252778f49280ec499bc07871cb
+ 8733fd34a0853332c9c93621ccf4cf385fbd6ce866c454d41f00e847041172af
+ b37344d93f546f55941fbfab2f2e3afb87b6f2348bcab23b03210d3841caeb94
+ e0eec0c31654cdd6d61f1e229bf30d03a65687efb2940cf5f6ad8cbb3be24c9a
+ 746268376d71020fe4d76ba99b284c438ce8a93d8f14f2256edb8c7e5f898d79
+ eae654d8591217046db6071f7a451d8f670bfed19f7741fc89d0ca6fe2ec3286
+ 64b1520a13729397fa5ffc602e8fbd82278905d88abe4aa121b4807388f5c1fd
+ b1d71e7963cad639252bb3835ae7061fc2e9a4ecca0f02b3ca945a7f5cc7f1dd
+ 8f63597ed3203939e8068d932bc94b4d96324b7fbf27414a80c99a50e2992ca6
+ e84723664dfca05d2dd8181bb152155e86400b8fb5cab47fc9f6a6e593bb2e8a
+ 9fc72cdbe425e11f02317a58a0c8d48b0fc2f083abab2aa2e5b1aa0ef56cd134
+ 20af9ba86d5d254225d0d999ed2632e31105002c8b2484820a5ae49594889735
+ 7d701e3318515b2f3de6ece496d24d5ad4edf364f0a21237988ee6399882d582
+ 77b9f299a9fe989332e038bfca88c16fef57b37b0c7e51005b512fb3c01beabf
+ a748b87535af394d2da746a58c27973219c8f25f6a515ef008a3d1a111b01e47
+ a9fba44d31ca7eb3aabb66ca78f3e024063d10d9570847dffa85c96622fe87d2
+ d6981fd12df96f70a3a67c3680e23cae8a1623d45be3775b9183157d83d9298f
+ 3e6fdf80dbbd3a2fa7ace83cec33515c77432d511839bb4846a61346fd943e3f
+ bfab911224c5fa86b6b2630ae5126ab2b3ac83cf570b051522f4c65f8a967214
+ 46762588818772a3dbb7f6174a65364aa2d1feb0d87cdc7ebb683fe650841eb4
+ 7d04fffb0e19175894e6d7a05c8979a4138ab779b59c1e3cb0b8941feae18585
+ 8bbcdf9e6745aa33c5f882dd804855ab4985dbb2d4b226c5b2ebeee488fb70e1
+ 255630538d649b6362e7c32cbde9213973633e086ba1fe2adf792846f3eb7ff4
+ f16fc2e89a5f906ce83fe143e39ad790726af3f2aa3545171a9dae43d39bc810
+ b0674fe7e4d725eeca6c018bf65ae70d7e0e46703bdd010dcdf43b27e644d1c3
+ 96b9ad936fed96f1ca0b50b8fd6ed1c1195f51b0e1e3a09df06b71d989f283cc
+ 599de024f076f03b75c341672eb0fbf6c64ad42018f62be1d92e9061938ea0f8
+ f602eeac6fb9e9a1a96e7e321dea6a386ad9f23dae29e95c97786f0d384cbb48
+ ecee47d63697b19d793a092c1bf6b4e7198b822d3e2e0fd44844accf1ed5d765
+ 4bbcf8ab34150b7db3d1017c3238c1cc5aea0da2c7807acacce55458b22c7a5b
+ c31378fa37dd863c4dc93528e38132d147ebdf9a7d73d69d7d1f9660e3d92925
+ e8680e1f89e76381820f89fc819b952e783919bf96d7d322322ebbfd8cb8a4d7
+ f2cdb0c8289fa87eb0278492635d86c79ccba617a3960596082a997b237c0b0c
+ 5d53d805473f2f563672f0f724b24fe83ff1c1b69f1b7957c4fd555f0f5fb227
+ f650a76363f7d621150a940c1bef41329b4a172a61658cb9b335b7aea8bc43a2
+ 404c749ff0f3d25b16f96a5acb6b00a2c67e528f1c3f1371ae8da61b2cc0aaef
+ 7ae177d6e5b441fc33daec99541df51a72ef957a80596fe7d928585798871124
+ 10bf5c041de15a8afb67d5199b3e92e80236e7bcf439cbff7ff94908a5d083d4
+ 596296ce8515ac6630d3d2b6f734e82bf7e1e360c0b35f723cbb0f86fa091326
+ 1705e6dcabf64d23d0c0cdaebc54dc1b1b3e43d04c0b7cce5c5eafe2178f764b
+ 7591e87d8fae8ffa6d30677bc43f6337df65f78a223b717d30511b27adeb2f2b
+ 932f7933986f38ede4f8368ee7e7be8dd67f069d5d236f6478b689f9dbfe7a05
+ 6b719c29a213fb1ac54be3d3f05029b2dc3491d840c0094988067e3317083664
+ 4dec4ea79f3561701c9d75f58c79b46e531e221f80e7f2ebbd7d53bad6fc2245
+ 085bb6f2b1a27d79c4b3f7975ed8c788d1fb69ba5723982b6191468f362db7e0
+ a0d249d5760ce06b2293927ad59c246c3eee8edeb528fd9b65cdc5500b534ac8
+ 3e6f77659603501aef90d09c12437ac14d0c1f9f1f4d5bee6035176db8bbdf44
+ bef21895a6f170225bbdc9c25adf326e24df643903bbd6991c5d33ade6f0ca28
+ ce26763308895f4436644e56299cda4cf7dd3ec098d892829d6dbceb06a8ffc5
+ 1502be0168ca095508dd318accb75cf07c3696249b9aaf99e63b86db034f776f
+ 1122eab7c4d31a84919c012dc8be0e3c47ae088c7a545806a5df70f2b60280e8
+ 71c70706c531a0d7d17e7bf0d904b1535253220dbfac9b958f22582f8686423d
+ 88d55521f2b9484479781b9cb550eef9b0f1b89923c41750acf07428ebf02b07
+ 2f396d1218dc873f0e7f1b0dceff9e87290036f5075df4972c1d65a09bb168a0
+ 266827024eda508c036c9fa328a5749d2faf0a95ca08ba270ab0b1bbb03f859d
+ 2bf5f90cafe30ab0bbdfcb323a8baa871495227e8a62a09735e94d4deafbb201
+ 0c0d80f6cb2937e37b36d01271d2a3395d686599bd0e2cfcf5c5a3416877ab9d
+ 0685d245ee75a340020c2c1586242e67ea93cba3befa184dca0d3f6a44236165
+ 1fcaa0768f933353a299ce84f0712d2bbee3afcd46ba359fde39cedaccb573a2
+ 06e5435dd2be397de4992a23347f2ba586f1c2dfc07d762613af24793f2296f2
+ cfdbfad0db0e2198a36e28e32e43f3db8dfbc2f52e422f4335d3fe26b932298a
+ 60c9ad7693eaee4c95f63272778350e57d35e54374e562f9a152f965829a8e52
+ c9e9a44ac9e9f0c0550250cc3c2b203e24016346f1fe7b36a185fdb2a969c2c5
+ acbe8bab626d1054e3d4c87d4441c9a391556859dc789dcfba55c09474577eac"
+skip_extraction="boost-${_boost_gitrev}.tar.gz
+ cpptoml-${_cpptoml_gitrev}.tar.gz
+ cryptopp-${_cryptopp_gitrev}.tar.gz
+ flatbuffers-${_flatbuffers_gitrev}.tar.gz
+ fmt-${_fmt_gitrev}.tar.gz
+ gtest-${_gtest_gitrev}.tar.gz
+ gtest-parallel-${_gtest_parallel_gitrev}.tar.gz
+ lmdb-${_lmdb_gitrev}.tar.gz
+ magic-enum-${_magic_enum_gitrev}.tar.gz
+ miniupnp-${_miniupnp_gitrev}.tar.gz
+ phc-winner-argon2-${_phc_winner_argon2_gitrev}.tar.gz
+ rocksdb-${_rocksdb_gitrev}.tar.gz
+ spdlog-${_spdlog_gitrev}.tar.gz
+ boost-algorithm-${_boost_algorithm_gitrev}.tar.gz
+ boost-align-${_boost_align_gitrev}.tar.gz
+ boost-any-${_boost_any_gitrev}.tar.gz
+ boost-array-${_boost_array_gitrev}.tar.gz
+ boost-asio-${_boost_asio_gitrev}.tar.gz
+ boost-assert-${_boost_assert_gitrev}.tar.gz
+ boost-atomic-${_boost_atomic_gitrev}.tar.gz
+ boost-beast-${_boost_beast_gitrev}.tar.gz
+ boost-bind-${_boost_bind_gitrev}.tar.gz
+ boost-chrono-${_boost_chrono_gitrev}.tar.gz
+ boost-circular_buffer-${_boost_circular_buffer_gitrev}.tar.gz
+ boost-concept_check-${_boost_concept_check_gitrev}.tar.gz
+ boost-config-${_boost_config_gitrev}.tar.gz
+ boost-container-${_boost_container_gitrev}.tar.gz
+ boost-container_hash-${_boost_container_hash_gitrev}.tar.gz
+ boost-context-${_boost_context_gitrev}.tar.gz
+ boost-conversion-${_boost_conversion_gitrev}.tar.gz
+ boost-core-${_boost_core_gitrev}.tar.gz
+ boost-coroutine-${_boost_coroutine_gitrev}.tar.gz
+ boost-date_time-${_boost_date_time_gitrev}.tar.gz
+ boost-describe-${_boost_describe_gitrev}.tar.gz
+ boost-detail-${_boost_detail_gitrev}.tar.gz
+ boost-dll-${_boost_dll_gitrev}.tar.gz
+ boost-dynamic_bitset-${_boost_dynamic_bitset_gitrev}.tar.gz
+ boost-endian-${_boost_endian_gitrev}.tar.gz
+ boost-exception-${_boost_exception_gitrev}.tar.gz
+ boost-filesystem-${_boost_filesystem_gitrev}.tar.gz
+ boost-foreach-${_boost_foreach_gitrev}.tar.gz
+ boost-format-${_boost_format_gitrev}.tar.gz
+ boost-function-${_boost_function_gitrev}.tar.gz
+ boost-function_types-${_boost_function_types_gitrev}.tar.gz
+ boost-functional-${_boost_functional_gitrev}.tar.gz
+ boost-fusion-${_boost_fusion_gitrev}.tar.gz
+ boost-integer-${_boost_integer_gitrev}.tar.gz
+ boost-interprocess-${_boost_interprocess_gitrev}.tar.gz
+ boost-intrusive-${_boost_intrusive_gitrev}.tar.gz
+ boost-io-${_boost_io_gitrev}.tar.gz
+ boost-iostreams-${_boost_iostreams_gitrev}.tar.gz
+ boost-iterator-${_boost_iterator_gitrev}.tar.gz
+ boost-lambda-${_boost_lambda_gitrev}.tar.gz
+ boost-lexical_cast-${_boost_lexical_cast_gitrev}.tar.gz
+ boost-log-${_boost_log_gitrev}.tar.gz
+ boost-logic-${_boost_logic_gitrev}.tar.gz
+ boost-math-${_boost_math_gitrev}.tar.gz
+ boost-move-${_boost_move_gitrev}.tar.gz
+ boost-mp11-${_boost_mp11_gitrev}.tar.gz
+ boost-mpl-${_boost_mpl_gitrev}.tar.gz
+ boost-multi_index-${_boost_multi_index_gitrev}.tar.gz
+ boost-multiprecision-${_boost_multiprecision_gitrev}.tar.gz
+ boost-numeric_conversion-${_boost_numeric_conversion_gitrev}.tar.gz
+ boost-optional-${_boost_optional_gitrev}.tar.gz
+ boost-parameter-${_boost_parameter_gitrev}.tar.gz
+ boost-phoenix-${_boost_phoenix_gitrev}.tar.gz
+ boost-pool-${_boost_pool_gitrev}.tar.gz
+ boost-predef-${_boost_predef_gitrev}.tar.gz
+ boost-preprocessor-${_boost_preprocessor_gitrev}.tar.gz
+ boost-process-${_boost_process_gitrev}.tar.gz
+ boost-program_options-${_boost_program_options_gitrev}.tar.gz
+ boost-property_tree-${_boost_property_tree_gitrev}.tar.gz
+ boost-proto-${_boost_proto_gitrev}.tar.gz
+ boost-random-${_boost_random_gitrev}.tar.gz
+ boost-range-${_boost_range_gitrev}.tar.gz
+ boost-ratio-${_boost_ratio_gitrev}.tar.gz
+ boost-rational-${_boost_rational_gitrev}.tar.gz
+ boost-regex-${_boost_regex_gitrev}.tar.gz
+ boost-scope-${_boost_scope_gitrev}.tar.gz
+ boost-scope_exit-${_boost_scope_exit_gitrev}.tar.gz
+ boost-serialization-${_boost_serialization_gitrev}.tar.gz
+ boost-smart_ptr-${_boost_smart_ptr_gitrev}.tar.gz
+ boost-spirit-${_boost_spirit_gitrev}.tar.gz
+ boost-stacktrace-${_boost_stacktrace_gitrev}.tar.gz
+ boost-static_assert-${_boost_static_assert_gitrev}.tar.gz
+ boost-static_string-${_boost_static_string_gitrev}.tar.gz
+ boost-system-${_boost_system_gitrev}.tar.gz
+ boost-test-${_boost_test_gitrev}.tar.gz
+ boost-thread-${_boost_thread_gitrev}.tar.gz
+ boost-throw_exception-${_boost_throw_exception_gitrev}.tar.gz
+ boost-tokenizer-${_boost_tokenizer_gitrev}.tar.gz
+ boost-tuple-${_boost_tuple_gitrev}.tar.gz
+ boost-type_index-${_boost_type_index_gitrev}.tar.gz
+ boost-type_traits-${_boost_type_traits_gitrev}.tar.gz
+ boost-typeof-${_boost_typeof_gitrev}.tar.gz
+ boost-unordered-${_boost_unordered_gitrev}.tar.gz
+ boost-utility-${_boost_utility_gitrev}.tar.gz
+ boost-variant-${_boost_variant_gitrev}.tar.gz
+ boost-variant2-${_boost_variant2_gitrev}.tar.gz
+ boost-winapi-${_boost_winapi_gitrev}.tar.gz"
+system_accounts="_nano"
+_nano_homedir="/var/lib/nano-node"
+make_dirs="/var/lib/nano-node 0755 _nano _nano"
+export CXXFLAGS+=" -Wno-deprecated-declarations"
+
+post_extract() {
+	vsrcextract -C ${wrksrc}/submodules/boost boost-${_boost_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/cpptoml cpptoml-${_cpptoml_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/cryptopp cryptopp-${_cryptopp_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/flatbuffers flatbuffers-${_flatbuffers_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/fmt fmt-${_fmt_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/gtest gtest-${_gtest_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/gtest-parallel gtest-parallel-${_gtest_parallel_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/lmdb lmdb-${_lmdb_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/magic_enum magic-enum-${_magic_enum_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/miniupnp miniupnp-${_miniupnp_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/phc-winner-argon2 phc-winner-argon2-${_phc_winner_argon2_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/rocksdb rocksdb-${_rocksdb_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/spdlog spdlog-${_spdlog_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/algorithm boost-algorithm-${_boost_algorithm_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/align boost-align-${_boost_align_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/any boost-any-${_boost_any_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/array boost-array-${_boost_array_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/asio boost-asio-${_boost_asio_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/assert boost-assert-${_boost_assert_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/atomic boost-atomic-${_boost_atomic_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/beast boost-beast-${_boost_beast_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/bind boost-bind-${_boost_bind_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/chrono boost-chrono-${_boost_chrono_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/circular_buffer boost-circular_buffer-${_boost_circular_buffer_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/concept_check boost-concept_check-${_boost_concept_check_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/config boost-config-${_boost_config_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/container boost-container-${_boost_container_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/container_hash boost-container_hash-${_boost_container_hash_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/context boost-context-${_boost_context_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/conversion boost-conversion-${_boost_conversion_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/core boost-core-${_boost_core_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/coroutine boost-coroutine-${_boost_coroutine_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/date_time boost-date_time-${_boost_date_time_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/describe boost-describe-${_boost_describe_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/detail boost-detail-${_boost_detail_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/dll boost-dll-${_boost_dll_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/dynamic_bitset boost-dynamic_bitset-${_boost_dynamic_bitset_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/endian boost-endian-${_boost_endian_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/exception boost-exception-${_boost_exception_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/filesystem boost-filesystem-${_boost_filesystem_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/foreach boost-foreach-${_boost_foreach_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/format boost-format-${_boost_format_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/function boost-function-${_boost_function_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/function_types boost-function_types-${_boost_function_types_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/functional boost-functional-${_boost_functional_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/fusion boost-fusion-${_boost_fusion_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/integer boost-integer-${_boost_integer_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/interprocess boost-interprocess-${_boost_interprocess_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/intrusive boost-intrusive-${_boost_intrusive_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/io boost-io-${_boost_io_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/iostreams boost-iostreams-${_boost_iostreams_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/iterator boost-iterator-${_boost_iterator_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/lambda boost-lambda-${_boost_lambda_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/lexical_cast boost-lexical_cast-${_boost_lexical_cast_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/log boost-log-${_boost_log_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/logic boost-logic-${_boost_logic_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/math boost-math-${_boost_math_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/move boost-move-${_boost_move_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/mp11 boost-mp11-${_boost_mp11_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/mpl boost-mpl-${_boost_mpl_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/multi_index boost-multi_index-${_boost_multi_index_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/multiprecision boost-multiprecision-${_boost_multiprecision_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/numeric/conversion boost-numeric_conversion-${_boost_numeric_conversion_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/optional boost-optional-${_boost_optional_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/parameter boost-parameter-${_boost_parameter_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/phoenix boost-phoenix-${_boost_phoenix_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/pool boost-pool-${_boost_pool_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/predef boost-predef-${_boost_predef_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/preprocessor boost-preprocessor-${_boost_preprocessor_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/process boost-process-${_boost_process_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/program_options boost-program_options-${_boost_program_options_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/property_tree boost-property_tree-${_boost_property_tree_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/proto boost-proto-${_boost_proto_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/random boost-random-${_boost_random_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/range boost-range-${_boost_range_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/ratio boost-ratio-${_boost_ratio_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/rational boost-rational-${_boost_rational_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/regex boost-regex-${_boost_regex_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/scope boost-scope-${_boost_scope_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/scope_exit boost-scope_exit-${_boost_scope_exit_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/serialization boost-serialization-${_boost_serialization_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/smart_ptr boost-smart_ptr-${_boost_smart_ptr_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/spirit boost-spirit-${_boost_spirit_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/stacktrace boost-stacktrace-${_boost_stacktrace_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/static_assert boost-static_assert-${_boost_static_assert_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/static_string boost-static_string-${_boost_static_string_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/system boost-system-${_boost_system_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/test boost-test-${_boost_test_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/thread boost-thread-${_boost_thread_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/throw_exception boost-throw_exception-${_boost_throw_exception_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/tokenizer boost-tokenizer-${_boost_tokenizer_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/tuple boost-tuple-${_boost_tuple_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/type_index boost-type_index-${_boost_type_index_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/type_traits boost-type_traits-${_boost_type_traits_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/typeof boost-typeof-${_boost_typeof_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/utility boost-unordered-${_boost_unordered_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/unordered boost-utility-${_boost_utility_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/variant boost-variant-${_boost_variant_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/variant2 boost-variant2-${_boost_variant2_gitrev}.tar.gz
+	vsrcextract -C ${wrksrc}/submodules/boost/libs/winapi boost-winapi-${_boost_winapi_gitrev}.tar.gz
+}
+
+pre_build() {
+	if grep -q avx2 /proc/cpuinfo; then
+		echo "using AVX2 optimizations"
+		configure_args+=" -DENABLE_AVX2=ON -DPERMUTE_WITH_GATHER=ON -DPERMUTE_WITH_SHUFFLES=ON"
+	else
+		echo "excluding unsupported AVX2 optimizations"
+	fi
+	if grep -q sse4 /proc/cpuinfo; then
+		echo "build with SIMD optimizations"
+		configure_args+=" -DNANO_SIMD_OPTIMIZATIONS=ON"
+	else
+		echo "excluding unsupported SIMD optimizations"
+		configure_args+=" -DNANO_SIMD_OPTIMIZATIONS=OFF"
+	fi
+}
+
+do_install() {
+	vbin build/nano_node
+	vbin build/nano_rpc
+	vbin build/nano_wallet
+}
+
+post_install() {
+	vlicense LICENSE
+	vsv nano-node
+}
