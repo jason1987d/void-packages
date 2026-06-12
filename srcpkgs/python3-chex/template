@@ -1,6 +1,6 @@
 # Template file for 'python3-chex'
 pkgname=python3-chex
-version=0.1.91
+version=0.1.92
 revision=1
 build_style=python3-pep517
 hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
@@ -11,8 +11,4 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="Apache-2.0"
 homepage="https://github.com/google-deepmind/chex"
 distfiles="https://github.com/google-deepmind/chex/archive/refs/tags/v${version}.tar.gz"
-checksum=0e67bc74c6914f4515c45927ff396c3d242e7fd9fe5c1da45ec937b85ccfaefc
-make_check=no # test failures:
-# FAILED chex/_src/asserts_test.py::TreeAssertionsTest::test_assert_tree_is_on_device
-# FAILED chex/_src/asserts_test.py::TreeAssertionsTest::test_assert_tree_is_on_host                                              
-# FAILED chex/_src/asserts_test.py::TreeAssertionsTest::test_assert_tree_is_sharded
+checksum=f56c7b1c4bfc84a365414398f65e48e5925813dbb33858f490654be0d7a02e21
