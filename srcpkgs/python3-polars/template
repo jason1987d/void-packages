@@ -1,6 +1,6 @@
 # Template file for 'python3-polars'
 pkgname=python3-polars
-version=1.40.1
+version=1.41.2
 revision=1
 build_style=python3-pep517
 build_helper="rust"
@@ -12,10 +12,11 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/pola-rs/polars"
 distfiles="https://github.com/pola-rs/polars/archive/refs/tags/py-${version}.tar.gz"
-checksum=f086d7b31d3276bab5d27cdaaed2cd4d73c1695428b735de780ca53d4bbfaba3
+checksum=4459f3ddbde8babb827b140e15920c6e2075959190a6d13428a7aa7ba50d0a95
 build_wrksrc=py-polars
 make_check=no # too many dependencies
 export RUSTC_BOOTSTRAP=1
+export CARGO_BUILD_JOBS=1
 
 post_install() {
 	vlicense LICENSE
