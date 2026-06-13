@@ -1,0 +1,29 @@
+# Template file for 's2n-tls'
+pkgname=s2n-tls
+version=1.7.4
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+makedepends="libgcc-devel glibc-devel openssl-devel"
+short_desc="AWS C99 implementation of the TLS/SSL protocols"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/aws/s2n-tls"
+distfiles="https://github.com/aws/s2n-tls/archive/refs/tags/v${version}.tar.gz"
+checksum=d2fbf45c0e039bdb6f253a392fc8bbdd258bfe0bd586f3516a2c97bb138b8e17
+
+post_install() {
+	vmkdir usr/lib/cmake/s2n
+	mv ${DESTDIR}/usr/lib/s2n/cmake/* ${DESTDIR}/usr/lib/cmake/s2n/
+	rm -r ${DESTDIR}/usr/lib/s2n
+}
+
+s2n-tls-devel_package() {
+	depends="s2n-tls>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/cmake
+		vmove "usr/lib/*.so"
+	}
+}
