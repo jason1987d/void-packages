@@ -1,6 +1,6 @@
 # Template file for 'python3-jaxtyping'
 pkgname=python3-jaxtyping
-version=0.3.10
+version=0.3.11
 revision=1
 build_style=python3-pep517
 hostmakedepends="hatchling"
@@ -10,7 +10,7 @@ maintainer="Jason Elswick <jason@jasondavid.us>"
 license="MIT"
 homepage="https://github.com/patrick-kidger/jaxtyping"
 distfiles="https://github.com/patrick-kidger/jaxtyping/archive/refs/tags/v${version}.tar.gz"
-checksum=aceb0869c96f2381c75b55de714223db3815da22e5b57b220ddb172bc26d35cc
+checksum=036563f822e36522ef92aaae2f0cc5ba3515798a12181890a51266440059d7d8
 make_check=no # unpackaged dependencies
 
 post_install() {
