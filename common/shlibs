@@ -4603,3 +4603,4 @@ libc10.so python3-pytorch-2.9.1_1
 libaws-c-common.so.1 aws-c-common-0.14.0_1
 libaws-c-cal.so.1.0.0 aws-c-cal-0.9.14_1
 libs2n.so.1 s2n-tls-1.7.4_1
+libaws-c-io.so.1.0.0 aws-c-io-0.27.2_1

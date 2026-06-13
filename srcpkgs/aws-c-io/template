@@ -1,0 +1,23 @@
+# Template file for 'aws-c-io'
+pkgname=aws-c-io
+version=0.27.2
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+makedepends="aws-c-cal-devel aws-c-common-devel s2n-tls-devel openssl-devel"
+short_desc="AWS SDK module to handle all IO and TLS work for application protocols"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/awslabs/aws-c-io"
+distfiles="https://github.com/awslabs/aws-c-io/archive/refs/tags/v${version}.tar.gz"
+checksum=42caef5ef624ca8f5046d4e9f21c8dcaf1c4d7d0b2d46d965357b13079f2d2d3
+
+aws-c-io-devel_package() {
+	depends="aws-c-io>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/cmake
+	}
+}
