@@ -1,0 +1,22 @@
+# Template file for 'aws-c-compression'
+pkgname=aws-c-compression
+version=0.3.2
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+makedepends="aws-c-common-devel"
+short_desc="C99 implementation of huffman encoding/decoding"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/awslabs/aws-c-compression"
+distfiles="https://github.com/awslabs/aws-c-compression/archive/refs/tags/v${version}.tar.gz"
+checksum=f93f5a5d8b3fee3a6d97b14ba279efacd4d4016ef9cc7dc4be7d43519ecfbe93
+
+aws-c-compression-devel_package() {
+	depends="aws-c-compression>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/cmake
+	}
+}
