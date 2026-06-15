@@ -1,0 +1,21 @@
+# Template file for 'ollama'
+pkgname=ollama
+version=0.33.3
+revision=1
+build_style=go
+configure_args="-DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr"
+go_import_path="github.com/ollama/ollama"
+short_desc="Local LLM system"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/ollama/ollama"
+distfiles="https://github.com/ollama/ollama/archive/refs/tags/v${version}.tar.gz"
+checksum=eaf9e0e7f78f1cac54dea518cbab6346890516e28c49575ee754bd778094d6d6
+system_accounts="_ollama"
+transmission_homedir="/var/lib/ollama"
+make_dirs="/var/lib/ollama 0755 _ollama _ollama"
+
+post_install() {
+	vlicense LICENSE
+	vsv ollama
+}
