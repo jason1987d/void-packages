@@ -1,0 +1,21 @@
+# Template file for 'ollama'
+pkgname=ollama
+version=0.40.15
+revision=1
+archs="x86_64 x86_64-musl aarch64 aarch64-musl"
+build_style=go
+go_import_path="github.com/ollama/ollama"
+short_desc="Local LLM system"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/ollama/ollama"
+distfiles="https://github.com/ollama/ollama/archive/refs/tags/v${version}.tar.gz"
+checksum=b3cd037b5beebbdb6fcea8cba62276507316e42fdee6b0f31773bae0e6247c82
+system_accounts="_ollama"
+_ollama_homedir="/var/lib/ollama"
+make_dirs="/var/lib/ollama 0755 _ollama _ollama"
+
+post_install() {
+	vlicense LICENSE
+	vsv ollama
+}
