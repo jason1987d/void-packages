@@ -1,0 +1,19 @@
+# Template file for 'python3-unidic-lite'
+
+pkgname=python3-unidic-lite
+version=1.0.8
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+makedepends="python3-devel"
+short_desc="Small version of UniDic packaged for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT AND BSD-3-Clause"
+homepage="https://github.com/polm/unidic-py"
+distfiles="${PYPI_SITE}/u/unidic-lite/unidic-lite-${version}.tar.gz"
+checksum=db9d4572d9fdd4d00a97949d4b0741ec480ee05a7e7e2e32f547500dae27b245
+
+post_install() {
+	vlicense LICENSE
+	vlicense LICENSE.unidic
+}
