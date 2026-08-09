@@ -1,0 +1,20 @@
+# Template file for 'python3-jieba'
+
+pkgname=python3-jieba
+version=0.42.1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools"
+checkdepends="python3-pytest"
+short_desc="Chinese text segmentation utilities"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/fxsjy/jieba"
+distfiles="https://github.com/fxsjy/jieba/archive/refs/tags/v${version}.tar.gz"
+checksum=607dd88ab9ac78b09d475cf19a3729539beaaecdf42fd5e46f933ffaedaa428e
+make_check=no # requires paddlepaddle and whoosh, will package later
+# note paddlepaddle in turns requires safetensors, which I will cherry pick from a finance-ai-ml branch that already has that built
+
+post_install() {
+	vlicense LICENSE
+}
