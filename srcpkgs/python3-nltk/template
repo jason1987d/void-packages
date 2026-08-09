@@ -1,0 +1,25 @@
+# Template file for 'python3-nltk'
+pkgname=python3-nltk
+version=3.10.3
+revision=1
+build_style=python3-module
+make_check_args="-k not(twitter)
+ --deselect nltk/test/unit/test_boxer_security.py::test_relative_bin_dir_is_rejected
+ --deselect nltk/test/unit/test_boxer_security.py::test_cwd_nested_dir_with_default_bin_dir_is_rejected
+ --deselect nltk/test/unit/test_classify.py::test_megam
+ --deselect nltk/test/unit/test_classify.py::test_tadm
+ --deselect nltk/test/unit/test_internals.py::test_find_binary_refuses_cwd_only_executable
+ --deselect nltk/test/unit/test_malt_security.py::test_relative_dirname_not_resolved_against_cwd
+ --deselect nltk/test/unit/test_malt_security.py::test_pathlike_argument_is_handled
+ --deselect nltk/test/unit/test_pickle_load_warnings.py::test_chartparser_app_uses_pickle_load_not_pickle_load_standard
+ --deselect nltk/test/unit/test_repp_security.py::test_relative_dirname_not_resolved_against_cwd
+ --deselect nltk/test/unit/test_rte_classify.py::TestRTEClassifier::test_rte_classification_with_megam"
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-click python3-joblib python3-regex python3-tqdm python3-numpy python3-crfsuite python3-scikit-learn python3-scipy python3-matplotlib python3-requests python3-parsing nltk-data python3-defusedxml"
+checkdepends="${depends} python3-pylint python3-pytest python3-pytest-cov python3-pytest-mock tox"
+short_desc="Python natural language toolkit"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://www.nltk.org/"
+distfiles="https://github.com/nltk/nltk/archive/refs/tags/v${version}.tar.gz"
+checksum=6b7ff7a6d061df0ad2a5f2a1ddd9cd2cfa764fe8786cedf475923eb00d9a6107
