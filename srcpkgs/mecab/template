@@ -1,0 +1,31 @@
+# Template file for 'mecab'
+
+pkgname=mecab
+version=0.996
+revision=1
+build_style=gnu-configure
+short_desc="Yet another part-of-speech and morphological analyzer"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause OR GPL-2.0-only OR LGPL-2.1-only"
+homepage="https://taku910.github.io/mecab/"
+distfiles="https://deb.debian.org/debian/pool/main/m/mecab/mecab_${version}.orig.tar.gz"
+checksum=e073325783135b72e666145c781bb48fada583d5224fb2490fb6c1403ba69c59
+subpackages="${pkgname}-devel"
+
+post_install() {
+	vlicense COPYING
+	vlicense GPL
+	vlicense LGPL
+	vlicense BSD
+}
+
+mecab-devel_package() {
+	short_desc+=" - development files"
+	depends="${sourcepkg}>=${version}_${revision}"
+	pkg_install() {
+		vmove usr/bin/mecab-config
+		vmove usr/include
+		vmove "usr/lib/*.a"
+		vmove "usr/lib/*.so"
+	}
+}
