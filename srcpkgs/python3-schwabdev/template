@@ -1,0 +1,18 @@
+# Template file for 'python3-schwabdev'
+pkgname=python3-schwabdev
+version=4.0.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="tzdata python3-aiohttp python3-requests python3-websockets python3-cryptography"
+checkdepends="${depends} python3-pytest python3-pytest-asyncio python3-coverage"
+short_desc="Python wrapper for using the Charles Schwab API"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/tylerebowers/Schwabdev"
+distfiles="https://github.com/tylerebowers/Schwabdev/archive/refs/tags/${version}.tar.gz"
+checksum=2496bd3a0c22d8e30828c6a6ddbc4f6791068c65d949f1717a599360647fce08
+
+post_install() {
+	vlicense LICENSE.txt
+}
