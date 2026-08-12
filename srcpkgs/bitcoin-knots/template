@@ -1,0 +1,70 @@
+# Template file for 'bitcoin-knots'
+pkgname=bitcoin-knots
+version=29.4.knots20260508
+revision=1
+build_style=cmake
+configure_args="-DBUILD_TESTS=ON -DBUILD_TX=ON -DBUILD_GUI=ON -DBUILD_CLI=ON -DBUILD_DAEMON=ON -WITH_CCACHE=OFF -DRDTS_CONSENT=IMPLICIT -DBUILD_BITCOINCONSENSUS_LIB=ON -DBUILD_SHARED_LIBS=ON"
+hostmakedepends="automake libtool pkg-config yasm librsvg-utils ImageMagick"
+makedepends="db-devel boost-devel-minimal miniupnpc-devel qt5-tools-devel
+ libevent-devel qrencode-devel sqlite-devel capnproto-devel librsvg-devel"
+short_desc="Bitcoin is a peer-to-peer network based digital currency"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://bitcoinknots.org/"
+distfiles="https://bitcoinknots.org/files/29.x/${version}/bitcoin-${version}.tar.gz"
+checksum=36032ab380ac1337fb73dcbbd32a7bae8669cd2c82c440929083e7ae67fee1ab
+conflicts="bitcoin"
+CFLAGS="-UNDEBUG"
+CXXFLAGS="-UNDEBUG"
+
+system_accounts="_bitcoin"
+_bitcoin_homedir="/var/lib/bitcoin"
+make_dirs="/var/lib/bitcoin 0755 _bitcoin _bitcoin"
+
+if [ "$CROSS_BUILD" ]; then
+	hostmakedepends+=" qt5-host-tools"
+fi
+
+pre_configure() {
+	case "$XBPS_TARGET_MACHINE" in
+	aarch64*)
+		CFLAGS=${CFLAGS/armv8-a/armv8-a+crc+crypto}
+		CXXFLAGS=${CXXFLAGS/armv8-a/armv8-a+crc+crypto}
+		;;
+	esac
+}
+
+pre_build() {
+	export BITCOIN_GENBUILD_NO_GIT=1
+}
+
+post_install() {
+	vlicense COPYING
+	vsv bitcoind
+}
+
+bitcoin-knots-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	conflicts="litecoin bitcoin"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/pkgconfig
+		vmove "usr/lib/*.so"
+		vdoc doc/shared-libraries.md
+	}
+}
+
+bitcoin-knots-qt_package() {
+	depends="desktop-file-utils"
+	conflicts="bitcoin"
+	short_desc+=" - QT GUI"
+	pkg_install() {
+		vmove usr/bin/bitcoin-qt
+		vmove usr/share/man/man1/bitcoin-qt.1
+		vinstall "${wrksrc}/share/pixmaps/bitcoin128.png" 644 usr/share/pixmaps
+		vinstall "${FILESDIR}/bitcoin-qt.desktop" 644 usr/share/applications
+		vlicense COPYING
+		rm "${DESTDIR}"/usr/bin/test_bitcoin-qt
+	}
+}
