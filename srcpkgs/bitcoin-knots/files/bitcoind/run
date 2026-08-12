@@ -1,0 +1,4 @@
+#!/bin/bash
+[ -r conf ] && . ./conf
+exec 2>&1
+exec chpst -u _bitcoin:_bitcoin bitcoind ${OPTS}
