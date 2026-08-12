@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Bitcoin Knots
+Comment=Bitcoin Knots wallet
+Exec=bitcoin-qt %u
+Icon=bitcoin-knots
+Terminal=false
+Type=Application
+Categories=Finance;
+MimeType=x-scheme-handler/bitcoin;
