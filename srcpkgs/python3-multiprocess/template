@@ -1,0 +1,18 @@
+# Template file for 'python3-multiprocess'
+pkgname=python3-multiprocess
+version=0.70.19
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-dill"
+short_desc="Better multiprocessing and multithreading in Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/uqfoundation/multiprocess"
+distfiles="https://github.com/uqfoundation/multiprocess/archive/refs/tags/${version}.tar.gz"
+checksum=098d607e6becc71d74665700ffd3576755098d13216b7f5fe4c344296e436bd5
+make_check=no # depends on python3-tests which is not packaged in void
+
+post_install() {
+	vlicense LICENSE
+}
