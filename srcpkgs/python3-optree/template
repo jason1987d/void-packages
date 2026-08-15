@@ -1,0 +1,19 @@
+# Template file for 'python3-optree'
+pkgname=python3-optree
+version=0.20.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-pybind11 python3-wheel cmake"
+depends="python3-typing_extensions"
+checkdepends="python3-pytest python3-pytest-cov python3-rich python3-covdefaults ${depends}"
+short_desc="Optimized PyTree Utilities"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/metaopt/optree"
+changelog="https://github.com/metaopt/optree/blob/main/CHANGELOG.md"
+distfiles="https://github.com/metaopt/optree/archive/refs/tags/v${version}.tar.gz"
+checksum=7e7cff06fb39e4c9f88d835cdd5385daca82bc38628ac35edb1767da8a508506
+
+post_extract() {
+	sed -i "s/or key in ('PYTHON_GIL', 'PYTHONDEVMODE', 'PYTHONHASHSEED')/or key in ('PYTHON_GIL', 'PYTHONDEVMODE', 'PYTHONHASHSEED', 'PYTHONPATH')/" tests/helpers.py
+}
