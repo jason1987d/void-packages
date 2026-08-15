@@ -1,0 +1,16 @@
+# Template file for 'python3-hf_xet'
+pkgname=python3-hf_xet
+version=1.6.0
+revision=1
+build_style=python3-pep517
+build_wrksrc=hf_xet
+build_helper=rust
+hostmakedepends="python3-setuptools python3-wheel maturin cargo pkg-config"
+makedepends="openssl-devel"
+checkdepends="python3-pytest"
+short_desc="Xet client tech, used in huggingface_hub"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/huggingface/xet-core"
+distfiles="https://github.com/huggingface/xet-core/archive/refs/tags/v${version}.tar.gz"
+checksum=fa796045261b5cc8accd598e699b2511856ad539275b16f0302cdbe6ae55f722
