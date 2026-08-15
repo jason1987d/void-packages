@@ -1,0 +1,8 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -61,6 +61,7 @@
+ 
+ [tool.setuptools-git-versioning]
+ enabled = true
++starting_version = "3.1.0"
+ dev_template = "{tag}.post{ccount}"
