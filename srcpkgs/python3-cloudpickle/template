@@ -1,0 +1,18 @@
+# Template file for 'python3-cloudpickle'
+pkgname=python3-cloudpickle
+version=3.1.2
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-flit_core"
+checkdepends="python3-pytest python3-pytest-cov python3-psutil python3-tornado python3-ipython_ipykernel python3-numpy python3-setuptools"
+short_desc="Extended pickling support for Python objects"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/cloudpipe/cloudpickle"
+changelog="https://github.com/cloudpipe/cloudpickle/blob/master/CHANGES.md"
+distfiles="https://github.com/cloudpipe/cloudpickle/archive/refs/tags/v${version}.tar.gz"
+checksum=7acae4307459d436eee740eea52ec9056f37b8b907d6aef7b0a97a1ccff90ff9
+
+post_install() {
+	vlicense LICENSE
+}
