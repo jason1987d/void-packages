@@ -1,0 +1,24 @@
+# Template file for 'python3-ml_dtypes'
+pkgname=python3-ml_dtypes
+version=0.7.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-scikit-build-core ninja"
+makedepends="python3-numpy python-devel"
+depends="python3-numpy python3-platformdirs"
+checkdepends="${depends} python3-pytest python3-abseil"
+short_desc="Implementation of NumPy dtype machine learning extensions"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0,MPL-2.0"
+homepage="https://github.com/jax-ml/ml_dtypes"
+changelog="https://github.com/jax-ml/ml_dtypes/blob/main/CHANGELOG.md"
+_eigen_gitrev=e705485a725643d65b7432319eac407ee5588835
+distfiles="https://github.com/jax-ml/ml_dtypes/archive/refs/tags/v${version}.tar.gz
+ https://gitlab.com/libeigen/eigen/-/archive/${_eigen_gitrev}.tar.gz"
+checksum="55371beae735d4d008a6575968d054187c19db0ec41b69352c1247ce595c9dcd
+ 6f052d6f404cd96c736fd24aa49c50c81070351bed1876f0f70376834db146b2"
+skip_extraction="${_eigen_gitrev}.tar.gz"
+
+post_extract() {
+	vsrcextract -C third_party/eigen ${_eigen_gitrev}.tar.gz
+}
