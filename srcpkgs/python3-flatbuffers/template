@@ -1,0 +1,24 @@
+# Template file for 'python3-flatbuffers'
+pkgname=python3-flatbuffers
+version=25.12.19
+revision=1
+build_style=python3-module
+build_wrksrc=python
+hostmakedepends="python3-setuptools"
+checkdepends="python3-numpy cmake which python3-coverage"
+short_desc="Python runtime library for FlatBuffers"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://google.github.io/flatbuffers/"
+changelog="https://github.com/google/flatbuffers/blob/master/CHANGELOG.md"
+distfiles="https://github.com/google/flatbuffers/archive/refs/tags/v${version}.tar.gz"
+checksum=f81c3162b1046fe8b84b9a0dbdd383e24fdbcf88583b9cb6028f90d04d90696a
+
+do_check() {
+	local builddir="${wrksrc}/.check-build"
+	cmake -S "${wrksrc}" -B "${builddir}" -DCMAKE_BUILD_TYPE=None -DFLATBUFFERS_BUILD_TESTS=OFF -DFLATBUFFERS_BUILD_GRPCTEST=OFF -DFLATBUFFERS_BUILD_CPP17=OFF -DFLATBUFFERS_BUILD_FLATLIB=OFF -DFLATBUFFERS_BUILD_SHAREDLIB=OFF -DFLATBUFFERS_BUILD_LEGACY=OFF
+	cmake --build "${builddir}" --target flatc
+	ln -sf "${builddir}/flatc" "${wrksrc}/flatc"
+	cd "${wrksrc}/tests"
+	FLATC="${builddir}/flatc" ./PythonTest.sh
+}
