@@ -1,0 +1,23 @@
+# Template file for 'aws-c-http'
+pkgname=aws-c-http
+version=0.11.1
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+makedepends="aws-c-cal-devel aws-c-common-devel aws-c-compression-devel aws-c-io-devel s2n-tls-devel openssl-devel"
+short_desc="AWS C99 implementation of the HTTP/1.1 and HTTP/2 specifications"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/awslabs/aws-c-http"
+distfiles="https://github.com/awslabs/aws-c-http/archive/refs/tags/v${version}.tar.gz"
+checksum=2988843d5c95d92249d40e59480c2a4376533a91d8e38a5106dc4da5a8720ce5
+
+aws-c-http-devel_package() {
+	depends="aws-c-http>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/cmake
+	}
+}
