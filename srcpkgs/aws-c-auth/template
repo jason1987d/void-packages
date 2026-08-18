@@ -1,0 +1,23 @@
+# Template file for 'aws-c-auth'
+pkgname=aws-c-auth
+version=0.10.5
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+makedepends="aws-c-cal-devel aws-c-common-devel aws-c-http-devel aws-c-io-devel aws-c-sdkutils-devel aws-c-compression-devel s2n-tls-devel openssl-devel"
+short_desc="C99 library implementation of AWS client-side authentication"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/awslabs/aws-c-auth"
+distfiles="https://github.com/awslabs/aws-c-auth/archive/refs/tags/v${version}.tar.gz"
+checksum=1ddd1dc476debdbf9ff083e254396fdc3ea0846dccf7d5f983a6571303abcb35
+
+aws-c-auth-devel_package() {
+	depends="aws-c-auth>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/cmake
+	}
+}
