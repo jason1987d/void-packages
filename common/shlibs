@@ -4695,7 +4695,6 @@ libcgif.so.0 cgif-0.5.3_1
 libdsk.so.5 libdsk-1.5.22_1
 libblend2d.so libblend2d-0.21.2_1
 libs2n.so.1 s2n-tls-1.7.10_1
-libaws-c-cal.so.1.0 aws-c-cal-1.0.0_1
 libaws-c-sdkutils.so.1.0 aws-c-sdkutils-1.0.0_1
 libaws-c-common.so.1.0 aws-c-common-1.0.3_1
 libs2n.so.1 s2n-tls-1.7.10_1
@@ -4703,7 +4702,7 @@ libs2n.so.1 s2n-tls-1.7.10_1
 libaws-c-sdkutils.so.1.0 aws-c-sdkutils-1.0.0_1
 libaws-c-common.so.1.0 aws-c-common-1.0.4_1
 libaws-c-cal.so.1.0 aws-c-cal-1.0.0_1
-libaws-c-auth.so.1.0 aws-c-auth-1.0.0_1
+libaws-c-auth.so.1.0 aws-c-auth-1.0.2_1
 libarrow_compute.so.2500 arrow-25.0.1_1
 libarrow_acero.so.2500 arrow-25.0.1_1
 libarrow.so.2500 arrow-25.0.1_1
