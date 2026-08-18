@@ -4631,3 +4631,4 @@ libaws-c-compression.so.1.0.0 aws-c-compression-0.3.3_1
 libaws-c-io.so.1.0.0 aws-c-io-0.27.7_1
 libaws-c-http.so.1.0.0 aws-c-http-0.11.1_1
 libaws-c-sdkutils.so.1.0.0 aws-c-sdkutils-0.2.10_1
+libaws-c-auth.so.1.0.0 aws-c-auth-0.10.5_1
