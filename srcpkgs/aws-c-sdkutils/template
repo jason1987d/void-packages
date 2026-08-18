@@ -1,0 +1,23 @@
+# Template file for 'aws-c-sdkutils'
+pkgname=aws-c-sdkutils
+version=0.2.10
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+makedepends="aws-c-common-devel"
+short_desc="AWS SDK utility library"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/awslabs/aws-c-sdkutils"
+distfiles="https://github.com/awslabs/aws-c-sdkutils/archive/refs/tags/v${version}.tar.gz"
+checksum=23bfb010c7a5becc48b7e36212a4f401319a46ec3e981eb9adb9d6b215e7a65e
+
+aws-c-sdkutils-devel_package() {
+	depends="aws-c-sdkutils>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/cmake
+	}
+}
