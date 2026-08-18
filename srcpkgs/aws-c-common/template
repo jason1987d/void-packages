@@ -1,0 +1,22 @@
+# Template file for 'aws-c-common'
+pkgname=aws-c-common
+version=1.0.4
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+short_desc="Core c99 package for AWS SDK for C"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/awslabs/aws-c-common"
+distfiles="https://github.com/awslabs/aws-c-common/archive/refs/tags/v${version}.tar.gz"
+checksum=74d001d5900868e8145b6968832d6273215df5342b8df69afcc3d6dfd59f430b
+
+aws-c-common-devel_package() {
+	depends="aws-c-common>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/cmake
+		vmove usr/lib/*.so
+	}
+}
