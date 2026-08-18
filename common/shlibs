@@ -4688,8 +4688,7 @@ libcgif.so.0 cgif-0.5.3_1
 libdsk.so.5 libdsk-1.5.22_1
 libblend2d.so libblend2d-0.21.2_1
 libaws-c-common.so.1.0 aws-c-common-1.0.0_1
-libs2n.so.1 s2n-tls-1.7.7_1
-libs2n.so.1 s2n-tls-1.7.8_1
+libs2n.so.1 s2n-tls-1.7.10_1
 libaws-c-cal.so.1.0.0 aws-c-cal-0.9.15_1
 libaws-c-compression.so.1.0.0 aws-c-compression-0.3.3_1
 libaws-c-io.so.1.0.0 aws-c-io-0.27.7_1
