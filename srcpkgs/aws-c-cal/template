@@ -1,0 +1,22 @@
+# Template file for 'aws-c-cal'
+pkgname=aws-c-cal
+version=0.9.15
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+makedepends="aws-c-common-devel openssl-devel"
+short_desc="AWS Crypto Abstraction Layer: C99 wrapper for cryptography primitives"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/awslabs/aws-c-cal"
+distfiles="https://github.com/awslabs/aws-c-cal/archive/refs/tags/v${version}.tar.gz"
+checksum=215dd31c12ea49c4f40aa7882a800f9648e4095cfcb2d6abdd27e957574ad6e2
+
+aws-c-cal-devel_package() {
+	depends="aws-c-cal>=${version}_${revision}"
+	short_desc+=" - development files"
+	pkg_install() {
+		vmove usr/include
+		vmove usr/lib/cmake
+	}
+}
