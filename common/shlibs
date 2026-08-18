@@ -4694,7 +4694,7 @@ libaws-c-compression.so.1.0 aws-c-compression-1.0.0_1
 libaws-c-io.so.1.0 aws-c-io-1.0.0_1
 libaws-c-http.so.1.0 aws-c-http-1.0.0_1
 libaws-c-sdkutils.so.1.0 aws-c-sdkutils-1.0.0_1
-libaws-c-auth.so.1.0.0 aws-c-auth-0.10.5_1
+libaws-c-auth.so.1.0 aws-c-auth-1.0.0_1
 libarrow_compute.so.2500 arrow-25.0.1_1
 libarrow_acero.so.2500 arrow-25.0.1_1
 libarrow.so.2500 arrow-25.0.1_1
