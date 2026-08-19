@@ -1,0 +1,44 @@
+# Template file for 'python3-tensorstore'
+pkgname=python3-tensorstore
+version=0.1.85
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-setuptools_scm python3-numpy cmake python3-pybind11 json-c++ python3-pip"
+makedepends="python3-devel libavif-devel re2-devel zlib-devel openssl-devel tiff-devel c-blosc-devel libpng-devel bzip2-devel aws-c-common-devel aws-c-auth-devel aws-c-compression-devel aws-c-cal-devel aws-c-http-devel aws-c-io-devel aws-c-sdkutils-devel tinyxml2-devel c-ares-devel libcurl-devel s2n-tls-devel"
+depends="python3-numpy python3-ml_dtypes"
+checkdepends="python3-pytest python3-pytest-asyncio python3-cloudpickle ${depends}"
+short_desc="Library for reading and writing large multi-dimensional arrays"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/tensorstore"
+distfiles="https://github.com/google/tensorstore/archive/refs/tags/v${version}.tar.gz"
+checksum=be4cc2c130cb962b311aaf196678d30f35cd1bd73248b582c983978602cb2c5f
+
+pre_build() {
+	local _system_libs=(aws_c_auth aws_c_cal aws_c_common aws_c_compression aws_c_http aws_c_io aws_c_sdkutils aws_checksums aws_s2n_tls boringssl brotli bzip2 c-ares com_github_pybind_pybind11 curl libjpeg_turbo libpng libtiff libwebp lz4 nlohmann_json org_aomedia_avif org_blosc_cblosc org_nghttp2 re2 snappy tinyxml2 xz zlib zstd)
+	export TENSORSTORE_SYSTEM_LIBS="${_system_libs[*]}"
+	export TENSORSTORE_SYSTEM_LIBS="${TENSORSTORE_SYSTEM_LIBS// /,}"
+	export TENSORSTORE_SYSTEM_PYTHON_LIBS=numpy
+
+	python -u bazelisk.py build -c opt --copt=-O3 --//tensorstore/internal/version="$pkgver" //python/tensorstore:_tensorstore__shared_objects --verbose_failures '--remote_download_regex=.*/(_tensorstore\.(so|pyd))' --copt=-fvisibility=hidden
+	local _prebuilt_dir="$PWD/build/tensorstore-prebuilt"
+	local _ext_suffix="$(python -c 'import sysconfig; print(sysconfig.get_config_var("EXT_SUFFIX"))')"
+	install -Dm755 bazel-bin/python/tensorstore/_tensorstore.so "$_prebuilt_dir/tensorstore/_tensorstore${_ext_suffix}"
+	export TENSORSTORE_PREBUILT_DIR="$_prebuilt_dir"
+}
+
+do_check() {
+	local _testdir="${XBPS_BUILDDIR}/tensorstore-test"
+
+	rm -rf "$_testdir"
+	mkdir -p "$_testdir"
+
+	python -m pip install --no-deps --target "$_testdir" \
+		dist/*.whl
+
+	cd "$_testdir"
+
+	python -m pytest \
+		"$wrksrc/python/tensorstore/tests" \
+		-vv -s --asyncio-mode=auto
+}
