@@ -1,0 +1,18 @@
+# Template file for 'python3-pytest-recording'
+pkgname=python3-pytest-recording
+version=0.14.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+depends="python3-vcrpy python3-pytest"
+checkdepends="${depends} python3-pytest-httpbin python3-pytest-mock python3-requests python3-Werkzeug"
+short_desc="Pytest plugin powered by VCR.py to record and replay HTTP traffic"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/kiwicom/pytest-recording"
+distfiles="https://github.com/kiwicom/pytest-recording/archive/refs/tags/v${version}.tar.gz"
+checksum=2e7736fa32f6a9e110617ea41ce46811be0ea7bbbd7017c273cd8556e430503a
+
+post_install() {
+	vlicense LICENSE
+}
