@@ -1,0 +1,22 @@
+# Template file for 'lighthouse'
+pkgname=lighthouse
+version=8.2.2
+revision=1
+build_style=cargo
+make_install_args="--path lighthouse"
+make_check_args="-- --skip attestation_production::gloas_attestation_index_payload_present --skip store_tests::test_import_historical_data_columns_batch_no_block_found interactive_tests::proposer_boost_re_org_bad_ffg --skip interactive_tests::proposer_boost_re_org_epoch_boundary --skip interactive_tests::proposer_boost_re_org_epoch_boundary_skip1 --skip interactive_tests::proposer_boost_re_org_epoch_boundary_skip32 --skip interactive_tests::proposer_boost_re_org_finality --skip interactive_tests::proposer_boost_re_org_head_distance --skip interactive_tests::proposer_boost_re_org_no_finality --skip interactive_tests::proposer_boost_re_org_parent_distance --skip interactive_tests::proposer_boost_re_org_slot_after_epoch_boundary --skip interactive_tests::proposer_boost_re_org_very_unhealthy --skip interactive_tests::proposer_boost_re_org_weight_misprediction --skip interactive_tests::proposer_boost_re_org_zero_weight"
+hostmakedepends="pkg-config cmake clang perl"
+makedepends="openssl-devel libzstd-devel sqlite-devel libclang"
+short_desc="Ethereum consensus client in Rust"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/sigp/lighthouse"
+distfiles="https://github.com/sigp/lighthouse/archive/refs/tags/v${version}.tar.gz"
+checksum=d7c2db0cfb18ad4748600b44c872714a1302b437cb8fd98ea42d4d311a0e3f8f
+system_accounts=_lighthouse
+_lighthouse_homedir="/var/lib/lighthouse"
+make_dirs="/var/lib/lighthouse 0755 _lighthouse _lighthouse"
+
+post_install() {
+	vsv lighthouse
+}
