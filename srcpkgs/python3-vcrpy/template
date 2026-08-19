@@ -1,0 +1,19 @@
+# Template file for 'python3-vcrpy'
+pkgname=python3-vcrpy
+version=8.3.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-yaml python3-wrapt"
+checkdepends="${depends} python3-pytest python3-aiohttp python3-boto3 python3-cryptography python3-httpbin python3-httplib2 python3-httpx python3-httpx2 python3-pytest-aiohttp python3-pytest-asyncio python3-pytest-cov python3-pytest-httpbin python3-requests python3-tornado python3-urllib3"
+short_desc="Automatically mock HTTP interactions to simplify and speed up testing"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/kevin1024/vcrpy"
+distfiles="https://github.com/kevin1024/vcrpy/archive/refs/tags/v${version}.tar.gz"
+checksum=f01a5b291f761eca87196a0d7074f44d3ca8206921e743e8f828e65eb6270659
+make_check=no # tornado tests broken, need to package other checkdepends: httpx-curl-cffi pycurl pyreqwest
+
+post_install() {
+	vlicense LICENSE.txt
+}
