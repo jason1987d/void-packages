@@ -1,0 +1,19 @@
+# Template file for 'python3-ptpython'
+pkgname=python3-ptpython
+version=3.0.32
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools"
+depends="python3-appdirs python3-jedi python3-prompt_toolkit python3-Pygments"
+checkdepends="${depends} python3-pytest"
+short_desc="Python REPL build on top of prompt_toolkit"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/prompt-toolkit/ptpython"
+changelog="https://github.com/prompt-toolkit/ptpython/blob/main/CHANGELOG"
+distfiles="https://github.com/prompt-toolkit/ptpython/archive/refs/tags/${version}.tar.gz"
+checksum=6418a381cfe84fb3b4a06afd331de62b59e5560d71dbec0158c21ca22802c8f5
+
+post_install() {
+	vlicense LICENSE
+}
