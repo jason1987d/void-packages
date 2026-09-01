@@ -1,0 +1,21 @@
+# Template file for 'python3-fsspec'
+pkgname=python3-fsspec
+version=2026.7.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling hatch-vcs"
+# should package other optional depends
+depends="python3-pygit2 python3-requests python3-tqdm python3-aiohttp python3-paramiko python3-libarchive-c"
+checkdepends="${depends} python3-numpy python3-pytest python3-pytest-benchmark python3-pytest-cov python3-pytest-mock python3-pytest-recording python3-pytest-rerunfailures python3-pytest-asyncio"
+short_desc="Specification that Python filesystems should adhere to"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/fsspec/filesystem_spec"
+distfiles="https://github.com/fsspec/filesystem_spec/archive/refs/tags/${version}.tar.gz"
+checksum=c876aee137711240d4f821a5d8811ed19bde9df504d941cac22a116075de1ebc
+
+export SETUPTOOLS_SCM_PRETEND_VERSION="${version}"
+
+post_install() {
+	vlicense LICENSE
+}
