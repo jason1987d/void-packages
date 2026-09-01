@@ -4632,3 +4632,12 @@ libaws-c-io.so.1.0.0 aws-c-io-0.27.7_1
 libaws-c-http.so.1.0.0 aws-c-http-0.11.1_1
 libaws-c-sdkutils.so.1.0.0 aws-c-sdkutils-0.2.10_1
 libaws-c-auth.so.1.0.0 aws-c-auth-0.10.5_1
+libarrow_compute.so.2500 arrow-25.0.1_1
+libarrow_acero.so.2500 arrow-25.0.1_1
+libarrow.so.2500 arrow-25.0.1_1
+libparquet.so.2500 arrow-25.0.1_1
+libarrow_dataset.so.2500 arrow-25.0.1_1
+libthrift.so.0.23.0 thrift-0.23.0_1
+libboost_process.so.1.91.0 libboost_process-1.91.0_1
+libgtest.so.1.17.0 gtest-1.17.0_1
+libgtest_main.so.1.17.0 gtest-1.17.0_1
