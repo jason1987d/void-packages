@@ -1,0 +1,72 @@
+# Template file for 'arrow'
+pkgname=arrow
+version=25.0.1
+revision=1
+build_style=cmake
+build_wrksrc=cpp
+configure_args="-DCMAKE_USE_OPENSSL=ON -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib -DCMAKE_BUILD_TYPE=Release -DARROW_SIMD_LEVEL=AVX2 -DARROW_BUILD_STATIC=OFF -DARROW_DEPENDENCY_SOURCE=SYSTEM -DARROW_BUILD_UTILITIES=ON -DARROW_COMPUTE=ON -DARROW_CSV=ON	-DARROW_CUDA=OFF -DARROW_DATASET=ON -DARROW_FILESYSTEM=ON -DARROW_FLIGHT=OFF -DARROW_GANDIVA=OFF -DARROW_GANDIVA_JAVA=OFF -DARROW_HDFS=OFF -DARROW_HIVESERVER2=OFF -DARROW_IPC=ON -DARROW_JSON=ON -DARROW_ORC=OFF -DARROW_PARQUET=ON -DARROW_PLASMA=OFF -DARROW_PLASMA_JAVA_CLIENT=OFF -DARROW_PYTHON=ON -DARROW_S3=OFF	-DARROW_SUBSTRAIT=OFF -DARROW_TENSORFLOW=OFF -DARROW_WITH_BZ2=ON -DARROW_WITH_ZLIB=ON -DARROW_WITH_LZ4=ON -DARROW_WITH_SNAPPY=ON -DARROW_WITH_ZSTD=ON -DARROW_WITH_BROTLI=ON -DARROW_MIMALLOC=ON -DARROW_THRIFT=ON -DARROW_BUILD_TESTS=ON -DCMAKE_CXX_FLAGS=-DMIMALLOC_USE_SYSTEM=ON -DPython3_EXECUTABLE=/usr/bin/python3"
+hostmakedepends="boost cmake curl extra-cmake-modules git ninja	protobuf python3-Cython	python3-cffi python3-fsspec python3-libcst python3-numpy python3-pandas	python3-pip python3-scikit-build-core python3-setuptools python3-setuptools_scm	python3-wheel python3-yaml python3-installer"
+makedepends="libcurl-devel boost-devel snappy-devel brotli-devel thrift-devel rapidjson	xsimd zlib-devel liblz4-devel libzstd-devel protobuf-devel openssl-devel re2-devel bzip2-devel libutf8proc-devel mimalloc-devel	libevent-devel python3-devel gflags-devel gtest-devel libboost_process"
+depends="protobuf snappy brotli openssl libutf8proc mimalloc liblz4 zlib libzstd abseil-cpp re2 libgcc"
+checkdepends="python3-pytest python3-hypothesis	python3-cffi python3-pytz python3-pandas"
+short_desc="Toolbox for fast data interchange and in-memory analytics"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://arrow.apache.org"
+changelog="https://github.com/apache/arrow/blob/main/CHANGELOG.md"
+distfiles="https://github.com/apache/arrow/archive/refs/tags/apache-arrow-${version}.tar.gz"
+checksum=01ee19d023775e70692cf52e0efa2b8cc7b9b7257d17983b5f6c36a06288ce02
+python_version=3.14
+subpackages="arrow-devel arrow-py"
+
+post_build() {
+	cmake --install ${wrksrc}/cpp/build --prefix ${wrksrc}/arrow-install
+	cd ${wrksrc}/python
+	CMAKE_PREFIX_PATH=${wrksrc}/arrow-install LD_LIBRARY_PATH=${wrksrc}/arrow-install/lib PYARROW_BUNDLE_ARROW_CPP=OFF python3 -m pip wheel --no-build-isolation --no-deps --wheel-dir ${wrksrc}/wheel .
+}
+
+do_install() {
+	cmake --install ${wrksrc}/cpp/build --prefix ${DESTDIR}/usr
+	python3 -m installer --destdir ${DESTDIR} ${wrksrc}/wheel/pyarrow-${version}-*.whl
+}
+
+do_check() {
+	cd ${wrksrc}
+	export PARQUET_TEST_DATA=cpp/submodules/parquet-testing/data
+	export ARROW_TEST_DATA=testing/data
+	ctest -E 'arrow-dataset-file-parquet-test|arrow-ipc-endianness-test|arrow-ipc-read-write-test|parquet-internals-test|parquet-reader-test|parquet-arrow-reader-writer-test|parquet-arrow-metadata-test' --test-dir ${wrksrc}/cpp/build --output-on-failure
+	rm -rf pyarrow-test
+	mkdir -p pyarrow-test
+	python3 -m pip install --no-deps --no-index --target pyarrow-test wheel/pyarrow-${version}-*.whl
+	cp -a python/pyarrow/tests ${wrksrc}/pyarrow-test/pyarrow/
+	cp python/pyarrow/conftest.py ${wrksrc}/pyarrow-test/pyarrow/
+	CMAKE_PREFIX_PATH=arrow-install PYTHONPATH=pyarrow-test LD_LIBRARY_PATH=arrow-install/lib:${LD_LIBRARY_PATH} python3 -m pytest -v --deselect "pyarrow-test/pyarrow/tests/parquet/test_data_types.py::test_undefined_logical_type" --deselect "pyarrow-test/pyarrow/tests/parquet/test_metadata.py::test_column_chunk_key_value_metadata" --deselect "pyarrow-test/pyarrow/tests/parquet/test_parquet_file.py::test_read_undefined_logical_type" --deselect "pyarrow-test/pyarrow/tests/test_cython.py::test_cython_api" --deselect "pyarrow-test/pyarrow/tests/test_cython.py::test_visit_strings" --deselect "pyarrow-test/pyarrow/tests/test_extension_type.py::test_cpp_extension_in_python" pyarrow-test/pyarrow/tests
+}
+
+arrow-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/cmake
+	}
+}
+
+arrow-py_package() {
+	depends="arrow>=${version}_${revision} python3-numpy"
+	short_desc+=" (Python bindings)"
+
+	pkg_install() {
+		vmove "${py3_sitelib}/pyarrow"
+		vmove "${py3_sitelib}/pyarrow-${version}.dist-info"
+	}
+}
+
+# NOTE: temporarily added to common/shlibs :
+# libthrift.so.0.23.0 thrift-0.23.0_1
+# libboost_process.so.1.91.0 boost-1.91.0_1
+# libgtest.so.1.17.0 gtest-1.17.0_1
+# libgtest_main.so.1.17.0 gtest-1.17.0_1
+# but this should not be needed!
