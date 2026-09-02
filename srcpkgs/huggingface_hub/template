@@ -1,0 +1,16 @@
+# Template file for 'huggingface_hub'
+pkgname=huggingface_hub
+version=1.30.0
+revision=1
+build_style=python3-pep517
+make_check_args="--deselect=tests/test_hf_api.py::TestHfApiPublicProduction::test_model_info_with_security --deselect=tests/test_commit_scheduler.py::TestCommitScheduler::test_sync_local_folder --deselect=tests/test_xet_upload.py::TestXetUpload::test_upload_file_with_bytesio --deselect=tests/test_xet_upload.py::TestXetUpload::test_fallback_to_lfs_when_xet_not_available"
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-filelock python3-yaml python3-packaging python3-fsspec python3-requests python3-tqdm python3-typing_extensions python3-hf_xet python3-httpx python3-shellingham python3-typer python3-authlib python3-fastapi python3-itsdangerous python3-click" 
+# there are still more optional dependencies to be packaged
+checkdepends="${depends} git python3-pytest python3-pytest-cov python3-pytest-env python3-pytest-xdist python3-pytest-asyncio python3-pytest-rerunfailures python3-pytest-mock python3-jedi python3-Jinja2 python3-urllib3 python3-numpy python3-duckdb python3-Pillow python3-pytest-vcr"
+short_desc="Python client for the Huggingface Hub"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/huggingface/huggingface_hub"
+distfiles="https://github.com/huggingface/huggingface_hub/archive/refs/tags/v${version}.tar.gz"
+checksum=06d838f5fe8985205a4a4557733e9e56b8eddb2f153fdb961bcb4de13c70a549
