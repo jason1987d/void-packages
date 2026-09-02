@@ -1,0 +1,21 @@
+# Template file for 'python3-interface_meta'
+pkgname=python3-interface_meta
+version=2.0.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatch hatch-vcs"
+checkdepends="python3-pytest"
+short_desc="Expose API with enforced method signatures and consistent documentation"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/matthewwardrop/interface_meta"
+distfiles="https://github.com/matthewwardrop/interface_meta/archive/refs/tags/v${version}.tar.gz"
+checksum=8aa00752fb197919fb5c4f66dba53094824a2ab4f1983bc5904f35ca7362e84f
+
+pre_build() {
+	export SETUPTOOLS_SCM_PRETEND_VERSION="${version}"
+}
+
+post_install() {
+	vlicense LICENSE
+}
