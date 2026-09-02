@@ -1,0 +1,18 @@
+# Template file for 'python3-pykalman'
+pkgname=python3-pykalman
+version=0.11.2
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-numpy python3-packaging python3-scikit-base python3-scipy"
+checkdepends="${depends} python3-pytest"
+short_desc="Kalman Filter, Smoother, and EM Algorithm for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/pykalman/pykalman"
+distfiles="https://github.com/pykalman/pykalman/archive/refs/tags/v${version}.tar.gz"
+checksum=a0ad8633d30d91db7261b24220bdd35043d97ac15207445f9753df760f7336ec
+
+post_install() {
+	vlicense LICENSE
+}
