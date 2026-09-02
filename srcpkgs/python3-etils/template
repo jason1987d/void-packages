@@ -1,0 +1,20 @@
+# Template file for 'python3-etils'
+pkgname=python3-etils
+version=1.14.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
+depends="python3-typing_extensions python3-fsspec python3-zipp python3-tqdm python3-numpy python3-jax python3-abseil python3-SimpleParsing python3-dm-tree python3-zipp"
+checkdepends="${depends} python3-pytest"
+short_desc="Collection of eclectic utils for python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/etils"
+changelog="https://github.com/google/etils/blob/main/CHANGELOG.md"
+distfiles="https://github.com/google/etils/archive/refs/tags/v${version}.tar.gz"
+checksum=99d6d2992b1a256bd921ae210dd9f00e6a100428edb71d15d8ce05fb70ba3fd1
+make_check=no # unpackaged dependencies such as fiddle and tensorflow
+
+post_extract() {
+	sed -i 's/flit_core >=3.8,<4/flit_core >=3.8/' pyproject.toml
+}
