@@ -1,0 +1,55 @@
+# Template file for 'python3-polars'
+pkgname=python3-polars
+version=1.44.1
+revision=1
+build_style=python3-pep517
+build_helper="rust"
+hostmakedepends="python3-setuptools python3-wheel maturin cargo pkg-config python3-wheel"
+makedepends="rust-std libzstd-devel"
+depends="python3-numpy python3-pandas arrow-py python3-pydantic python3-fsspec python3-matplotlib python3-SQLAlchemy2 python3-orjson python3-pytz python3-XlsxWriter python3-openpyxl"
+checkdepends="${depends} python3-pytest python3-pytest-xdist python3-hypothesis"
+short_desc="Extremely fast Query Engine for DataFrames"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/pola-rs/polars"
+distfiles="https://github.com/pola-rs/polars/archive/refs/tags/py-${version}.tar.gz"
+checksum=0238ab4df39583c517082e137cdd017246f4a7fde3c486d3a78a7be6b8bc2561
+build_wrksrc=py-polars
+make_check=no # still need to package dependencies - connectorx xlsx2csv adbc-driver-manager deltalake pyiceberg altair cloudpickle great-tables cudf-polars-cu12
+
+export RUSTC_BOOTSTRAP=1
+export CARGO_BUILD_JOBS=1
+
+post_build() {
+	case "$XBPS_TARGET_MACHINE" in
+		x86) runtime=32 ;;
+		x86_64|aarch64) runtime=64 ;;
+		*) msg_error "Unsupported architecture: $XBPS_TARGET_MACHINE" ;;
+	esac
+	maturin build -o dist --release --locked --strip --compatibility linux 	--manifest-path "runtime/polars-runtime-${runtime}/Cargo.toml"
+}
+
+
+post_install() {
+	vlicense LICENSE
+}
+
+#python3-polars-runtime32_package() {
+#	depends="${sourcepkg}>=${version}_${revision}"
+#	short_desc+=" - 32 bit runtime"
+#	archs="x86"
+#	pkg_install() {
+#		maturin build -o dist --release --locked --strip --compatibility linux --manifest-path runtime/polars-runtime-32/Cargo.toml
+#		python -m installer --destdir="$PKGDESTDIR" dist/*.whl
+#	}
+#}
+#
+#python3-polars-runtime64_package() {
+#	depends="${sourcepkg}>=${version}_${revision}"
+#	short_desc+=" - 64 bit runtime"
+#	archs="x86_64 aarch64"
+#	pkg_install() {
+#		maturin build -o dist --release --locked --strip --compatibility linux --manifest-path runtime/polars-runtime-64/Cargo.toml
+#		python -m installer --destdir="$PKGDESTDIR" dist/*.whl
+#	}
+#}
