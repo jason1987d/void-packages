@@ -1,0 +1,23 @@
+# Template file for 'python3-SimpleParsing'
+pkgname=python3-SimpleParsing
+version=0.1.9
+revision=1
+build_style=python3-pep517
+make_check_args="--deselect test/test_bools.py::test_bool_args_in_help --deselect test/test_conf_path.py::test_pass_invalid_value_to_add_config_path_arg --deselect test/test_docstrings.py::test_weird_docstring_with_field_like --deselect test/test_docstrings.py::test_docstring_builds_upon_bases --deselect test/test_docstrings.py::test_desc_from_cls_docstring --deselect test/test_docstrings.py::test_help_takes_value_from_docstring --deselect test/test_examples.py::test_running_example_outputs_expected_without_arg --deselect test/test_issue_48.py::test_issue_48 --deselect test/test_subgroups.py::test_help_string --deselect test/test_subgroups.py::test_help_string_displays_default_factory_arguments --deselect test/test_subgroups.py::test_subgroup_partial_with_nested_field"
+hostmakedepends="python3-setuptools python3-wheel hatchling hatch-vcs uv python3-uv-dynamic-versioning git"
+depends="python3-yaml python3-tomli python3-tomli-w python3-typing_extensions python3-docstring-parser"
+checkdepends="${depends} python3-pytest python3-pytest-regressions python3-pytest-benchmark"
+short_desc="Simple, Elegant, Typed Argument Parsing with argparse"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/lebrice/SimpleParsing"
+distfiles="${PYPI_SITE}/s/simple-parsing/simple_parsing-${version}.tar.gz"
+checksum=0ff184ebaa6606420989ddbcb5650b21c62e2a59ec5388bc76c3343bda872cde
+
+pre_build() {
+	export UV_DYNAMIC_VERSIONING_OVERRIDE="${version}"
+}
+
+post_install() {
+	vlicense LICENSE
+}
