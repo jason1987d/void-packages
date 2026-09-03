@@ -1,0 +1,296 @@
+# Template file for 'python3-torch'
+pkgname=python3-torch
+version=2.14.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-numpy python3-packaging python3-yaml python3-requests python3-six python3-typing_extensions git libgomp python3-pybind11 python3-scikit-build-core"
+makedepends="libgomp-devel"
+depends="python3-expecttest python3-fsspec python3-hypothesis python3-Jinja2 python3-networkx python3-optree python3-psutil python3-sympy python3-typing_extensions python3-wheel libgomp python3-filelock python3-setuptools"
+checkdepends="${depends} python3-pytest"
+short_desc="Tensors and Dynamic neural networks with strong GPU acceleration"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/pytorch/pytorch"
+_aiter_gitrev=971d98b8ed4003639486134a435df7e2ef9c0475
+_fbjni_gitrev=7e1e1fe3858c63c251c637ae41a20de425dde96f
+_FP16_gitrev=4dfe081cf6bcd15db339cf2680b9281b8451eeb3
+_FXdiv_gitrev=b408327ac2a15ec3e43352421954f5b1967701d1
+_NNPACK_gitrev=c07e3a0400713d546e0dea2d5466dd22ea389c73
+_NVTX_gitrev=7d113f290f89eeeae9c957011c497101f3948d9e
+_VulkanMemoryAllocator_gitrev=1d8f600fd424278486eade7ed3e877c99f0846b1
+_XNNPACK_gitrev=51a0103656eff6fc9bfd39a4597923c4b542c883
+_benchmark_gitrev=299e5928955cc62af9968370293b916f5130916f
+_composable_kernel_gitrev=5a74dec07a894484b9489d0c0e00cd3b52652d18
+_cpp_httplib_gitrev=62d899feac3cf9215a55f2b43da250fdd98d2156
+_cpuinfo_gitrev=bc3c01e230c6974283e4b89421cfb0e232435589
+_cudnn_frontend_gitrev=35fd7b0d0e1d4952b904c79341c5e84e3af0a328
+_cutlass_gitrev=e05f953a5b3d38adc240df2ff928e0421c2abba3
+_fbgemm_gitrev=bf6dce360a4fe133bc779e2fd036277678509f95
+_flash_attention_gitrev=14c377950125c70b7a9dabf9c561fca53715ac7d
+_flatbuffers_gitrev=a2cd1ea3b6d3fee220106b5fed3f7ce8da9eb757
+_fmt_gitrev=c0330b746600bfd91dbacb88837da5a16f947ba5
+_gemmlowp_gitrev=3fb5c176c17c765a3492cd2f0321b0dab712f350
+_gloo_gitrev=74cc005ae13f69c11d8a41e50b42025b6730e796
+_googletest_gitrev=52eb8108c5bdec04579160ae17225d66034bd723
+_ideep_gitrev=e087b6e4b32a7ba684db82231d1558123968ac1d
+_ittapi_gitrev=0c57540822deb5dae43bef6c1cc9b3be4772a033
+_kineto_gitrev=15f4784a3471d4db8b31720d528f2f57cd2b1f40
+_kleidiai_gitrev=d7770c89632329a9914ef1a90289917597639cbe
+_mimalloc_gitrev=30ac9d56b8b9ea57ae84bc8ef17ef39000da08fe
+_mslk_gitrev=3d332d1c0c0ac7765852c97b3979c9ef913e037f
+_json_gitrev=55f93686c01528224f448c19128836e7df245f72
+_onnx_gitrev=e709452ef2bbc1d113faf678c24e6d3467696e83
+_pocketfft_gitrev=0fa0ef591e38c2758e3184c6c23e497b9f732ffa
+_protobuf_gitrev=f0dc78d7e6e331b8c6bb2d5283e06aa26883ca7c
+_psimd_gitrev=072586a71b55b7f8c584153d223e95687148a900
+_pthreadpool_gitrev=a56dcd79c699366e7ac6466792c3025883ff7704
+_pybind11_gitrev=97bf890db679505a14dfe547a5e77bb2bd05dc90
+_python_peachpy_gitrev=f45429b087dd7d5bc78bb40dc7cf06425c252d67
+_sleef_gitrev=5a1d179df9cf652951b59010a2d2075372d67f68
+_tensorpipe_gitrev=2b4cd91092d335a697416b2a3cb398283246849d
+_fbgemm_asmjit_gitrev=a3199e8857792cd10b7589ff5d58343d2c9008ea
+_fbgemm_composable_kernel_gitrev=7fe50dc3da2069d6645d9deb8c017a876472a977
+_fbgemm_cpuinfo_gitrev=161a9ec374884f4b3e85725cb22e05f9458fdc93
+_fbgemm_cutlass_gitrev=571edeb2d0ac872a8392fc49285b156b07884b4e
+_fbgemm_googletest_gitrev=${_googletest_gitrev}
+_fbgemm_hipify_torch_gitrev=63b6a7b541fa7f08f8475ca7d74054db36ff2691
+_fbgemm_json_gitrev=55f93686c01528224f448c19128836e7df245f72
+_tensorpipe_googletest_gitrev=aee0f9d9b5b87796ee8a0ab26b7587ec30e8858e
+_tensorpipe_libnop_gitrev=910b55815be16109f04f4180e9adee14fb4ce281
+_tensorpipe_libuv_gitrev=5152db2cbfeb5582e9c27c5ea1dba2cd9e10759b
+_tensorpipe_pybind11_gitrev=a23996fce38ff6ccfbcdc09f1e63f2c4be5ea2ef
+_ideep_mkldnn_gitrev=80afa71049cd69a3df32adcccb623b12cd7baa22
+_flash_attention_composable_kernel_gitrev=c56c6750d0fc54ed771d532cc92c316423449614
+_flash_attention_cutlass_gitrev=7127592069c2fe01b041e174ba4345ef9b279671
+_aiter_composable_kernel_gitrev=af7118e342580ecd3f71edce7b1d0ba465012ecf
+_onnx_pybind11_gitrev=a2e59f0e7065404b44dfe92a28aca47ba1378dc4
+_kineto_fmt_gitrev=40626af88bd7df9a5fb80be7b25ac85b122d6c21
+_kineto_googletest_gitrev=52eb8108c5bdec04579160ae17225d66034bd723
+distfiles="https://github.com/pytorch/pytorch/archive/refs/tags/v${version}.tar.gz
+ https://github.com/ROCm/aiter/archive/${_aiter_gitrev}.tar.gz
+ https://github.com/Maratyszcza/FP16/archive/${_FP16_gitrev}.tar.gz
+ https://github.com/Maratyszcza/FXdiv/archive/${_FXdiv_gitrev}.tar.gz
+ https://github.com/Maratyszcza/NNPACK/archive/${_NNPACK_gitrev}.tar.gz
+ https://github.com/NVIDIA/NVTX/archive/${_NVTX_gitrev}.tar.gz
+ https://github.com/malfet/PeachPy/archive/${_python_peachpy_gitrev}.tar.gz
+ https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator/archive/${_VulkanMemoryAllocator_gitrev}.tar.gz
+ https://github.com/google/XNNPACK/archive/${_XNNPACK_gitrev}.tar.gz
+ https://github.com/google/benchmark/archive/${_benchmark_gitrev}.tar.gz
+ https://github.com/ROCm/composable_kernel/archive/${_composable_kernel_gitrev}.tar.gz
+ https://github.com/yhirose/cpp-httplib/archive/${_cpp_httplib_gitrev}.tar.gz
+ https://github.com/pytorch/cpuinfo/archive/${_cpuinfo_gitrev}.tar.gz
+ https://github.com/NVIDIA/cudnn-frontend/archive/${_cudnn_frontend_gitrev}.tar.gz
+ https://github.com/NVIDIA/cutlass/archive/${_cutlass_gitrev}.tar.gz
+ https://github.com/pytorch/fbgemm/archive/${_fbgemm_gitrev}.tar.gz
+ https://github.com/facebookincubator/fbjni/archive/${_fbjni_gitrev}.tar.gz
+ https://github.com/Dao-AILab/flash-attention/archive/${_flash_attention_gitrev}.tar.gz
+ https://github.com/google/flatbuffers/archive/${_flatbuffers_gitrev}.tar.gz
+ https://github.com/fmtlib/fmt/archive/${_fmt_gitrev}.tar.gz
+ https://github.com/google/gemmlowp/archive/${_gemmlowp_gitrev}.tar.gz
+ https://github.com/pytorch/gloo/archive/${_gloo_gitrev}.tar.gz
+ https://github.com/google/googletest/archive/${_googletest_gitrev}.tar.gz
+ https://github.com/intel/ideep/archive/${_ideep_gitrev}.tar.gz
+ https://github.com/intel/ittapi/archive/${_ittapi_gitrev}.tar.gz
+ https://github.com/nlohmann/json/archive/${_json_gitrev}.tar.gz
+ https://github.com/pytorch/kineto/archive/${_kineto_gitrev}.tar.gz
+ https://github.com/ARM-software/kleidiai/archive/${_kleidiai_gitrev}.tar.gz
+ https://github.com/microsoft/mimalloc/archive/${_mimalloc_gitrev}.tar.gz
+ https://github.com/meta-pytorch/MSLK/archive/${_mslk_gitrev}.tar.gz
+ https://github.com/onnx/onnx/archive/${_onnx_gitrev}.tar.gz
+ https://github.com/mreineck/pocketfft/archive/${_pocketfft_gitrev}.tar.gz
+ https://github.com/protocolbuffers/protobuf/archive/${_protobuf_gitrev}.tar.gz
+ https://github.com/Maratyszcza/psimd/archive/${_psimd_gitrev}.tar.gz
+ https://github.com/Maratyszcza/pthreadpool/archive/${_pthreadpool_gitrev}.tar.gz
+ https://github.com/pybind/pybind11/archive/${_pybind11_gitrev}.tar.gz
+ https://github.com/pybind/pybind11/archive/${_onnx_pybind11_gitrev}.tar.gz
+ https://github.com/shibatch/sleef/archive/${_sleef_gitrev}.tar.gz
+ https://github.com/pytorch/tensorpipe/archive/${_tensorpipe_gitrev}.tar.gz
+ https://github.com/asmjit/asmjit/archive/${_fbgemm_asmjit_gitrev}.tar.gz
+ https://github.com/ROCm/composable_kernel/archive/${_fbgemm_composable_kernel_gitrev}.tar.gz
+ https://github.com/pytorch/cpuinfo/archive/${_fbgemm_cpuinfo_gitrev}.tar.gz
+ https://github.com/NVIDIA/cutlass/archive/${_fbgemm_cutlass_gitrev}.tar.gz
+ https://github.com/ROCm/hipify_torch/archive/${_fbgemm_hipify_torch_gitrev}.tar.gz
+ https://github.com/nlohmann/json/archive/${_fbgemm_json_gitrev}.tar.gz
+ https://github.com/google/googletest/archive/${_tensorpipe_googletest_gitrev}.tar.gz
+ https://github.com/google/libnop/archive/${_tensorpipe_libnop_gitrev}.tar.gz
+ https://github.com/libuv/libuv/archive/${_tensorpipe_libuv_gitrev}.tar.gz
+ https://github.com/pybind/pybind11/archive/${_tensorpipe_pybind11_gitrev}.tar.gz
+ https://github.com/uxlfoundation/oneDNN/archive/${_ideep_mkldnn_gitrev}.tar.gz
+ https://github.com/ROCm/composable_kernel/archive/${_flash_attention_composable_kernel_gitrev}.tar.gz
+ https://github.com/NVIDIA/cutlass/archive/${_flash_attention_cutlass_gitrev}.tar.gz
+ https://github.com/ROCm/composable_kernel/archive/${_aiter_composable_kernel_gitrev}.tar.gz
+ https://github.com/fmtlib/fmt/archive/${_kineto_fmt_gitrev}.tar.gz
+ https://github.com/google/googletest/archive/${_kineto_googletest_gitrev}.tar.gz"
+checksum="f774234c4dd76c495b65a29aac8d361bec1dc2430d6d5152b800a39eac03e5c1
+ bdbfe901388ae79941f2de53467110c3ce0a05ade1a24823baf00223c5e2124d
+ 90f20492621d5ed80b442aa682ff92d7ccf333ac8fac4a10e7e02afb159f3c13
+ 9ccf554541666b5c089ad5dd465141d671c99971f36d72f313652f5c49ffce14
+ 7af7792ba33873fd8c0ca80f261c565e254ffb1348497da74541bf2909bf013d
+ a9ec6ba17b4e93ba8c257f75901c81a4deded73eedc4f3d0cf1fd5f546e445e7
+ e57182725e856db7751df5a4546fbc4fee9dd7a59ea2285ae4b3452b0dc7bc5c
+ 04b278f5a185ef75a7ea988e0e76ddd0b2f2186bf56dd90625159972a47dcb3b
+ 3ff271a4f41e798616950b0c690d127afcc530a6180f78c78c4b2932920911aa
+ a9f63d40157775f13ca8a5c6769603cc0708f4eb81a1f539abdf0f85a10c17dd
+ 24ad5d2a278d59017efbb99646a242fa83ad32509275120f8c14cbd34cb428ab
+ ee6cc9382bcee9392cc8f0e3b7ae79636b677264c2fd7ad9e5f8657302630073
+ 8a1591993e36e551798d43c71754a2bebe7f13bca86d7c0de1e03ab51a179646
+ ff14285d97546e617fb9f28c479b5e636f1a19cc9b8dfd92813164f4aac62969
+ 30d038c2aabb65b70ef4f3152e03a7ba85f8a26e5243ce6ff8fbe4c2f24d7a85
+ e9624343a7322c883f591f21f454b83a66f6ed9ef1feb45ba4cda00ad9bf8a37
+ 221024505fa31647a1bce58ffeeeefc761b93f3b9ee7a8a9e0608268fb068611
+ ea7f67a7210f4e1af1d63cf9e81a79d28cd878beb13a1bce07c053a322b964db
+ 02db3e64fc74127f119ad2770068534e5b7b4731f6f79a5e8a30b2221ca4d744
+ 12b8873d2c0a5bb6c3d4f5326d3ea09d5c2fe2df9440ec9e83d79ec0b0aae57a
+ fdd6f08bdb33d33f4df516ffb91730fdb163479c19502cfc983083fd9cf43bfa
+ 1d7260c64008e5ad430a01f63dfd94a3e04ea663f2694a3834f3877b4da66833
+ 745c55415660044610f7fcd3af7a6420d5de16a7dbb9ebfe2e131275676232be
+ bf74234fa6090f013b905a5e3f62696a2ca9b01c1723e8dc465123f841bd0986
+ db64b21db2d3f883963e95fba8fda3080b4d56e8b9b270cba1863cdc91496341
+ 67f4cdd9ca930c9c1e130af4a437c7fc98fab77a2846fc2d2a14b4943831f8ef
+ 25f3d86a886698b07b2f11e22078958d9dab9d8655d55c887dd595d31eb8f595
+ 93d3dd80fe5a59339fb712f1c0ccc16694dc5b158df00ff87b9652a1badde186
+ c240b03282eab8d55a0348d4430c160bb8f73b1aff247dd45b7a10d03b2bdc9f
+ 1944e67d1baeffef3bb8f89793ea06e0f05b88aac4d5cd89b4558a21aca6754b
+ 3001af7fb316cefd02c3b586139167d43eb3cf79b78aed47645831593dfbd015
+ 1cfd0494ac6fe88e034579cb655b0ef9731b39a0432558e50fe41c4abd6d8684
+ d594b561fb41bf243233d8f411c7f2b7d913e5c9c1be4ca439baf7e48384c893
+ f6c4dab91ae9a03b3019e7cab0572743afd0e1b6e75b97fcca50259c737c924e
+ 0663f88fbfc3e7e2c3e2522e18a460af94367aade7a5caf20b037b2eb7940173
+ 6368877d3f241f283e010d858af27a6934ac45f7cbb5c68d2518b11bf64a113f
+ 1da0a5c38950e4f49329e9de10c59b2527840a1b963113f1c53b455971cd6aef
+ afd1b92010ae7918e20eec3e5bb270b7ca4828b5cb19e4d820a0a4558a04ce63
+ 0e85ca56bfe25ed7b3026d2784f716eb10ed1328ade346e3a252814752c57eeb
+ b0cb3259c3ad0485201fb6e3b4774ec99838b18652321b93cfc6fcdd797d794a
+ 7d8c69ad81cdee4e952d4ace075b3c0fb3d57c4d1cabc9c277b88bc7ad574f39
+ 9debb2f4e174c6f3f19df40652a308f66fa1bb24efc982208c097b82027f0fee
+ 2f54f03539a7a5c59e5529bdb97b731201d75b12a512268359b6749ffa02f8e5
+ f7d71dad6a05affc256d84ca1e2b3b09f3e10be71e0e3acd3ea608e3755c9bca
+ 67f4cdd9ca930c9c1e130af4a437c7fc98fab77a2846fc2d2a14b4943831f8ef
+ 89e40180b66e6629d1dd80c3ca3ab036524ed4d6fda8544980e2d16a2d5cb4b0
+ ec3604671f8ea11aed9588825f9098057ebfef7a8908e97459835150eea9f63a
+ eeb2cdd529d0de964dccb479afb37427cdf001288786c51babe12c79c9cc8eac
+ fd73796d5d0c0a2d0f780b7b5a16e694241c30e637df15a4ee632cb55f63d5e4
+ f13ce92168cae7bd25f5efc43f00b37ff14bcc62ffdea3d85220b1c50c104f17
+ 631c42712fce3eab6f53e344f9b67ebaf6001d01962de7131821777b894e307c
+ 12baa9c2bf22eaca065b5e55387c21bb4ac742992a6ecd2dd1d3b016dfd25a0a
+ 716566bcc0a00691df82722ae33620eff804650ddc60ae222f6a04ed7a8fe3d0
+ 992216a0605e03f0373984ecad11158f42d8569782f1b2c84035272da10f0ff1
+ 745c55415660044610f7fcd3af7a6420d5de16a7dbb9ebfe2e131275676232be"
+skip_extraction="${_aiter_gitrev}.tar.gz
+ ${_FP16_gitrev}.tar.gz
+ ${_FXdiv_gitrev}.tar.gz
+ ${_NNPACK_gitrev}.tar.gz
+ ${_NVTX_gitrev}.tar.gz
+ ${_python_peachpy_gitrev}.tar.gz
+ ${_VulkanMemoryAllocator_gitrev}.tar.gz
+ ${_XNNPACK_gitrev}.tar.gz
+ ${_benchmark_gitrev}.tar.gz
+ ${_composable_kernel_gitrev}.tar.gz
+ ${_cpp_httplib_gitrev}.tar.gz
+ ${_cpuinfo_gitrev}.tar.gz
+ ${_cudnn_frontend_gitrev}.tar.gz
+ ${_cutlass_gitrev}.tar.gz
+ ${_fbgemm_gitrev}.tar.gz
+ ${_fbjni_gitrev}.tar.gz
+ ${_flash_attention_gitrev}.tar.gz
+ ${_flatbuffers_gitrev}.tar.gz
+ ${_fmt_gitrev}.tar.gz
+ ${_gemmlowp_gitrev}.tar.gz
+ ${_gloo_gitrev}.tar.gz
+ ${_googletest_gitrev}.tar.gz
+ ${_ideep_gitrev}.tar.gz
+ ${_ittapi_gitrev}.tar.gz
+ ${_json_gitrev}.tar.gz
+ ${_kineto_gitrev}.tar.gz
+ ${_kleidiai_gitrev}.tar.gz
+ ${_mimalloc_gitrev}.tar.gz
+ ${_mslk_gitrev}.tar.gz
+ ${_onnx_gitrev}.tar.gz
+ ${_pocketfft_gitrev}.tar.gz
+ ${_protobuf_gitrev}.tar.gz
+ ${_psimd_gitrev}.tar.gz
+ ${_pthreadpool_gitrev}.tar.gz
+ ${_pybind11_gitrev}.tar.gz
+ ${_sleef_gitrev}.tar.gz
+ ${_tensorpipe_gitrev}.tar.gz
+ ${_fbgemm_asmjit_gitrev}.tar.gz
+ ${_fbgemm_composable_kernel_gitrev}.tar.gz
+ ${_fbgemm_cpuinfo_gitrev}.tar.gz
+ ${_fbgemm_cutlass_gitrev}.tar.gz
+ ${_fbgemm_googletest_gitrev}.tar.gz
+ ${_fbgemm_hipify_torch_gitrev}.tar.gz
+ ${_fbgemm_json_gitrev}.tar.gz
+ ${_tensorpipe_googletest_gitrev}.tar.gz
+ ${_tensorpipe_libnop_gitrev}.tar.gz
+ ${_tensorpipe_libuv_gitrev}.tar.gz
+ ${_tensorpipe_pybind11_gitrev}.tar.gz
+ ${_ideep_mkldnn_gitrev}.tar.gz
+ ${_flash_attention_composable_kernel_gitrev}.tar.gz
+ ${_flash_attention_cutlass_gitrev}.tar.gz
+ ${_aiter_composable_kernel_gitrev}.tar.gz
+ ${_onnx_pybind11_gitrev}.tar.gz
+ ${_kineto_fmt_gitrev}.tar.gz
+ ${_kineto_googletest_gitrev}.tar.gz"
+make_check=no # Need to add nvidia and amd support , maybe other fixes too as there are test collection errors
+
+post_extract() {
+	vsrcextract -C third_party/aiter ${_aiter_gitrev}.tar.gz
+	vsrcextract -C third_party/FP16 ${_FP16_gitrev}.tar.gz
+	vsrcextract -C third_party/FXdiv ${_FXdiv_gitrev}.tar.gz
+	vsrcextract -C third_party/NNPACK ${_NNPACK_gitrev}.tar.gz
+	vsrcextract -C third_party/NVTX ${_NVTX_gitrev}.tar.gz
+	vsrcextract -C third_party/python-peachpy ${_python_peachpy_gitrev}.tar.gz
+	vsrcextract -C third_party/VulkanMemoryAllocator ${_VulkanMemoryAllocator_gitrev}.tar.gz
+	vsrcextract -C third_party/XNNPACK ${_XNNPACK_gitrev}.tar.gz
+	vsrcextract -C third_party/benchmark ${_benchmark_gitrev}.tar.gz
+	vsrcextract -C third_party/composable_kernel ${_composable_kernel_gitrev}.tar.gz
+	vsrcextract -C third_party/cpp-httplib ${_cpp_httplib_gitrev}.tar.gz
+	vsrcextract -C third_party/cpuinfo ${_cpuinfo_gitrev}.tar.gz
+	vsrcextract -C third_party/cudnn_frontend ${_cudnn_frontend_gitrev}.tar.gz
+	vsrcextract -C third_party/cutlass ${_cutlass_gitrev}.tar.gz
+	vsrcextract -C third_party/fbgemm ${_fbgemm_gitrev}.tar.gz
+	vsrcextract -C android/libs/fbjni ${_fbjni_gitrev}.tar.gz
+	vsrcextract -C third_party/flash-attention ${_flash_attention_gitrev}.tar.gz
+	vsrcextract -C third_party/flatbuffers ${_flatbuffers_gitrev}.tar.gz
+	vsrcextract -C third_party/fmt ${_fmt_gitrev}.tar.gz
+	vsrcextract -C third_party/gemmlowp/gemmlowp ${_gemmlowp_gitrev}.tar.gz
+	vsrcextract -C third_party/gloo ${_gloo_gitrev}.tar.gz
+	vsrcextract -C third_party/googletest ${_googletest_gitrev}.tar.gz
+	vsrcextract -C third_party/ideep ${_ideep_gitrev}.tar.gz
+	vsrcextract -C third_party/ittapi ${_ittapi_gitrev}.tar.gz
+	vsrcextract -C third_party/nlohmann ${_json_gitrev}.tar.gz
+	vsrcextract -C third_party/kineto ${_kineto_gitrev}.tar.gz
+	vsrcextract -C third_party/kleidiai ${_kleidiai_gitrev}.tar.gz
+	vsrcextract -C third_party/mimalloc ${_mimalloc_gitrev}.tar.gz
+	vsrcextract -C third_party/mslk ${_mslk_gitrev}.tar.gz
+	vsrcextract -C third_party/onnx ${_onnx_gitrev}.tar.gz
+	vsrcextract -C third_party/pocketfft ${_pocketfft_gitrev}.tar.gz
+	vsrcextract -C third_party/protobuf ${_protobuf_gitrev}.tar.gz
+	vsrcextract -C third_party/psimd ${_psimd_gitrev}.tar.gz
+	vsrcextract -C third_party/pthreadpool ${_pthreadpool_gitrev}.tar.gz
+	vsrcextract -C third_party/pybind11 ${_pybind11_gitrev}.tar.gz
+	vsrcextract -C third_party/sleef ${_sleef_gitrev}.tar.gz
+	vsrcextract -C third_party/tensorpipe ${_tensorpipe_gitrev}.tar.gz
+	vsrcextract -C third_party/fbgemm/external/asmjit ${_fbgemm_asmjit_gitrev}.tar.gz
+	vsrcextract -C third_party/fbgemm/external/composable_kernel ${_fbgemm_composable_kernel_gitrev}.tar.gz
+	vsrcextract -C third_party/fbgemm/external/cpuinfo ${_fbgemm_cpuinfo_gitrev}.tar.gz
+	vsrcextract -C third_party/fbgemm/external/cutlass ${_fbgemm_cutlass_gitrev}.tar.gz
+	vsrcextract -C third_party/fbgemm/external/googletest ${_fbgemm_googletest_gitrev}.tar.gz
+	vsrcextract -C third_party/fbgemm/external/hipify_torch ${_fbgemm_hipify_torch_gitrev}.tar.gz
+	vsrcextract -C third_party/fbgemm/external/json ${_fbgemm_json_gitrev}.tar.gz
+	vsrcextract -C third_party/tensorpipe/third_party/googltest ${_tensorpipe_googletest_gitrev}.tar.gz
+	vsrcextract -C third_party/tensorpipe/third_party/libnop ${_tensorpipe_libnop_gitrev}.tar.gz
+	vsrcextract -C third_party/tensorpipe/third_party/libuv ${_tensorpipe_libuv_gitrev}.tar.gz
+	vsrcextract -C third_party/tensorpipe/third_party/pybind11 ${_tensorpipe_pybind11_gitrev}.tar.gz
+	vsrcextract -C third_party/ideep/mkl-dnn ${_ideep_mkldnn_gitrev}.tar.gz
+	vsrcextract -C third_party/flash-attention/csrc/compsable_kernel ${_flash_attention_composable_kernel_gitrev}.tar.gz
+	vsrcextract -C third_party/flash-attention/csrc/cutlass ${_flash_attention_cutlass_gitrev}.tar.gz
+	vsrcextract -C third_party/aiter/3rdparty/composable_kernel ${_aiter_composable_kernel_gitrev}.tar.gz
+	vsrcextract -C third_party/onnx/third_party/pybind11 ${_onnx_pybind11_gitrev}.tar.gz
+	vsrcextract -C third_party/kineto/libkineto/third_party/fmt ${_kineto_fmt_gitrev}.tar.gz
+	vsrcextract -C third_party/kineto/libkineto/third_party/googletest ${_kineto_googletest_gitrev}.tar.gz
+}
+
+post_install() {
+	vlicense LICENSE
+}
