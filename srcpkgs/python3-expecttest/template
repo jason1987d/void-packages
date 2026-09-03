@@ -1,0 +1,17 @@
+# Template file for 'python3-expecttest'
+pkgname=python3-expecttest
+version=0.3.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-poetry-core uv"
+checkdepends="python3-pytest python3-flake8 python3-hypothesis python3-mypy"
+short_desc="Python expect tests"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/pytorch/expecttest"
+distfiles="https://github.com/pytorch/expecttest/archive/refs/tags/v${version}.tar.gz"
+checksum=e35ef2df7f97071c735a93612bfeb4d60b1c5f0990656bccffaf81b917cab09b
+
+post_install() {
+	vlicense LICENSE
+}
