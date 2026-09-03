@@ -1,0 +1,13 @@
+# Template file for 'python3-ninja'
+pkgname=python3-ninja
+version=1.13.2
+revision=1
+build_style=python3-pep517
+hostmakedepends="cmake ninja python3-scikit-build-core hatch-fancy-pypi-readme python3-setuptools_scm"
+checkdepends="python3-pytest python3-importlib_metadata"
+short_desc="Infrastructure to build Ninja Python wheels"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/scikit-build/ninja-python-distributions"
+distfiles="${PYPI_SITE}/n/ninja/ninja-${version}.tar.gz"
+checksum=525bfa3fc88aa30a4467df270fd5be6f9fcae8061d54d4df74ea1dc5abd5a975
