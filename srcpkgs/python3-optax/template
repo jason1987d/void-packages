@@ -1,0 +1,18 @@
+# Template file for 'python3-optax'
+pkgname=python3-optax
+version=0.2.8
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-flit_core"
+depends="python3-abseil python3-chex python3-jax python3-jaxlib python3-numpy python3-etils"
+checkdepends="${depends} python3-pytest python3-scikit-learn python3-scipy python3-flax"
+short_desc="Gradient processing and optimization library for JAX"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google-deepmind/optax"
+distfiles="https://github.com/google-deepmind/optax/archive/refs/tags/v${version}.tar.gz"
+checksum=c5864f15c7f9ddfa3f703d8a1f73d5a516db07d220fb0a434741d23f45da4559
+
+post_extract() {
+	sed -i 's/flit_core >=3\.2,<4/flit_core >=3.2,<5/' pyproject.toml
+}
