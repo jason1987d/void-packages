@@ -1,0 +1,19 @@
+# Template file for 'python3-beartype'
+pkgname=python3-beartype
+version=0.22.9
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+makedepends="python3-devel"
+checkdepends="python3-pytest python3-poetry python3-Pygments nuitka python3-typer python3-click python3-SQLAlchemy PyInstaller python3-pandas python3-mypy python3-numpy"
+short_desc="Fast near-real-time pure-Python runtime-static type-checker"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/beartype/beartype"
+distfiles="https://github.com/beartype/beartype/archive/refs/tags/v${version}.tar.gz"
+checksum=ecc0518c0c9102637e711c8f46ce0ba561c3138c89aea522d4b28b84a5f47b2d
+make_check=no # tests fail
+
+post_install() {
+	vlicense LICENSE
+}
