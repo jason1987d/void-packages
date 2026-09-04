@@ -1,0 +1,13 @@
+# Template file for 'python3-wadler_lindig'
+pkgname=python3-wadler_lindig
+version=0.1.8
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+checkdepends="python3-pytest python3-numpy"
+short_desc="Wadler–Lindig pretty printer for Python"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/patrick-kidger/wadler_lindig"
+distfiles="https://github.com/patrick-kidger/wadler_lindig/archive/refs/tags/v${version}.tar.gz"
+checksum=999e1b4c7249531e46e2026a73603616d83159187d793124fb484358d292ebc6
