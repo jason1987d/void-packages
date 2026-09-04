@@ -1,0 +1,11 @@
+--- a/CMakeLists.txt	2026-07-03 12:23:38.000000000 -0500
++++ b/CMakeLists.txt	2026-07-06 12:43:07.410306672 -0500
+@@ -523,7 +523,7 @@
+ 
+ 	# Automatically install ta_regtest in ta-lib/bin after a successful build.
+ 	install(TARGETS ta_regtest
+-		RUNTIME DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/bin"
++		RUNTIME DESTINATION bin
+ 	)
+ 
+ 	############
