@@ -1,0 +1,21 @@
+# Template file for 'python3-ta-lib'
+pkgname=python3-ta-lib
+version=0.8.3
+revision=1
+build_style=python3-pep517
+make_check_args="--deselect tests/test_func.py::test_input_empty --deselect tests/test_threads.py::test_shutdown_and_reinitialize"
+hostmakedepends="python3-setuptools python3-wheel python3-Cython python3-numpy cmake"
+makedepends="python3-devel ta-lib-devel"
+depends="python3-numpy python3-Cython python3-build"
+checkdepends="${depends} python3-pytest python3-pandas python3-polars"
+short_desc="Python wrapper for TA-Lib (technical analysis)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-2-Clause"
+homepage="https://github.com/ta-lib/ta-lib-python"
+changelog="https://github.com/TA-Lib/ta-lib-python/blob/master/CHANGELOG"
+distfiles="https://github.com/TA-Lib/ta-lib-python/archive/refs/tags/v${version}.tar.gz"
+checksum=588595e6403bda2386aa37638dcabe8c620fd49d41057225b6dba7d155b53286
+
+post_install() {
+	vlicense LICENSE
+}
