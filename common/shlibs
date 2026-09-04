@@ -4641,3 +4641,4 @@ libthrift.so.0.23.0 thrift-0.23.0_1
 libboost_process.so.1.91.0 libboost_process-1.91.0_1
 libgtest.so.1.17.0 gtest-1.17.0_1
 libgtest_main.so.1.17.0 gtest-1.17.0_1
+libta-lib.so.0.7.1 ta-lib-0.7.1_1
