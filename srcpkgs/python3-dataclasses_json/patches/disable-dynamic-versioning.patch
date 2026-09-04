@@ -1,0 +1,16 @@
+--- a/pyproject.toml	2024-06-09 09:20:35.000000000 -0500
++++ b/pyproject.toml	2026-09-04 18:03:58.962182006 -0500
+@@ -27,11 +27,8 @@
+ line-length = 120
+ 
+ [build-system]
+-requires = ["poetry-core>=1.2.0", "poetry-dynamic-versioning"]
+-build-backend = "poetry_dynamic_versioning.backend"
+-
+-[tool.poetry-dynamic-versioning]
+-enable = true
++requires = ["poetry-core>=1.2.0"]
++build-backend = "poetry.core.masonry.api"
+ 
+ [tool.poetry.urls]
+ changelog = "https://github.com/lidatong/dataclasses-json/releases"
