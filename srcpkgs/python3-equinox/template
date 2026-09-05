@@ -1,0 +1,15 @@
+# Template file for 'python3-equinox'
+pkgname=python3-equinox
+version=0.13.8
+revision=1
+build_style=python3-pep517
+make_check_args="--deselect tests/test_pmap.py::test_out --deselect tests/test_pmap.py::test_no_arrays --deselect tests/test_pmap.py::test_num_traces --deselect tests/test_while_loop.py::test_speed_while"
+hostmakedepends="hatchling"
+depends="python3-jax python3-jaxtyping python3-typing_extensions python3-wadler_lindig"
+checkdepends="${depends} python3-pytest python3-jaxlib python3-optax python3-beartype"
+short_desc="Elegant easy-to-use neural networks + scientific computing in JAX"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/patrick-kidger/equinox"
+distfiles="https://github.com/patrick-kidger/equinox/archive/refs/tags/v${version}.tar.gz"
+checksum=411557757ff13ae6578b0d35334d17d49943e221658255087749f754e41a5c1b
