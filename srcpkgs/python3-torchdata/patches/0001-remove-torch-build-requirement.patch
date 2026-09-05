@@ -1,0 +1,10 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -11,7 +11,4 @@
+ requires = [
+     "setuptools",
+     "wheel",
+-    "ninja",
+-    "cmake",
+-    "torch",
+ ]
