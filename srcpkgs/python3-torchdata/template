@@ -1,0 +1,19 @@
+# Template file for 'python3-torchdata'
+pkgname=python3-torchdata
+version=0.11.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel python3-cmake python3-ninja python3-torch"
+depends="python3-torch python3-requests python3-urllib3 python3-fsspec"
+checkdepends="${depends} python3-pytest python3-numpy python3-parameterized python3-datasets"
+# circular checkdepends get datasets before torchdata at some point in git log!
+short_desc="PyTorch repo for data loading and utilities shared by PyTorch libraries"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/meta-pytorch/data"
+distfiles="https://github.com/meta-pytorch/data/archive/refs/tags/v${version}.tar.gz"
+checksum=945c53a8587567624aaad2d66204fbae9acb9535696554c53ffeb83320c308b9
+
+post_install() {
+	vlicense LICENSE
+}

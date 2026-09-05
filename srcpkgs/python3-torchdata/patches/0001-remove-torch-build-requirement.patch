@@ -1,0 +1,9 @@
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -10,7 +10,6 @@
+     "wheel",
+     "ninja",
+     "cmake",
+-    "torch",
+ ]
+
