@@ -1,0 +1,57 @@
+# Template file for 'python3-array-record'
+pkgname=python3-array-record
+version=0.8.3
+revision=1
+_bazel_version=7.2.1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools rsync openjdk21"
+makedepends="python3-devel"
+depends="python3-etils python3-abseil"
+checkdepends="${depends} python3-pytest python3-grain"
+short_desc="Efficient random-access storage format for array records"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/array_record"
+distfiles="https://github.com/google/array_record/archive/refs/tags/v${version}.tar.gz
+ https://github.com/bazelbuild/bazel/releases/download/${_bazel_version}/bazel_nojdk-${_bazel_version}-linux-x86_64"
+checksum="d43ffceb77110a18eda2dc38384e3ef77aa0acdd0fe0b6f27756a2799fdaae87
+ 1c7a167ad2c45374afb19f60093465f58f9209a5142d53d63bc4aadb567323fa"
+skip_extraction="bazel_nojdk-${_bazel_version}-linux-x86_64"
+_bazel="${XBPS_SRCDISTDIR}/${pkgname}-${version}/bazel_nojdk-${_bazel_version}-linux-x86_64"
+
+post_extract() {
+	chmod +x "${_bazel}"
+	ln -sf "${_bazel}" "${wrksrc}/bazel"
+}
+
+do_configure() {
+	export PATH="${XBPS_SRCDISTDIR}/${pkgname}-${version}:${PATH}"
+	ln -sf "${_bazel}" "${XBPS_SRCDISTDIR}/${pkgname}-${version}/bazel"
+}
+
+do_build() {
+	export PATH="${wrksrc}:${PATH}"
+	export PYTHON_BIN="${XBPS_CROSS_BASE}/usr/bin/python3.14"
+	export PYTHON_VERSION="3.14"
+	bazel build -c opt --cxxopt=-std=c++17 --host_cxxopt=-std=c++17 --action_env PYTHON_BIN_PATH="${PYTHON_BIN}" --@rules_python//python/config_settings:python_version=3.14 ...
+	mkdir -p "${wrksrc}/wheel/array_record"
+	cp setup.py LICENSE "${wrksrc}/wheel/"
+	rsync -avm -L --exclude="bazel-*/" . "${wrksrc}/wheel/array_record/"
+	rsync -avm -L --include="*.so" --include="*_pb2.py" --exclude="*.runfiles" --exclude="*_obj" --include="*/" --exclude="*" bazel-bin/cpp "${wrksrc}/wheel/array_record"
+	rsync -avm -L --include="*.so" --include="*_pb2.py" --exclude="*.runfiles" --exclude="*_obj" --include="*/" --exclude="*" bazel-bin/python "${wrksrc}/wheel/array_record"
+	cd "${wrksrc}/wheel"
+	python3 setup.py bdist_wheel
+	mkdir -p "${wrksrc}/dist"
+	cp dist/*.whl "${wrksrc}/dist/"
+}
+
+do_install() {
+	python3 -m installer --destdir="${DESTDIR}" "${wrksrc}"/wheel/dist/array_record-*.whl
+}
+
+do_check() {
+	export PATH="${wrksrc}:${PATH}"
+	export USE_BAZEL_VERSION="${_bazel_version}"
+	export PYTHON_BIN="${XBPS_CROSS_BASE}/usr/bin/python3.14"
+	bazel test --cxxopt=-std=c++17 --host_cxxopt=-std=c++17 --test_output=errors --action_env PYTHON_BIN_PATH="${PYTHON_BIN}" --@rules_python//python/config_settings:python_version=3.14 //cpp:array_record_reader_test //cpp:array_record_writer_test //cpp:masked_reader_test //cpp:parallel_for_test //cpp:sequenced_chunk_writer_test //cpp:test_utils_test //cpp:tri_state_ptr_test //python:array_record_data_source_test //python:array_record_module_test
+}
