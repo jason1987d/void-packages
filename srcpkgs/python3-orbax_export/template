@@ -1,0 +1,19 @@
+# Template file for 'python3-orbax_export'
+pkgname=python3-orbax_export
+version=0.0.8
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-flit_core"
+depends="python3-abseil python3-dataclasses_json python3-jaxtyping python3-numpy python3-etils python3-protobuf python3-jax python3-jaxlib python3-orbax_checkpoint"
+checkdepends="${depends} python3-pytest python3-pytest-xdist python3-requests python3-chex"
+short_desc="Common checkpointing and persistence utilities for JAX users (export)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/orbax"
+distfiles="${PYPI_SITE}/o/orbax-export/orbax_export-${version}.tar.gz"
+checksum=544eef564e2a6f17cd11b1167febe348b7b7cf56d9575de994a33d5613dd568a
+make_check=no # unpackaged dependency tf-nightly (tensorflow)
+
+post_extract() {
+	sed -i 's/flit_core >=3.5,<4/flit_core >=3.5,<5/' pyproject.toml
+}
