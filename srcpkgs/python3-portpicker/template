@@ -1,0 +1,21 @@
+# Template file for 'python3-portpicker'
+pkgname=python3-portpicker
+version=1.6.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-psutil"
+checkdepends="python3-pytest ${depends} net-tools"
+short_desc="Python module to find available network ports for testing"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/python_portpicker"
+distfiles="https://github.com/google/python_portpicker/archive/refs/tags/v${version}.tar.gz"
+checksum=9d236d7fcc8e37c00a9281b9bd765d50a6352e71746ea6c36e16c179615785d3
+
+do_check() {
+	cd "${wrksrc}"
+	export PYTHONPATH="${wrksrc}/src:${wrksrc}/src/tests"
+	unset PYTEST_ADDOPTS
+	python3 -m pytest src/tests
+}
