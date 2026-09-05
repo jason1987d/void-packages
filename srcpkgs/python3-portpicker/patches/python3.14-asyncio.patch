@@ -1,0 +1,11 @@
+--- a/src/portserver.py
++++ b/src/portserver.py
+@@ -367,7 +367,8 @@
+     if sys.platform == 'win32':
+         asyncio.set_event_loop(asyncio.ProactorEventLoop())
+
+-    event_loop = asyncio.get_event_loop()
++    event_loop = asyncio.new_event_loop()
++    asyncio.set_event_loop(event_loop)
+
+     if sys.platform == 'win32':
