@@ -1,0 +1,25 @@
+# Template file for 'python3-grain'
+pkgname=python3-grain
+version=0.2.18
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-grpcio-tools python3-pybind11"
+makedepends="python3-devel abseil-cpp-devel"
+depends="python3-abseil python3-array-record python3-cloudpickle python3-etils python3-numpy python3-portpicker python3-protobuf"
+checkdepends="${depends} python3-jax python3-pytest python3-parameterized python3-attrs python3-prometheus_client arrow-py"
+short_desc="Library for reading and processing ML training data"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/google/grain"
+changelog="https://github.com/google/grain/blob/main/CHANGELOG.md"
+distfiles="https://github.com/google/grain/archive/refs/tags/v${version}.tar.gz"
+checksum=8570a542e5e173ad78aaba36575cd2744264da2e0d56a768220485f5338f34b2
+make_check_pre="env PYTHON_VERSION=3.14 PYTHON_MINOR_VERSION=14"
+make_check=no # broken tests with python 3.14
+
+pre_build() {
+	python3 -m grpc_tools.protoc -I grain/proto --python_out grain/proto grain/proto/execution_summary.proto
+	local ext_suffix
+	ext_suffix="$(python3-config --extension-suffix)"
+	c++ ${CXXFLAGS} ${CPPFLAGS} -std=c++17 -fPIC -shared $(python3 -m pybind11 --includes) -I. grain/_src/python/experimental/index_shuffle/python/index_shuffle_module.cc grain/_src/python/experimental/index_shuffle/index_shuffle.cc -o "grain/_src/python/experimental/index_shuffle/python/index_shuffle_module${ext_suffix}" ${LDFLAGS} -labsl_strings
+}
