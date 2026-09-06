@@ -1,0 +1,28 @@
+# Template file for 'tensorboard'
+pkgname=tensorboard
+version=2.21.0
+revision=1
+build_style=python3-module
+build_wrksrc=tensorboard/pip_package
+hostmakedepends="python3-setuptools"
+depends="python3-abseil python3-grpcio python3-Markdown python3-numpy python3-packaging python3-Pillow python3-protobuf tensorboard-data-server python3-Werkzeug python3-setuptools"
+checkdepends="${depends} python3-pytest python3-pytest-mock python3-tensorflow"
+short_desc="TensorFlow visualization toolkit"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/tensorflow/tensorboard"
+distfiles="https://github.com/tensorflow/tensorboard/archive/refs/tags/${version}.tar.gz"
+checksum=6cf2193326759e9cefe5ef772c935e5b8f15a79093033cddff7e785b30f5bfd9
+make_check=no # tests fail, need to figure out pb2 and tensorflow situation
+
+pre_build() {
+	export PYTHONPATH=${wrksrc}:${PYTHONPATH}
+}
+
+pre_install() {
+	export PYTHONPATH="${wrksrc}:${PYTHONPATH}"
+}
+
+do_check() {
+	PYTHONPATH="${wrksrc}" python3 -m pytest "${wrksrc}/tensorboard"
+}
