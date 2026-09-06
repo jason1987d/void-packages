@@ -1,0 +1,19 @@
+# Template file for 'tensorboard-data-server'
+pkgname=tensorboard-data-server
+version=0.7.2
+revision=1
+_tensorboard_version=2.21.0
+build_wrksrc=tensorboard/data/server
+build_style=cargo
+hostmakedepends="python3-packaging"
+short_desc="Fast data loading server for TensorBoard"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/tensorflow/tensorboard"
+distfiles="https://github.com/tensorflow/tensorboard/archive/refs/tags/${_tensorboard_version}.tar.gz"
+checksum=6cf2193326759e9cefe5ef772c935e5b8f15a79093033cddff7e785b30f5bfd9
+
+do_install() {
+	vmkdir usr/lib/python${py3_ver}/site-packages/tensorboard_data_server/bin
+	vinstall target/${XBPS_RUST_TARGET}/release/rustboard 755 usr/lib/python${py3_ver}/site-packages/tensorboard_data_server/bin server
+}
