@@ -1,0 +1,35 @@
+# Template file for 'xprof'
+pkgname=xprof
+version=2.23.1
+revision=1
+hostmakedepends="python3-installer python3-setuptools python3-wheel tar which"
+depends="python3-Cheroot python3-Werkzeug python3-abseil python3-etils python3-fire python3-fsspec python3-protobuf python3-setuptools python3-six python3-urllib3"
+# other depends - gviz-api gcsfs google-cloud-storage
+checkdepends="${depends} python3-pytest python3-tensorflow"
+short_desc="Profiling and performance analysis tool for machine learning"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/openxla/xprof"
+_bazel_version=7.4.1
+_bazel_distfile="bazel-${_bazel_version}-linux-x86_64"
+distfiles="https://github.com/openxla/xprof/archive/refs/tags/${pkgname}-v${version}.tar.gz
+ https://releases.bazel.build/${_bazel_version}/release/${_bazel_distfile}"
+checksum="d57d365e71b70537f69c901c66e0f5cc4f07c7f778e4214c955c703f622d9963
+ c97f02133adce63f0c28678ac1f21d65fa8255c80429b588aeeba8a1fac6202b"
+skip_extraction="${_bazel_distfile}"
+make_check=no # need to figure this out especially with tensorflow
+
+post_extract() {
+	vsrccopy "${_bazel_distfile}" .
+	chmod +x "${_bazel_distfile}"
+}
+
+do_build() {
+	"./${_bazel_distfile}" run plugin:build_pip_package -- --output "${wrksrc}/profile-pip"
+	cd "${wrksrc}/profile-pip"
+	python3 setup.py bdist_wheel
+}
+
+do_install() {
+	python3 -m installer --destdir="${DESTDIR}" "${wrksrc}"/profile-pip/dist/*.whl
+}
