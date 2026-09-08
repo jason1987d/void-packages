@@ -1,0 +1,21 @@
+# Template file for 'python3-tiktoken'
+pkgname=python3-tiktoken
+version=0.14.0
+revision=1
+build_style=python3-pep517
+build_helper=rust
+make_check_args="--import-mode=append --deselect=tests/test_misc.py::test_optional_blobfile_dependency --deselect=tests/test_simple_public.py::test_optional_blobfile_dependency"
+hostmakedepends="python3-setuptools python3-setuptools-rust python3-wheel rust cargo python3-installer"
+depends="python3-regex python3-requests"
+checkdepends="${depends} python3-pytest python3-hypothesis python3-blobfile"
+short_desc="BPE tokeniser for use with OpenAI's models"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/openai/tiktoken"
+changelog="https://github.com/openai/tiktoken/blob/main/CHANGELOG.md"
+distfiles="https://github.com/openai/tiktoken/archive/refs/tags/${version}.tar.gz"
+checksum=1aa4b5bfacafe8f18133a56770fef19690ebc255469e48296d8010d23fcf041d
+
+post_install() {
+	vlicense LICENSE
+}
