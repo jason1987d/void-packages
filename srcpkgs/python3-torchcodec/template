@@ -1,0 +1,24 @@
+# Template file for 'python3-torchcodec'
+pkgname=python3-torchcodec
+version=0.16.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-scikit-build-core python3-torch cmake python3-pybind11 pkg-config ninja"
+makedepends="ffmpeg-devel libjpeg-turbo-devel zlib-devel libpng-devel libwebp-devel libavif-devel libheif-devel"
+depends="python3-torch ffmpeg glibc libgcc libstdc++"
+checkdepends="${depends} python3-pytest python3-numpy python3-Pillow python3-torchvision"
+short_desc="PyTorch media decoding and encoding"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/meta-pytorch/torchcodec"
+distfiles="https://github.com/meta-pytorch/torchcodec/archive/refs/tags/v${version}.tar.gz"
+checksum=b10068c6c52205bc10bec0bba350079b34ecc1880727e89fc8a13951d59c7bf1
+
+pre_build() {
+	export TORCHCODEC_DISABLE_COMPILE_WARNING_AS_ERROR=ON
+	export I_CONFIRM_THIS_IS_NOT_A_LICENSE_VIOLATION=1
+}
+
+post_install() {
+	vlicense LICENSE
+}
