@@ -1,0 +1,17 @@
+# Template file for 'python3-moto'
+pkgname=python3-moto
+version=5.2.5
+revision=1
+build_style=python3-pep517
+make_check_args="-m not(requires_docker)"
+hostmakedepends="python3-setuptools"
+depends="python3-boto3 python3-cryptography python3-requests python3-xmltodict python3-Werkzeug python3-dateutil python3-responses python3-Jinja2 python3-botocore"
+checkdepends="${depends} python3-pytest python3-Flask python3-Flask-Cors python3-freezegun python3-pyotp python3-openapi-spec-validator python3-joserfc"
+short_desc="Mock out tests based on AWS infrastructure"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/getmoto/moto"
+changelog="https://github.com/getmoto/moto/blob/master/CHANGELOG.md"
+distfiles="https://github.com/getmoto/moto/archive/refs/tags/${version}.tar.gz"
+checksum=e83c2e1be03760924eaa2bf67fba1e186207e8d97c14e641f8064d90471cd954
+make_check=no # unpackaged checkdepends aws_xray_sdk antlr4 pycognito
