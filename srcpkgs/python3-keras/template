@@ -1,0 +1,18 @@
+# Template file for 'python3-keras'
+pkgname=python3-keras
+version=3.15.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-setuptools python3-wheel"
+depends="python3-abseil python3-numpy python3-rich python3-namex python3-h5py python3-optree python3-ml_dtypes python3-packaging"
+checkdepends="${depends} python3-pytest python3-pytest-cov python3-pytest-xdist python3-coverage python3-dm-tree python3-scipy python3-scikit-learn python3-Pillow python3-pandas python3-requests python3-protobuf python3-tensorflow python3-jax python3-flax python3-torch python3-orbax_checkpoint python3-grain tensorboard xprof"
+# may need to package python3-jax2onnx python3-tf2onnx 
+# tensorboard-plugin-profile is made available by 'xprof'
+# checkdepends note: gast flatbuffers astunparse termcolor are supposed to be brought in by tensorflow, but aren't appearing when these tests run, may be a known void python packaging bug
+short_desc="Deep Learning for humans"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/keras-team/keras"
+distfiles="https://github.com/keras-team/keras/archive/refs/tags/v${version}.tar.gz"
+checksum=7577d21ca0231e38ace70c17decb94492631e2b159c59b43e39cdcc6e1495a5d
+make_check=no # unpackaged dependencies
