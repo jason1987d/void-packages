@@ -1,0 +1,16 @@
+# Template file for 'python3-tokenizers'
+pkgname=python3-tokenizers
+version=0.23.2
+revision=1
+build_style=python3-pep517
+make_check_args="--ignore=benches --deselect tests/documentation/test_tutorial_train_from_iterators.py::TestTrainFromIterators::test_gzip"
+hostmakedepends="python3-setuptools python3-wheel maturin cargo"
+depends="huggingface_hub python3-fsspec python3-tiktoken"
+checkdepends="${depends} python3-pytest python3-pytest-asyncio python3-requests python3-datasets ruff ty"
+short_desc="Tokenizers optimized for Research and Production (Python)"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/huggingface/tokenizers"
+distfiles="https://github.com/huggingface/tokenizers/archive/refs/tags/v${version}.tar.gz"
+checksum=6f900d6be35eb71921339483937946a4f42167dec9c0102e51055874fb239b8b
+build_wrksrc="bindings/python"
