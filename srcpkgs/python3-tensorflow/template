@@ -1,0 +1,67 @@
+# Template file for 'python3-tensorflow'
+pkgname=python3-tensorflow
+version=2.21.0
+revision=1
+_bazel_version=7.7.0
+hostmakedepends="git python3 openjdk21 tar which cmake xxd python3-installer python3-wheel"
+makedepends="openblas-devel xsimd"
+depends="python3-abseil python3-astunparse python3-flatbuffers python3-gast python3-grpcio python3-h5py python3-ml_dtypes python3-numpy python3-opt_einsum python3-packaging python3-protobuf python3-requests python3-setuptools python3-six python3-termcolor python3-typing_extensions python3-wrapt python3-keras libclang gcc-fortran"
+checkdepends="bazel ${depends} python3-Cython"
+short_desc="End-to-end open source machine learning platform"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://www.tensorflow.org/"
+distfiles="https://github.com/tensorflow/tensorflow/archive/refs/tags/v${version}.tar.gz
+ https://github.com/bazelbuild/bazel/releases/download/${_bazel_version}/bazel_nojdk-${_bazel_version}-linux-x86_64"
+checksum="ef3568bb4865d6c1b2564fb5689c19b6b9a5311572cd1f2ff9198636a8520921
+ 4f2cc6a60c019c477da2df07c35dc4ea46a62aa806f396545e62891fe593cca2"
+skip_extraction="bazel_nojdk-${_bazel_version}-linux-x86_64"
+make_check=no # need to find correct test targets
+
+_bazel="${XBPS_SRCDISTDIR}/${pkgname}-${version}/bazel_nojdk-${_bazel_version}-linux-x86_64"
+
+post_extract() {
+	chmod +x "${_bazel}"
+}
+
+do_configure() {
+	export PATH="${XBPS_SRCDISTDIR}/${pkgname}-${version}:${PATH}"
+	ln -sf "${_bazel}" \
+		"${XBPS_SRCDISTDIR}/${pkgname}-${version}/bazel"
+	export TF_SET_ANDROID_WORKSPACE=0
+	export TF_NEED_CUDA=0
+	export TF_NEED_ROCM=0
+	export TF_NEED_OPENCL=0
+	export TF_NEED_MPI=0
+	export TF_NEED_TENSORRT=0
+	export TF_NEED_KAFKA=0
+	export TF_NEED_AWS=0
+	export TF_NEED_GCP=0
+	export TF_NEED_HDFS=0
+	export TF_NEED_S3=0
+	export TF_NEED_CLANG=0
+	export TF_ENABLE_XLA=1
+	export TF_PYTHON_VERSION=$(python3 -c \
+		'import sys; print(f"{sys.version_info.major}.{sys.version_info.minor}")')
+	export PYTHON_BIN_PATH="$(command -v python3)"
+	export USE_DEFAULT_PYTHON_LIB_PATH=1
+	export CC=gcc
+	export CXX=g++
+	export CC_OPT_FLAGS="-march=x86-64"
+	./configure
+}
+
+do_build() {
+	export PATH="${XBPS_SRCDISTDIR}/${pkgname}-${version}:${PATH}"
+	bazel build -c opt --verbose_failures --config=verbose_logs //tensorflow/tools/pip_package:wheel --repo_env=WHEEL_NAME=tensorflow_cpu
+}
+
+do_check() {
+	export PATH="${XBPS_SRCDISTDIR}/${pkgname}-${version}:${PATH}"
+	bazel test -c opt --config=verbose_logs --test_output=errors --test_tag_filters=-gpu,-tpu,-benchmark-test,-v1only,-no_oss --build_tag_filters=-gpu,-tpu,-benchmark-test,-v1only,-no_oss --test_lang_filters=py 
+}
+
+do_install() {
+	local wheel="${wrksrc}/bazel-bin/tensorflow/tools/pip_package/wheel_house/tensorflow_cpu-${version}-cp314-cp314-linux_x86_64.whl"
+	python3 -m installer --destdir="${DESTDIR}" "${wheel}"
+}
