@@ -1,0 +1,18 @@
+# Template file for 'shell_gpt'
+pkgname=shell_gpt
+version=1.5.1
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+depends="python3-openai python3-typer python3-rich python3-distro python3-prompt_toolkit"
+short_desc="Command-line productivity tool powered by AI LLMs like GPT-5"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/TheR1D/shell_gpt"
+distfiles="https://github.com/TheR1D/shell_gpt/archive/refs/tags/${version}.tar.gz"
+checksum=ec5882c07d2d9ce0f293b1f3745a6f3d0c60a46c6331307df28024a8b054f650
+make_check=no # requires specific versions of packages, unpackaged types-requests
+
+post_install() {
+	vlicense LICENSE
+}
