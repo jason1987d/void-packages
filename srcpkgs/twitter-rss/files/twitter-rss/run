@@ -1,0 +1,13 @@
+#!/bin/sh
+
+export DISPLAY=:99
+Xvfb "$DISPLAY" -screen 0 1280x1024x24 &
+xvfb_pid=$!
+cleanup() {
+	kill "$xvfb_pid" 2>/dev/null
+}
+trap cleanup INT TERM EXIT
+
+[ -r conf ] && . ./conf
+exec 2>&1
+exec chpst -u _twitter_rss:_twitter_rss -C /var/lib/twitter-rss /usr/bin/twitter-rss

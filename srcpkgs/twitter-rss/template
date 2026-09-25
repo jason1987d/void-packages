@@ -1,0 +1,37 @@
+# Template file for 'twitter-rss'
+pkgname=twitter-rss
+version=2.0.0
+revision=1
+_commit=3caf077464a5ae4fa7847f76f1c632db3581c70e
+hostmakedepends="nodejs yarn"
+depends="nodejs xorg-server-xvfb"
+short_desc="Generate RSS feeds from Twitter search"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="MIT"
+homepage="https://github.com/book000/twitter-rss"
+distfiles="https://github.com/book000/twitter-rss/archive/${_commit}.tar.gz>${pkgname}-${version}.tar.gz"
+checksum=0826a3643386ef741e0c18ae7a2626657e9c65b7052e473c6f6cf3852362fa36
+nopie=yes
+system_accounts=_twitter_rss
+_twitter_rss_homedir="/var/lib/twitter-rss"
+make_dirs="/var/lib/twitter-rss 0755 _twitter_rss _twitter_rss"
+
+do_build() {
+	yarn install --frozen-lockfile
+	yarn compile
+}
+
+do_install() {
+	vmkdir usr/lib/${pkgname}
+	vmkdir usr/bin
+	vcopy dist usr/lib/${pkgname}/dist
+	vcopy node_modules usr/lib/${pkgname}/node_modules
+	vcopy data usr/lib/${pkgname}/data
+	vinstall package.json 644 usr/lib/${pkgname}
+	vbin ${FILESDIR}/twitter-rss-bin
+}
+
+post_install() {
+	vsv twitter-rss
+	vlicense LICENSE
+}
