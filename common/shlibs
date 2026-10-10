@@ -4729,3 +4729,4 @@ libta-lib.so.0.7.1 ta-lib-0.7.1_1
 libta-lib.so.1 ta-lib-0.8.1_1
 libtorch.so python3-torch-2.14.0_1
 libtorch_cpu.so python3-torch-2.14.0_1
+libsimdjson.so.34 simdjson-5.0.3_1

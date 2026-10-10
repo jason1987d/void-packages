@@ -1,0 +1,28 @@
+# Template file for 'simdjson'
+pkgname=simdjson
+version=5.0.6
+revision=1
+build_style=cmake
+configure_args="-DBUILD_SHARED_LIBS=ON"
+short_desc="Parse gigabytes of JSON per second"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0 OR MIT"
+homepage="https://github.com/simdjson/simdjson"
+distfiles="https://github.com/simdjson/simdjson/archive/refs/tags/v${version}.tar.gz"
+checksum=a2535137f8da93c0a61a6eeb47e96e502e16db89223b64f76b4041d595f797d7
+
+post_install() {
+	vlicense LICENSE-MIT
+}
+
+simdjson-devel_package() {
+	depends="${sourcepkg}>=${version}_${revision}"
+	short_desc+=" - development files"
+
+	pkg_install() {
+		vmove usr/include
+		vmove "usr/lib/*.so"
+		vmove usr/lib/pkgconfig
+		vmove usr/lib/cmake
+	}
+}
