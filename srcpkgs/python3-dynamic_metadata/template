@@ -1,0 +1,13 @@
+# Template file for 'python3-dynamic_metadata'
+pkgname=python3-dynamic_metadata
+version=0.6.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="python3-flit_core"
+checkdepends="python3-pytest"
+short_desc="Documenting dynamic metadata support"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/scikit-build/dynamic-metadata"
+distfiles="https://github.com/scikit-build/dynamic-metadata/archive/refs/tags/v${version}.tar.gz"
+checksum=3ee2e471f62a7a4384e37aa7bef91de00cd20a21bdaba3a0313c9e089b162679
