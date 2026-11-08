@@ -1,0 +1,18 @@
+# Template file for 'python3-formerly'
+pkgname=python3-formerly
+version=0.1.0
+revision=1
+build_style=python3-pep517
+hostmakedepends="hatchling"
+checkdepends="python3-pytest"
+short_desc="Deprecate a class that users inherit from"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/scrapy/formerly"
+changelog="https://github.com/scrapy/formerly/blob/main/CHANGELOG.rst"
+distfiles="https://github.com/scrapy/formerly/archive/refs/tags/${version}.tar.gz"
+checksum=ca03dbfd074a4a34e692f2d292392a25e15e7ea438d98d59fbb687402a8e64c4
+
+post_install() {
+	vlicense LICENSE
+}
