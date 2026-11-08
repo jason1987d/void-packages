@@ -1,0 +1,16 @@
+# Template file for 'python3-frostwork'
+pkgname=python3-frostwork
+version=0.2.2
+revision=1
+build_style=python3-pep517
+hostmakedepends="maturin"
+depends="python3-typing_extensions python3-puccinialin"
+checkdepends="${depends} python3-pytest python3-parsel"
+short_desc="Treeless one-pass HTML extraction — CSS/XPath selectors streaming scan"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="Apache-2.0"
+homepage="https://github.com/scrapy/frostwork"
+changelog="https://github.com/scrapy/frostwork/blob/main/CHANGELOG.md"
+distfiles="https://github.com/scrapy/frostwork/archive/refs/tags/${version}.tar.gz"
+checksum=822689038a9bae960a380de165df31930140843f4593d7548ae2f193fca9f105
+make_check=no # unpackaged checkdepends web-poet
