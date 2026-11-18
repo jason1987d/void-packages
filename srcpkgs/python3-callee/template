@@ -1,0 +1,17 @@
+# Template file for 'python3-callee'
+pkgname=python3-callee
+version=0.3.1
+revision=1
+build_style=python3-module
+hostmakedepends="python3-setuptools python3-wheel"
+short_desc="Argument matchers for unittest.mock"
+maintainer="Jason Elswick <jason@jasondavid.us>"
+license="BSD-3-Clause"
+homepage="https://github.com/Xion/callee"
+changelog="https://github.com/Xion/callee/blob/master/CHANGELOG.md"
+distfiles="https://github.com/Xion/callee/archive/refs/tags/${version}.tar.gz"
+checksum=38c6185187f1df481460c237416142923f414183eedefefbc673685f9be5b2f0
+
+post_install() {
+	vlicense LICENSE
+}
