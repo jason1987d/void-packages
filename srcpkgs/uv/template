@@ -1,6 +1,6 @@
 # Template file for 'uv'
 pkgname=uv
-version=0.13.9
+version=0.13.10
 revision=1
 build_style=python3-pep517
 build_helper="rust qemu"
@@ -13,7 +13,7 @@ license="Apache-2.0 OR MIT"
 homepage="https://github.com/astral-sh/uv"
 changelog="https://github.com/astral-sh/uv/raw/main/CHANGELOG.md"
 distfiles="https://github.com/astral-sh/uv/releases/download/${version}/source.tar.gz>uv-${version}.tar.gz"
-checksum=9ff3b8467058929c25c6be93805dd14f1ba7f35013edc8146643af0b015231c5
+checksum=c74718c9167796fbb82956637e4b162303b3e10d275c3056276c6143dab713fa
 
 case "$XBPS_TARGET_MACHINE" in
 	i686*)
